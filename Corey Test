@@ -1,1 +1,2 @@
-TEST
+public boolean dont(){return !do};
+public boolean do(){return !dont};
