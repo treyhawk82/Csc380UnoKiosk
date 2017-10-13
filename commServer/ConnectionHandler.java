@@ -37,7 +37,6 @@ public class ConnectionHandler extends Thread{
         //player ID of the current player
         int currentPlayer = serverObject.checkIfPlayer(currentIPAddress);
         //current mode, and switches mode of for the following connection via method call of serverObject
-        boolean sendOrReceive = serverObject.alternateInputOutput(currentPlayer);
 
         //current time to be able to track connection activity
         Date currentTime = new Date(System.currentTimeMillis());
@@ -45,17 +44,11 @@ public class ConnectionHandler extends Thread{
         serverObject.setLastConnection(currentPlayer, currentTime);
 
         //checks whether it has to send or receive
-        if (sendOrReceive){
-            Receiver receiverThread = new Receiver(currentPlayer, currentConnection, lock, serverObject);
-            receiverThread.run();
-        }else {
-            Sender senderThread = new Sender(currentPlayer, currentConnection, lock, serverObject);
-            senderThread.run();
-        }
-        try {
-            currentConnection.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        Receiver receiverThread = new Receiver(currentPlayer, currentConnection, lock, serverObject);
+        receiverThread.run();
+
+        Sender senderThread = new Sender(currentPlayer, currentConnection, lock, serverObject);
+        senderThread.run();
     }
 }
