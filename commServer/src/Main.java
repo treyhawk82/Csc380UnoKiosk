@@ -16,7 +16,8 @@ public class Main {
 
         //just some random data to send to the clients atm TO-DO
         for(int i = 0; i < NUMBER_OF_PLAYERS; i++){
-            hands[i] = "Player No.: " + i;
+            //top of discard pile - player number - player 0 # of cards - p1 # of cards - p2 # of cards - p3 # of cards - player hand
+            hands[i] = "y4-" + i + "-3-5-4-6-y1xg3xr0";
         }
     }
 }

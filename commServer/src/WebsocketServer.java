@@ -132,8 +132,7 @@ public class WebsocketServer extends WebSocketServer {
             if(currentPlayer > -1 && currentPlayer < 4)currentPlayerIPs[currentPlayer] = null;
             // do some thing if required
         }
-        System.out.println("ERROR from " + conn.getRemoteSocketAddress().getAddress().getHostAddress());
-        conn.close();
+        System.out.println("ERROR, a connection has been closed");
     }
 
     /**
