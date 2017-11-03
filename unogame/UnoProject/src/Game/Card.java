@@ -10,6 +10,8 @@ public class Card {
         this.cardColor = cardColor;
         this.cardNum = cardNum;
     }
+
+
     //getters
     public String getCardColor() {
         return cardColor;
@@ -18,7 +20,10 @@ public class Card {
         return cardNum;
     }
 
-
+    @Override
+    public String toString() {
+        return "\ncolor: " + cardColor + " number: " + cardNum + "\n";
+    }
 }
 
 
