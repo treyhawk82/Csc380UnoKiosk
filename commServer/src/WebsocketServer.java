@@ -9,14 +9,38 @@ import java.util.Set;
 
 public class WebsocketServer extends WebSocketServer {
 
+    /**
+     * TCP port on which this server is listening
+     */
     private static int TCP_PORT = 4444;
+    /**
+     * number of players in our game
+     */
     private int NUMBER_OF_PLAYERS;
 
+    /**
+     * saves the WebSocket connections we accepted in a set
+     */
     private Set<WebSocket> conns;
+    /**
+     * saves the ip addresses of our current players
+     */
     private String[] currentPlayerIPs;
+    /**
+     * saves the actions the players have taken to give them to the game to process
+     */
     private ArrayList<String> actions;
+    /**
+     * saves the hands of our current players
+     */
     private String[] hands;
 
+    /**
+     * constructor of the WebsocketServer class. Instantiates with the current hands of our players as well as the
+     * number of current players. Also instantiates every variable that is needed to accept connections
+     * @param hands String array of current hands of our players
+     * @param NUMBER_OF_PLAYERS number of players in our game
+     */
     public WebsocketServer(String[] hands, int NUMBER_OF_PLAYERS) {
         super(new InetSocketAddress(TCP_PORT));
         this.NUMBER_OF_PLAYERS = NUMBER_OF_PLAYERS;
@@ -29,6 +53,12 @@ public class WebsocketServer extends WebSocketServer {
         }
     }
 
+    /**
+     * When a Websocket is opened, this method saves the connection to the conns Set, saves the current players ip
+     * address.
+     * @param conn Websocket connection to a client
+     * @param handshake handshake that is needed to establish the connection
+     */
     @Override
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
         conns.add(conn);
@@ -43,6 +73,14 @@ public class WebsocketServer extends WebSocketServer {
         System.out.println("New connection from " + currentIP);
     }
 
+    /**
+     * this method is called if the Websocket connection has been closed, and handles the closing on the server side.
+     * This includes deleting the connection from the conns Set.
+     * @param conn Websocket connection to the client
+     * @param code error code
+     * @param reason gives the reason why the connection was closed
+     * @param remote ???
+     */
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
         conns.remove(conn);
@@ -54,20 +92,22 @@ public class WebsocketServer extends WebSocketServer {
 
     }
 
+    /**
+     * This method is called when a client sends a message. It receives "No action taken" if the client has not made
+     * any move to trigger an update of the current state of the game, and receives a code if a specific action has
+     * been taken. TO-DO it also sends a String to the client that includes the current hand of the specific player,
+     * the current top card on the discard pile, and if uno is callable.
+     * @param conn Websocket connection to the player
+     * @param message is the message that has been received from the client
+     *
+     *                THIS ALSO UPDATES EVERY CLIENT IF _ONE_ CLIENT SENDS A MESSAGE.
+     *                NOT SURE IF WE SHOULD KEEP THIS OR NOT.
+     */
     @Override
     public void onMessage(WebSocket conn, String message) {
-        System.out.println("Message from client: " + message);
-        /**for (WebSocket sock : conns) {
-            String currentIP = sock.getRemoteSocketAddress().getAddress().getHostAddress();
-            int currentPlayer = -1;
-            for(int i = 0; i < NUMBER_OF_PLAYERS; i++){
-                if(currentPlayerIPs[i].equals(currentIP))currentPlayer = i;
-            }
-            sock.send(hands[currentPlayer]);
-        }*/
+        System.out.println("Message from client " + conn.getRemoteSocketAddress().getAddress().getHostAddress() +": " + message);
         for (WebSocket sock: conns
              ) {
-            sock.send("HellO!");
             String currentIP = sock.getRemoteSocketAddress().getAddress().getHostAddress();
             System.out.println("Test " + currentIP);
             int currentPlayer = 0;
@@ -75,12 +115,14 @@ public class WebsocketServer extends WebSocketServer {
                 if(currentPlayerIPs[currentPlayer].equals(currentIP))sock.send(hands[currentPlayer]);
                 currentPlayer++;
             }
-
-
-
         }
     }
 
+    /**
+     * handles the connection in case an error has occured. Includes deleting the connection from the conns Set-
+     * @param conn Websocket connection to the player
+     * @param ex exception that has occurred
+     */
     @Override
     public void onError(WebSocket conn, Exception ex) {
         //ex.printStackTrace();
@@ -92,10 +134,6 @@ public class WebsocketServer extends WebSocketServer {
         }
         System.out.println("ERROR from " + conn.getRemoteSocketAddress().getAddress().getHostAddress());
         conn.close();
-    }
-
-    public void updateHands(){
-
     }
 
     /**
