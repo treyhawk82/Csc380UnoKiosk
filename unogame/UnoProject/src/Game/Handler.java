@@ -15,6 +15,10 @@ public class Handler {
     int i;
 
     public void returnTop(){
+         System.out.println(deck.peek());
+     }
+
+     public void printCards(){
          System.out.println(deck);
      }
 
