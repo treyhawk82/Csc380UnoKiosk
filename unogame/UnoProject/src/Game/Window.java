@@ -8,9 +8,10 @@ public class Window {
     public Window(int width, int height, String title, GUI gui){
         JFrame frame = new JFrame(title);
 
-        frame.setPreferredSize(new Dimension(width, height));
-        frame.setMaximumSize(new Dimension(width, height));
-        frame.setMinimumSize(new Dimension(width, height));
+        int offset = 40;
+        frame.setPreferredSize(new Dimension(width, height + offset));
+        frame.setMaximumSize(new Dimension(width, height + offset));
+        frame.setMinimumSize(new Dimension(width, height + offset));
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);

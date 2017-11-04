@@ -18,12 +18,11 @@ public class Handler {
          System.out.println(deck.peek());
      }
 
-     public void printCards(){
+    public void printCards(){
          System.out.println(deck);
      }
 
-     public void addCards() {
-
+    public void addCards() {
          for (i =0; i <= 9; i++) {
              Card c = new Card("Yellow", i);
             deck.push(c);
@@ -57,7 +56,6 @@ public class Handler {
              deck.push(c);
          }
 
-
          deck.push(new Card("Yellow" , 10));    //skip
          deck.push(new Card("Yellow" , 10));    //skip
          deck.push(new Card("Green" , 10));     //skip
@@ -90,12 +88,8 @@ public class Handler {
          deck.push(new Card("Wild + 4", 14));       //wild+4
          deck.push(new Card("Wild + 4", 14));       //wild+4
          deck.push(new Card("Wild + 4", 14));       //wild+4
-
-
-
-     }
-
-     }
+    }
+}
 
 
 
