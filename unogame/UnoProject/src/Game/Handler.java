@@ -86,7 +86,7 @@ public class Handler {
          deck.push(new Card("Wild", 13));       //wild
          deck.push(new Card("Wild", 13));       //wild
          deck.push(new Card("Wild", 13));       //wild
-         deck.push(new Card("Wild + 4 ", 14));       //wild+4
+         deck.push(new Card("Wild + 4", 14));       //wild+4
          deck.push(new Card("Wild + 4", 14));       //wild+4
          deck.push(new Card("Wild + 4", 14));       //wild+4
          deck.push(new Card("Wild + 4", 14));       //wild+4
