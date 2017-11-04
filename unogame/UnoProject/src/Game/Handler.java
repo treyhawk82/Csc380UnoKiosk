@@ -25,11 +25,11 @@ public class Handler {
      public void addCards() {
 
          for (i =0; i <= 9; i++) {
-             Card c = new Card("yellow", i);
+             Card c = new Card("Yellow", i);
             deck.push(c);
          }
          for (i =1; i <= 9; i++) {
-             Card c = new Card("yellow", i);
+             Card c = new Card("Yellow", i);
              deck.push(c);
          }
          for (i =0; i <= 9; i++) {

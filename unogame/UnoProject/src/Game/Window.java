@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class Window {
 
-    public Window(int width, int height, String title, Main game){
+    public Window(int width, int height, String title, GUI gui){
         JFrame frame = new JFrame(title);
 
         frame.setPreferredSize(new Dimension(width, height));
@@ -15,8 +15,8 @@ public class Window {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
-        frame.add(game);
+        frame.add(gui);
         frame.setVisible(true);
-        game.start();
+        gui.start();
     }
 }
