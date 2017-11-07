@@ -1,4 +1,6 @@
-package Game;
+package Game.gui;
+
+import Game.ID;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;

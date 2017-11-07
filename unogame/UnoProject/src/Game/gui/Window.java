@@ -1,4 +1,4 @@
-package Game;
+package Game.gui;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +12,11 @@ public class Window {
         frame.setPreferredSize(new Dimension(width, height + offset));
         frame.setMaximumSize(new Dimension(width, height + offset));
         frame.setMinimumSize(new Dimension(width, height + offset));
+        /*
+        the two methods below make the window fullscreen, disabled for testing
+         */
+        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //frame.setUndecorated(true);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);

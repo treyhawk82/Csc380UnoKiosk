@@ -1,4 +1,7 @@
-package Game;
+package Game.gui;
+
+import Game.GameObject;
+import Game.ID;
 
 import java.awt.*;
 

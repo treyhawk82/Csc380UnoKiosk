@@ -1,4 +1,4 @@
-package Game;
+package Game.gui;
 
 import java.awt.*;
 
@@ -61,7 +61,7 @@ public class Background {
             Color darkerGameGreen = new Color(17,196,125);
             g.setColor(darkerGameGreen);
         }else {
-            Color gameGreen = new Color(47,226,155);
+            Color gameGreen = new Color(43,220,150);
             g.setColor(gameGreen);
         }
 
