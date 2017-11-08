@@ -6,24 +6,24 @@ import Game.Handler;
 import java.util.ArrayList;
 
 public class Deal extends Handler {
+
+    //fields
     private ArrayList<Card> hand;
+
+    //instantiate hand
     public Deal(){
         hand = new ArrayList<>();
     }
-
-
-    public void addCard(Handler deck){
-       // hand.add(0,deck.getLast());
-      //  deck.removeLast();
+    //computer deals cards to player and removed from top of drawpile
+    public void DealCard(Handler drawPile){
+        hand.add(0,drawPile.returnTop());
+        drawPile.pop();
     }
-
-
-    public void addCard(Card addCard){
-        hand.add(addCard);
-    }
-    public void removeCard(int element){
+    //player plays a card?
+    public void playCard(int element){
         hand.remove(element);
     }
+    //returns what card a user has?
     public Card getCard(int element){
         return hand.get(element);
     }

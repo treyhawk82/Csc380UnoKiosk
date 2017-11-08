@@ -14,8 +14,13 @@ public class Handler {
     Stack deck = new Stack();
     int i;
 
-    public void returnTop(){
-         System.out.println(deck.peek());
+
+    public Card returnTop(){
+        return (Card) deck.peek();
+     }
+
+     public void pop(){
+        deck.pop();
      }
 
     public void printCards(){
