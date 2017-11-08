@@ -1,4 +1,4 @@
-public class deal extends cardHandler{
+public class deal extends Handler{
     private ArrayList<Card> hand;
     public deal(){
         hand = new ArrayList<>();
