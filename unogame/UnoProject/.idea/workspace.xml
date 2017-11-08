@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="changed colourscheme">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/gui/Background.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/gui/Background.class" />
+    <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Game/Deal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Deal.java" afterPath="$PROJECT_DIR$/src/Game/Deal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/gui/Background.java" afterPath="$PROJECT_DIR$/src/Game/gui/Background.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,19 +39,32 @@
       <file leaf-file-name="Handler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/Handler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2175">
+            <state relative-caret-position="1963">
               <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Deal.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Deal.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/Deal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="31" column="7" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+              <folding>
+                <element signature="e#131#132#0" expanded="true" />
+                <element signature="e#171#172#0" expanded="true" />
+                <element signature="e#329#330#0" expanded="true" />
+                <element signature="e#362#363#0" expanded="true" />
+                <element signature="e#403#404#0" expanded="true" />
+                <element signature="e#439#440#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+                <element signature="e#517#518#0" expanded="true" />
+                <element signature="e#544#545#0" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
+                <element signature="e#608#609#0" expanded="true" />
+                <element signature="e#659#660#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,7 +79,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Background.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Background.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/gui/Background.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
@@ -144,15 +155,16 @@
         <option value="$PROJECT_DIR$/src/Game/GameObject.java" />
         <option value="$PROJECT_DIR$/src/Game/UnoBoard.java" />
         <option value="$PROJECT_DIR$/src/Game/GUI.java" />
-        <option value="$PROJECT_DIR$/src/Game/Handler.java" />
         <option value="$PROJECT_DIR$/src/Game/Window.java" />
         <option value="$PROJECT_DIR$/src/Game/Background.java" />
         <option value="$PROJECT_DIR$/src/Game/CardDrawer.java" />
         <option value="$PROJECT_DIR$/src/Game/gui/CardDrawer.java" />
         <option value="$PROJECT_DIR$/src/Game/Main.java" />
         <option value="$PROJECT_DIR$/src/Game/gui/GUI.java" />
-        <option value="$PROJECT_DIR$/src/Game/Deal.java" />
         <option value="$PROJECT_DIR$/src/Game/gui/Background.java" />
+        <option value="$PROJECT_DIR$/src/Game/deal.java" />
+        <option value="$PROJECT_DIR$/src/Game/Handler.java" />
+        <option value="$PROJECT_DIR$/src/Game/Deal.java" />
       </list>
     </option>
   </component>
@@ -183,6 +195,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,21 +241,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Game" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UnoProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -389,12 +394,21 @@
       <workItem from="1510070543149" duration="48000" />
       <workItem from="1510085505860" duration="350000" />
       <workItem from="1510101679799" duration="947000" />
-      <workItem from="1510154409201" duration="2360000" />
+      <workItem from="1510154409201" duration="3120000" />
+      <workItem from="1510158307193" duration="133000" />
     </task>
+    <task id="LOCAL-00001" summary="changed colourscheme">
+      <created>1510157524749</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1510157524749</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19212000" />
+    <option name="totallyTimeSpent" value="20105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="2182" height="1402" extended-state="6" />
@@ -402,13 +416,12 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32873377" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5037037" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.4962963" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -425,6 +438,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873377" sideWeight="0.49814814" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -432,12 +446,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed colourscheme" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed colourscheme" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/treyhawk82/Csc380UnoKiosk&#10;&#10;# Conflicts:&#10;#&#9;unogame/UnoProject/src/Game/Deal.java&#10;#&#9;unogame/UnoProject/src/Game/deal&#10;#&#9;unogame/UnoProject/src/Game/deal.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/treyhawk82/Csc380UnoKiosk&#10;&#10;# Conflicts:&#10;#&#9;unogame/UnoProject/src/Game/Deal.java&#10;#&#9;unogame/UnoProject/src/Game/deal&#10;#&#9;unogame/UnoProject/src/Game/deal.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -898,38 +923,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/UnoProject/Game/deal">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/deal">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Deal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="31" column="7" lean-forward="false" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/UnoProject/Game/deal" />
+    <entry file="file://$PROJECT_DIR$/src/Game/deal" />
     <entry file="file://$PROJECT_DIR$/src/Game/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -943,6 +938,35 @@
         <state relative-caret-position="100">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1963">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Deal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding>
+            <element signature="e#131#132#0" expanded="true" />
+            <element signature="e#171#172#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#659#660#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
