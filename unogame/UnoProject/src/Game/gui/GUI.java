@@ -16,8 +16,8 @@ public class GUI extends Canvas implements Runnable {
 
 
     public String[] hands = {"y3xg4xr7", "g5xg7xg8xr5", "y0xy1xy2xy3", "r5xg4xb7xb9xw13xw14xr9xb9xy7"};
-    int turnOfPlayer = 3;
-    String topOfDiscardPile = "g9";
+    int turnOfPlayer = 1;
+    String topOfDiscardPile = "g4";
 
     public GUI(){
         guiHandler = new GUIHandler();
