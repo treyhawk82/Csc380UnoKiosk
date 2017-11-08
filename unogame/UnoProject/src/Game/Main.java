@@ -9,11 +9,11 @@ public class Main{
 
         Handler h = new Handler();
 
-      //  h.addCards();
+        h.addCards();
      //   h.returnTop();
         System.out.println();
-        h.getBottom();
 
+        h.returnTop();
     }
 
 
