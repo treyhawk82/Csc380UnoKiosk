@@ -21,11 +21,11 @@ public class Background {
         hasBeenChanged();
         int n = 3;
         if (colorchanged && turnOfPlayer == 0) {
-            Color darkerGameBlue = new Color(0, 185, 217);
-            g.setColor(darkerGameBlue);
-        }else {
             Color gameBlue = new Color(0, 195, 229);
             g.setColor(gameBlue);
+        }else {
+            Color darkerGameBlue = new Color(0, 185, 217);
+            g.setColor(darkerGameBlue);
         }
         int[] trianglebluex = {0, SCREEN_WIDTH/2, SCREEN_WIDTH};
         int[] trianglebluey = {0, SCREEN_HEIGHT/2, 0};
@@ -39,11 +39,11 @@ public class Background {
         g.drawString(currentHandSize, 860, 375);
 
         if(colorchanged && turnOfPlayer == 1) {
-            Color darkerGameYellow = new Color(230, 211, 83);
-            g.setColor(darkerGameYellow);
-        }else {
             Color gameYellow = new Color(247, 227, 89);
             g.setColor(gameYellow);
+        }else {
+            Color darkerGameYellow = new Color(230, 211, 83);
+            g.setColor(darkerGameYellow);
         }
         int[] triangleyellowx = {SCREEN_WIDTH, SCREEN_WIDTH/2, SCREEN_WIDTH};
         int[] triangleyellowy = {0, SCREEN_HEIGHT/2, SCREEN_HEIGHT};
@@ -58,11 +58,12 @@ public class Background {
 
 
         if(colorchanged && turnOfPlayer == 2) {
-            Color darkerGameGreen = new Color(17,196,125);
-            g.setColor(darkerGameGreen);
-        }else {
             Color gameGreen = new Color(43,220,150);
             g.setColor(gameGreen);
+
+        }else {
+            Color darkerGameGreen = new Color(17,196,125);
+            g.setColor(darkerGameGreen);
         }
 
         int[] trianglegreenx = {0, SCREEN_WIDTH/2, SCREEN_WIDTH};
@@ -77,11 +78,11 @@ public class Background {
         g.drawString(currentHandSize, 860, 755);
 
         if(colorchanged && turnOfPlayer == 3){
-            Color darkerGameRed = new Color(222, 91, 89);
-            g.setColor(darkerGameRed);
-        }else {
             Color gameRed = new Color(255, 104, 102);
             g.setColor(gameRed);
+        }else {
+            Color darkerGameRed = new Color(222, 91, 89);
+            g.setColor(darkerGameRed);
         }
         int[] triangleredx = {0, SCREEN_WIDTH/2, 0};
         int[] triangleredy = {0, SCREEN_HEIGHT/2, SCREEN_HEIGHT};
