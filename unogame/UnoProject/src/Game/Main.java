@@ -1,6 +1,5 @@
 package Game;
 
-import Game.gui.GUI;
 
 public class Main{
 
