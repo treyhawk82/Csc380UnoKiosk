@@ -11,7 +11,7 @@ public class deal extends Handler{
         hand.add(addCard);
     }
     public void removeCard(int element){
-        hand.remove(elem);
+        hand.remove(element);
     }
     public Card getCard(int element){
         return hand.get(element);
