@@ -1,13 +1,24 @@
-public class deal extends Handler{
+package Game;
+
+import Game.Card;
+import Game.Handler;
+
+import java.util.ArrayList;
+
+public class Deal extends Handler {
     private ArrayList<Card> hand;
-    public deal(){
+    public Deal(){
         hand = new ArrayList<>();
     }
-    public void addCard(cardHandler deck){
-        hand.add(0,deck.getLast());
-        deck.removeLast();
+
+
+    public void addCard(Handler deck){
+       // hand.add(0,deck.getLast());
+      //  deck.removeLast();
     }
-    public void addCard(uno.Card addCard){
+
+
+    public void addCard(Card addCard){
         hand.add(addCard);
     }
     public void removeCard(int element){
@@ -23,7 +34,7 @@ public class deal extends Handler{
     public void printArray(){
         System.out.println(hand.toString());
     }
-    public Card getLast(){
-        return hand.get(hand.size()-1);
-    }
+  //  public Card getLast(){
+    //    return hand.get(hand.size()-1);
+  //  }
 }
