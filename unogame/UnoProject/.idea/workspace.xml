@@ -353,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510330424851</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added GameLogic class, Deal class needs to be edited more&#10;Need help with Logic">
+      <created>1510330498691</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1510330498691</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
