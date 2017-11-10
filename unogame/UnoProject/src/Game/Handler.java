@@ -2,15 +2,16 @@ package Game;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Stack;
-//        There are four different colours for the cards
-//        There are 2 cards of the numbers 1 to 9 for each colour   **done
-//        There is 1 card for the number 0 for each colour          **done
-//        There are 2 cards of “draw 2” for every colour **
-//        There are 2 cards of “skip” for every colour **
-//        There are 2 cards of “reverse” for every colour **
-//        There are 4 “wild” cards
-//        There are 4 “wild +4” cards
-
+/**
+ * There are four different colours for the cards
+ * There are 2 cards of the numbers 1 to 9 for each colour   **done
+ * There is 1 card for the number 0 for each colour          **done
+ * There are 2 cards of “draw 2” for every colour **
+ * There are 2 cards of “skip” for every colour **
+ * There are 2 cards of “reverse” for every colour **
+ * There are 4 “wild” cards
+ * There are 4 “wild +4” cards
+ */
 public class Handler {
     //fields
     Stack deck = new Stack();

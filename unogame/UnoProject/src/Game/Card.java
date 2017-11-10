@@ -19,10 +19,10 @@ public class Card {
     public int getCardNum() {
         return cardNum;
     }
-
+    public int getSpecificCardNum(Card card) { return card.cardNum; }
     @Override
     public String toString() {
-        return "\ncolor: " + cardColor + " number: " + cardNum + "\n";
+        return "\ncolor: " + cardColor + " number: " + cardNum ;
     }
 }
 

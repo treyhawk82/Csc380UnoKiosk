@@ -7,7 +7,7 @@ public class Main{
 
     public static void main(String[] args) {
 
-        new GUI();
+       // new GUI();
 
         Handler h = new Handler();
 

@@ -13,13 +13,12 @@ public class Player {
 
     //fields
     int ID;
-    ArrayList<Card> Hand;
+
 
     //constructor
 
-    public Player(int ID, ArrayList<Card> hand) {
+    public Player(int ID) {
         this.ID = ID;
-        Hand = hand;
     }
 
     public int getID() {
