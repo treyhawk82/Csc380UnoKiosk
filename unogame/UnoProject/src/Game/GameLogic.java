@@ -1,6 +1,4 @@
-package Game;
-
-import Game.commServer.Server;
+package game;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -10,10 +8,10 @@ public class GameLogic {
     //fields
    static Handler deck = new Handler();
    static Deal discardPile = new Deal();
-   static Deal player1 = new Deal();
-   static Deal computer1 = new Deal();
-   static Deal computer2 = new Deal();
-   static Deal computer3 = new Deal();
+   static Deal player_blue = new Deal();
+   static Deal player_yellow = new Deal();
+   static Deal player_green = new Deal();
+   static Deal player_red = new Deal();
    static Random rn = new Random();
    static boolean uno;
    static Scanner s = new Scanner(System.in);
@@ -29,10 +27,10 @@ public class GameLogic {
          * add 7 cards to each players hand
          */
         for (int i = 0; i <= 6; i++) {
-            player1.dealCard(deck);
-            computer1.dealCard(deck);
-            computer2.dealCard(deck);
-            computer3.dealCard(deck);
+            player_blue.dealCard(deck);
+            player_yellow.dealCard(deck);
+            player_green.dealCard(deck);
+            player_red.dealCard(deck);
         }
         /**
          * create a discard pile
@@ -63,9 +61,11 @@ public class GameLogic {
         /**
          * this will be the game loop
          */
-
+       int loop = 7;
         do {
 
+            //System.out.println("test" + loop);
+            loop++;
         }while(currentPlayer == 0);
     }
 
@@ -119,5 +119,20 @@ public class GameLogic {
         System.out.println(newCard.toString());
         return newCard;
     }
+
+    public String getHandSizesAndHands(){
+        String handSizesandHands = "";
+        handSizesandHands = player_blue.getSizeString() + "-"
+                + player_yellow.getSizeString() + "-"
+                + player_green.getSizeString() + "-"
+                + player_red.getSizeString() + "-";
+
+        handSizesandHands = handSizesandHands + player_blue.getCommHandString() + "-"
+                + player_yellow.getCommHandString() + "-"
+                + player_green.getCommHandString() + "-"
+                + player_red.getCommHandString();
+    return handSizesandHands;
+    }
+
 
 }

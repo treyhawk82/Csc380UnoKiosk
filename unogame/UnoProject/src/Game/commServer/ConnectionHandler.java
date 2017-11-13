@@ -1,4 +1,4 @@
-package Game.commServer;
+package game.commServer;
 
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;

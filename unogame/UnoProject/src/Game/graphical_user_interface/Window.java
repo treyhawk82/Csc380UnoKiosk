@@ -1,4 +1,4 @@
-package Game.graphical_user_interface;
+package game.graphical_user_interface;
 
 import javax.swing.*;
 import java.awt.*;

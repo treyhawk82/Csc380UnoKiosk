@@ -1,8 +1,8 @@
-package Game;
+package game;
 
 
-import Game.commServer.Server;
-import Game.graphical_user_interface.GUI;
+import game.commServer.Server;
+import game.graphical_user_interface.GUI;
 
 public class Main{
 
@@ -34,12 +34,19 @@ public class Main{
     //    System.out.println();
       //  System.out.println("You are player " + p1.getID());
         //h.addCards();
-        GUI gui = new GUI();
 
+        System.out.println("test1");
         GameLogic gameLogic = new GameLogic();
-        gameLogic.run();
+        System.out.println("test2");
+
+        System.out.println("test3");
         Server server = new Server(gameLogic);
+        System.out.println("test4");
         server.run();
+        System.out.println("test5");
+        GUI gui = new GUI(server);
+        System.out.println("test6");
+        gameLogic.run();
 
 
 

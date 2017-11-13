@@ -1,7 +1,4 @@
-package Game;
-
-import Game.Card;
-import Game.Handler;
+package game;
 
 import java.util.ArrayList;
 
@@ -34,6 +31,10 @@ public class Deal extends Handler {
     
     public int getSize(){
         return hand.size();
+    }
+
+    public String getSizeString(){
+        return "" + hand.size();
     }
 
     public void printArray(){

@@ -1,6 +1,6 @@
-package Game.graphical_user_interface;
+package game.graphical_user_interface;
 
-import Game.GameObject;
+import game.GameObject;
 
 import java.awt.*;
 import java.util.LinkedList;

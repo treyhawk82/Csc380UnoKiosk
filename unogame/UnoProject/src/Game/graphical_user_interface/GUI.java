@@ -1,6 +1,7 @@
-package Game.graphical_user_interface;
+package game.graphical_user_interface;
 
-import Game.ID;
+import game.ID;
+import game.commServer.Server;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -13,14 +14,16 @@ public class GUI extends Canvas implements Runnable {
     private Thread thread;
     private boolean running = false;
     private GUIHandler guiHandler;
+    private Server server;
 
 
     public String[] hands = {"y3xg4xr7", "g5xg7xg8xr5xg5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5", "y0xy1xy2xy3", "r5xg4xb7xb9xw13xw14xr9xb9xy7"};
     int turnOfPlayer = 0;
     String topOfDiscardPile = "g4";
 
-    public GUI(){
+    public GUI(Server server){
         guiHandler = new GUIHandler();
+        this.server = server;
         new Window(SCREEN_WIDTH, SCREEN_HEIGHT, "Test Game!", this);
 
         guiHandler.addObject(new UnoBoard(SCREEN_WIDTH, SCREEN_HEIGHT, ID.UnoBoard, hands, turnOfPlayer, topOfDiscardPile));
@@ -43,6 +46,7 @@ public class GUI extends Canvas implements Runnable {
     }
 
     public void run(){
+
         this.requestFocus();
         long lastTime = System.nanoTime();
         double amountOfTicks = 60.0;
@@ -68,6 +72,8 @@ public class GUI extends Canvas implements Runnable {
                 System.out.println("FPS: " + frames);
                 frames = 0;
             }
+
+            hands = server.getHands();
         }
         stop();
     }

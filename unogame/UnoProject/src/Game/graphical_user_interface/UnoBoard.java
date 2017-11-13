@@ -1,7 +1,7 @@
-package Game.graphical_user_interface;
+package game.graphical_user_interface;
 
-import Game.GameObject;
-import Game.ID;
+import game.GameObject;
+import game.ID;
 
 import java.awt.*;
 
