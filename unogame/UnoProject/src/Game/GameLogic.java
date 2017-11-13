@@ -17,8 +17,12 @@ public class GameLogic {
    static Scanner s = new Scanner(System.in);
 
     public static void main(String[] args) {
+        /**
+         * create the deck and shuffle it
+         */
         deck.addCards();
         deck.shuffleDeck();
+
         /**
          * add 7 cards to each players hand
          */
@@ -45,15 +49,47 @@ public class GameLogic {
         }
 
         /**
-         * instantiate players
+         * instantiate all players
+         * user will be player 0 aka player 1
          */
         Player p1 = new Player(0);
         Player p2 = new Player(1);      //computer player
         Player p3 = new Player(2);      //computer player
         Player p4 = new Player(3);      //computer player
+        int currentPlayer = 0;      //this is the user
+
+        /**
+         * this will be the game loop
+         */
+
+        do {        // do this until the game ends
+            while(currentPlayer == 0) {
+
+            }
+        }
+    }
+
+    /*******************************************
+     * If you couldn't tell, these are methods *
+     *******************************************/
+
+    /**
+     * print the last card from the discard pile
+     */
+    public static void printDiscard(){
+        System.out.println("Face up card: ");
+        System.out.println(discardPile.returnTop());
+    }
+    /**
+     * get the user's choice
+     */
+    public static void getChoice() {
+
     }
     /**
      * method to handle wild card logic
+     * @param cardNum
+     * @return Card
      */
     public static Card wildCard(int cardNum) {
         System.out.println("Enter a color: ");
