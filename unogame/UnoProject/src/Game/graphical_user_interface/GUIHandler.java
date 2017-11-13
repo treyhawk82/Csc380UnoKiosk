@@ -1,4 +1,4 @@
-package Game.gui;
+package Game.graphical_user_interface;
 
 import Game.GameObject;
 

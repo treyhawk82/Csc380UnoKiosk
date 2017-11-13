@@ -16,7 +16,7 @@ public class Deal extends Handler {
     }
 
     //computer deals cards to player and removed from top of drawpile
-    public void DealCard(Handler drawPile){
+    public void dealCard(Handler drawPile){
         hand.add(0,drawPile.returnTop());
         drawPile.pop();
     }
@@ -51,5 +51,18 @@ public class Deal extends Handler {
         for (Card element : hand) {
             System.out.println(element.toString());
         }
+    }
+
+    public String getCommHandString(){
+        boolean firstTime = true;
+        String commHandString = "";
+        for (Card handCard: hand) {
+            if (!firstTime) {
+                commHandString = commHandString + "x";
+            }
+            commHandString = commHandString + handCard.getCommCardString();
+            firstTime = false;
+        }
+        return commHandString;
     }
 }

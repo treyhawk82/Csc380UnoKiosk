@@ -1,5 +1,7 @@
 package Game.commServer;
 
+import Game.GameLogic;
+
 public class Server {
 
     /**
@@ -7,6 +9,7 @@ public class Server {
     * CardHandler class TO-DO
     */
     private static String[] hands;
+    private GameLogic gameLogic;
 
     /**
      * the number of players in our game
@@ -14,6 +17,9 @@ public class Server {
     private static final int NUMBER_OF_PLAYERS = 4;
 
 
+    public Server(GameLogic gameLogic){
+        this.gameLogic = gameLogic;
+    }
     public void run(){
         hands = new String[NUMBER_OF_PLAYERS];
         new ConnectionHandler(hands, NUMBER_OF_PLAYERS).start();

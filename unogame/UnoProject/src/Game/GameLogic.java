@@ -1,5 +1,7 @@
 package Game;
 
+import Game.commServer.Server;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,7 +18,7 @@ public class GameLogic {
    static boolean uno;
    static Scanner s = new Scanner(System.in);
 
-    public static void main(String[] args) {
+   public void run(){
         /**
          * create the deck and shuffle it
          */
@@ -27,16 +29,16 @@ public class GameLogic {
          * add 7 cards to each players hand
          */
         for (int i = 0; i <= 6; i++) {
-            player1.DealCard(deck);
-            computer1.DealCard(deck);
-            computer2.DealCard(deck);
-            computer3.DealCard(deck);
+            player1.dealCard(deck);
+            computer1.dealCard(deck);
+            computer2.dealCard(deck);
+            computer3.dealCard(deck);
         }
         /**
          * create a discard pile
          * the card will be face up
          */
-        discardPile.DealCard(deck);
+        discardPile.dealCard(deck);
        // System.out.println(discardPile.getCard(0));
 
         /**
@@ -62,11 +64,9 @@ public class GameLogic {
          * this will be the game loop
          */
 
-        do {        // do this until the game ends
-            while(currentPlayer == 0) {
+        do {
 
-            }
-        }
+        }while(currentPlayer == 0);
     }
 
     /*******************************************

@@ -24,6 +24,24 @@ public class Card {
     public String toString() {
         return "\ncolor: " + cardColor + " number: " + cardNum ;
     }
+
+    public String getCommCardString(){
+        String commCardString = "";
+        if (cardColor.equalsIgnoreCase("red")){
+            commCardString = "r";
+        }
+        if (cardColor.equalsIgnoreCase("blue")){
+            commCardString = "b";
+        }
+        if (cardColor.equalsIgnoreCase("yellow")){
+            commCardString = "y";
+        }
+        if (cardColor.equalsIgnoreCase("green")){
+            commCardString = "g";
+        }
+        commCardString = commCardString + cardNum;
+        return commCardString;
+    }
 }
 
 
