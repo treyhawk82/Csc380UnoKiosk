@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/commServer/Server.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/commServer/Server.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/Main.java" afterPath="$PROJECT_DIR$/src/Game/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/graphical_user_interface/GUI.java" afterPath="$PROJECT_DIR$/src/Game/graphical_user_interface/GUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/graphical_user_interface/UnoBoard.java" afterPath="$PROJECT_DIR$/src/Game/graphical_user_interface/UnoBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/commServer/Server.java" afterPath="$PROJECT_DIR$/src/Game/commServer/Server.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/graphical_user_interface/Background.java" afterPath="$PROJECT_DIR$/src/Game/graphical_user_interface/Background.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -70,8 +68,18 @@
       <file leaf-file-name="Background.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game/graphical_user_interface/Background.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2625">
-              <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
+            <state relative-caret-position="475">
+              <caret line="103" column="9" lean-forward="true" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Background_backup.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/graphical_user_interface/Background_backup.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-300">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -376,7 +384,7 @@
       <workItem from="1510609428762" duration="2368000" />
       <workItem from="1510611826565" duration="156000" />
       <workItem from="1510612006136" duration="74000" />
-      <workItem from="1510612103066" duration="14171000" />
+      <workItem from="1510612103066" duration="14664000" />
     </task>
     <task id="LOCAL-00001" summary="Edited deal class">
       <created>1510157962378</created>
@@ -427,11 +435,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510622381028</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Broke my gui while trying to clean up my code :(&#10;put the backup in a .txt file, will check tomorrow why it&#10;doesnt work the way I want it to">
+      <created>1510629365507</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1510629365507</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36727000" />
+    <option name="totallyTimeSpent" value="37220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="2182" height="1402" extended-state="6" />
@@ -484,7 +499,8 @@
     <MESSAGE value="packages are broken for no apparent reason, tried to implement some toStrings for the communication server" />
     <MESSAGE value="got packages working again, tweaking gui and server in a way that they retrieve hands and so on from gamelogic" />
     <MESSAGE value="got gui and server working with gamelogic" />
-    <option name="LAST_COMMIT_MESSAGE" value="got gui and server working with gamelogic" />
+    <MESSAGE value="Broke my gui while trying to clean up my code :(&#10;put the backup in a .txt file, will check tomorrow why it&#10;doesnt work the way I want it to" />
+    <option name="LAST_COMMIT_MESSAGE" value="Broke my gui while trying to clean up my code :(&#10;put the backup in a .txt file, will check tomorrow why it&#10;doesnt work the way I want it to" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -493,16 +509,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/game/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/graphical_user_interface/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2175">
@@ -854,7 +860,7 @@
         <state relative-caret-position="3000">
           <caret line="120" column="9" lean-forward="true" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -884,7 +890,7 @@
         <state relative-caret-position="175">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -913,10 +919,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/graphical_user_interface/Background_backup.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/graphical_user_interface/Background.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
+        <state relative-caret-position="475">
+          <caret line="103" column="9" lean-forward="true" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
           <folding />
         </state>
       </provider>

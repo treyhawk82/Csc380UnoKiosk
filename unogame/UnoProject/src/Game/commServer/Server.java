@@ -7,21 +7,40 @@ import java.util.Date;
 public class Server implements Runnable{
 
     /**
-    * A String array that contains the hands of every player. Will most likely be instantiated by a toString() in the
-    * CardHandler class TO-DO
-    */
+     *  saves the GameLogic object to be able to retrieve the current status of the game
+     */
     private GameLogic gameLogic;
 
+    /**
+     * the individual string for each player that gets communicated to them saved in a string array
+     */
     private String commstring[] = new String[4];
+    /**
+     * a String array that saves the current hands of each individual player
+     */
     private String hands[] = new String[4];
 
+    /**
+     * handsize of player blue
+     */
     private int player_blue_handsize;
+    /**
+     * handsize of player yellow
+     */
     private int player_yellow_handsize;
+    /**
+     * handsize of player green
+     */
     private int player_green_handsize;
+    /**
+     * handsize of player red
+     */
     private int player_red_handsize;
 
 
-
+    /**
+     * current card on top of the discard pile
+     */
     private String topOfDiscardPile = "w13";
 
     /**
@@ -33,6 +52,11 @@ public class Server implements Runnable{
     public Server(GameLogic gameLogic){
         this.gameLogic = gameLogic;
     }
+
+    /**
+     * this method instantiates the ConnectionHandler for the WebSocket connection and then updates the hands and
+     * handsizes for each individual player every 1000ms and concatenates them again to pass it on to the gui
+     */
     public void run(){
         new ConnectionHandler(commstring, NUMBER_OF_PLAYERS).start();
         //just some random data to send to the clients atm TO-DO
@@ -40,12 +64,14 @@ public class Server implements Runnable{
             //top of discard pile - player number - player 0 # of cards - p1 # of cards - p2 # of cards - p3 # of cards - player hand
         //    commstring[i] = "y4-" + i + "-3-5-4-6-y1xg3xr0";
         //}
+        // saves the initialisation time of the method in order to restrain the method to only update every 1000ms
         long lastTime = System.currentTimeMillis();
 
         while (true) {
             if (System.currentTimeMillis() > lastTime + 1000) {
                 lastTime = System.currentTimeMillis();
                 gameLogic.getHandSizesAndHands();
+                //gets a concatenated string of hands and handsizes for each individual player
                 String currentHandSizesAndHands = gameLogic.getHandSizesAndHands();
                 String parseHandString[] = currentHandSizesAndHands.split("-");
                 if (parseHandString.length == 9) {
@@ -71,13 +97,16 @@ public class Server implements Runnable{
         }
     }
 
-
-
-
+    /**
+     * @return returns the String array containing the hands of each individual player
+     */
     public String[] getHands(){
         return hands;
     }
 
+    /**
+     * @return returns the top card on the discard pile
+     */
     public String getTopOfDiscardPile() {
         return topOfDiscardPile;
     }
