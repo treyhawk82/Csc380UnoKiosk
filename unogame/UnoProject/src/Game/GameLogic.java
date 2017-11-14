@@ -3,7 +3,7 @@ package game;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GameLogic {
+public class GameLogic implements Runnable{
 
     //fields
    static Handler deck = new Handler();
@@ -15,6 +15,7 @@ public class GameLogic {
    static Random rn = new Random();
    static boolean uno;
    static Scanner s = new Scanner(System.in);
+   boolean done = false;
 
    public void run(){
         /**
@@ -62,6 +63,7 @@ public class GameLogic {
          * this will be the game loop
          */
        int loop = 7;
+       done = true;
         do {
 
             //System.out.println("test" + loop);
@@ -121,16 +123,22 @@ public class GameLogic {
     }
 
     public String getHandSizesAndHands(){
-        String handSizesandHands = "";
-        handSizesandHands = player_blue.getSizeString() + "-"
-                + player_yellow.getSizeString() + "-"
-                + player_green.getSizeString() + "-"
-                + player_red.getSizeString() + "-";
 
-        handSizesandHands = handSizesandHands + player_blue.getCommHandString() + "-"
-                + player_yellow.getCommHandString() + "-"
-                + player_green.getCommHandString() + "-"
-                + player_red.getCommHandString();
+            String handSizesandHands = "";
+        if(done) {
+            handSizesandHands = player_blue.getSizeString() + "-"
+                    + player_yellow.getSizeString() + "-"
+                    + player_green.getSizeString() + "-"
+                    + player_red.getSizeString() + "-";
+
+            handSizesandHands = handSizesandHands + player_blue.getCommHandString() + "-"
+                    + player_yellow.getCommHandString() + "-"
+                    + player_green.getCommHandString() + "-"
+                    + player_red.getCommHandString();
+
+            int discardPileSize = discardPile.getSize();
+            handSizesandHands = handSizesandHands + "-" + discardPile.getCard(discardPileSize - 1).getCommCardString();
+        }
     return handSizesandHands;
     }
 

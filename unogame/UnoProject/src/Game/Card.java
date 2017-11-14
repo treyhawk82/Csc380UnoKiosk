@@ -39,6 +39,12 @@ public class Card {
         if (cardColor.equalsIgnoreCase("green")){
             commCardString = "g";
         }
+        if(cardColor.equalsIgnoreCase("wild")){
+            commCardString = "w";
+        }
+        if(cardColor.equalsIgnoreCase("wild + 4")){
+            commCardString = "w";
+        }
         commCardString = commCardString + cardNum;
         return commCardString;
     }
