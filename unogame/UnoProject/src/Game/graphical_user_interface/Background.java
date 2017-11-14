@@ -54,13 +54,19 @@ public class Background {
 
     Font font = new Font("TimesRoman", Font.PLAIN, 45);
 
+    Graphics g;
+    int turnOfPlayer;
+    UnoBoard unoBoard;
+
+    CardDrawer cardDrawer;
+
     /**
      * Constructor of Background.
      * @param SCREEN_WIDTH the windows width
      * @param SCREEN_HEIGHT the windows height
      * @param numberOfCardsinHands the number of cards in the hand of each individual player
      */
-    public Background (int SCREEN_WIDTH, int SCREEN_HEIGHT, int[] numberOfCardsinHands){
+    public Background (int SCREEN_WIDTH, int SCREEN_HEIGHT, int[] numberOfCardsinHands, UnoBoard unoBoard){
         this.SCREEN_HEIGHT = SCREEN_HEIGHT;
         this.SCREEN_WIDTH = SCREEN_WIDTH;
         this.numberOfCardsinHands = numberOfCardsinHands;
@@ -73,6 +79,9 @@ public class Background {
         trianglegreeny = new int[]{SCREEN_HEIGHT, SCREEN_HEIGHT / 2, SCREEN_HEIGHT};
         triangleredx = new int[]{0, SCREEN_WIDTH / 2, 0};
         triangleredy = new int[]{0, SCREEN_HEIGHT / 2, SCREEN_HEIGHT};
+        this.turnOfPlayer = unoBoard.getTurnOfPlayer();
+        this.g = unoBoard.getGraphics();
+        this.unoBoard = unoBoard;
     }
 
     /**
@@ -88,6 +97,9 @@ public class Background {
         drawBackgroundColours(g, green, highlightGreen, trianglegreenx, trianglegreeny, 2, turnOfPlayer);
         drawBackgroundColours(g, red, highlightRed, triangleredx, triangleredy, 3, turnOfPlayer);
 
+
+        cardDrawer = new CardDrawer();
+        cardDrawer.drawPlayerCards(g, numberOfCardsinHands, unoBoard.getTopOfDiscardPile());
     }
 
     private void hasBeenChanged(){
