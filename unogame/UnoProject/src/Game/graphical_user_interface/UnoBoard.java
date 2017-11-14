@@ -33,7 +33,7 @@ public class UnoBoard extends GameObject {
         background = new Background(SCREEN_WIDTH, SCREEN_HEIGHT, numberOfCardsinHands);
         this.gui = gui;
         try {
-            Thread.sleep(500);
+            Thread.sleep(200);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
