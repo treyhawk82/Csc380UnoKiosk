@@ -1,6 +1,7 @@
 package game.graphical_user_interface;
 
 import java.awt.*;
+import java.util.TimerTask;
 
 public class Background {
 
@@ -39,14 +40,14 @@ public class Background {
     private final Color red = new Color(222, 91, 89);
     private final Color highlightRed = new Color(255, 104, 102);
 
-    private final int[] trianglebluex = {0, SCREEN_WIDTH/2, SCREEN_WIDTH};
-    private final int[] trianglebluey = {0, SCREEN_HEIGHT/2, 0};
-    private final int[] triangleyellowx = {SCREEN_WIDTH, SCREEN_WIDTH/2, SCREEN_WIDTH};
-    private final int[] triangleyellowy = {0, SCREEN_HEIGHT/2, SCREEN_HEIGHT};
-    private final int[] trianglegreenx = {0, SCREEN_WIDTH/2, SCREEN_WIDTH};
-    private final int[] trianglegreeny = {SCREEN_HEIGHT, SCREEN_HEIGHT/2, SCREEN_HEIGHT};
-    private final int[] triangleredx = {0, SCREEN_WIDTH/2, 0};
-    private final int[] triangleredy = {0, SCREEN_HEIGHT/2, SCREEN_HEIGHT};
+    private int[] trianglebluex;
+    private int[] trianglebluey;
+    private int[] triangleyellowx;
+    private int[] triangleyellowy;
+    private int[] trianglegreenx;
+    private int[] trianglegreeny;
+    private int[] triangleredx;
+    private int[] triangleredy;
 
     private final int[] cardsLeftPositionsx = {860, 1225, 860, 475};
     private final int[] cardsLeftPositionsy = {375, 550, 755, 550};
@@ -64,6 +65,14 @@ public class Background {
         this.SCREEN_WIDTH = SCREEN_WIDTH;
         this.numberOfCardsinHands = numberOfCardsinHands;
         this.colorchanged = false;
+        trianglebluex = new int[]{0, SCREEN_WIDTH / 2, SCREEN_WIDTH};
+        trianglebluey = new int[]{0, SCREEN_HEIGHT / 2, 0};
+        triangleyellowx = new int[]{SCREEN_WIDTH, SCREEN_WIDTH / 2, SCREEN_WIDTH};
+        triangleyellowy = new int[]{0, SCREEN_HEIGHT / 2, SCREEN_HEIGHT};
+        trianglegreenx = new int[]{0, SCREEN_WIDTH / 2, SCREEN_WIDTH};
+        trianglegreeny = new int[]{SCREEN_HEIGHT, SCREEN_HEIGHT / 2, SCREEN_HEIGHT};
+        triangleredx = new int[]{0, SCREEN_WIDTH / 2, 0};
+        triangleredy = new int[]{0, SCREEN_HEIGHT / 2, SCREEN_HEIGHT};
     }
 
     /**
