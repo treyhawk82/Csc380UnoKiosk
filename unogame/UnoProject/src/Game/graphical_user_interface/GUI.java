@@ -15,6 +15,7 @@ public class GUI extends Canvas implements Runnable {
     private boolean running = false;
     private GUIHandler guiHandler;
     private Server server;
+    private long lastTime2;
 
 
     public String[] hands = {"y3xg4xr7", "g5xg7xg8xr5xg5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5g5xg7xg8xr5", "y0xy1xy2xy3", "r5xg4xb7xb9xw13xw14xr9xb9xy7"};
@@ -26,7 +27,7 @@ public class GUI extends Canvas implements Runnable {
         this.server = server;
         new Window(SCREEN_WIDTH, SCREEN_HEIGHT, "Test Game!", this);
 
-        guiHandler.addObject(new UnoBoard(SCREEN_WIDTH, SCREEN_HEIGHT, ID.UnoBoard, hands, turnOfPlayer, topOfDiscardPile));
+        guiHandler.addObject(new UnoBoard(SCREEN_WIDTH, SCREEN_HEIGHT, ID.UnoBoard, hands, turnOfPlayer, topOfDiscardPile, this));
     }
 
 
@@ -34,6 +35,7 @@ public class GUI extends Canvas implements Runnable {
         thread = new Thread(this);
         thread.start();
         running = true;
+        lastTime2 = System.currentTimeMillis();
     }
 
     public synchronized void stop(){
@@ -73,7 +75,14 @@ public class GUI extends Canvas implements Runnable {
                 frames = 0;
             }
 
-            hands = server.getHands();
+
+            if(System.currentTimeMillis() > lastTime2 + 1000) {
+                hands = server.getHands();
+                for (int i = 0; i < hands.length; i++) {
+                    lastTime2 = System.currentTimeMillis();
+                }
+                this.topOfDiscardPile = server.getTopOfDiscardPile();
+            }
         }
         stop();
     }
@@ -93,5 +102,9 @@ public class GUI extends Canvas implements Runnable {
 
         g.dispose();
         bs.show();
+    }
+
+    public String[] getHands(){
+        return hands;
     }
 }

@@ -35,18 +35,13 @@ public class Main{
       //  System.out.println("You are player " + p1.getID());
         //h.addCards();
 
-        System.out.println("test1");
         GameLogic gameLogic = new GameLogic();
-        System.out.println("test2");
-
-        System.out.println("test3");
         Server server = new Server(gameLogic);
-        System.out.println("test4");
-        server.run();
-        System.out.println("test5");
+        Thread serverThread = new Thread(server, "CommunicationServer");
+        serverThread.start();
         GUI gui = new GUI(server);
-        System.out.println("test6");
-        gameLogic.run();
+        Thread gameLogicThread = new Thread(gameLogic, "GameLogic");
+        gameLogicThread.start();
 
 
 

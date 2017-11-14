@@ -19,10 +19,10 @@ public class UnoBoard extends GameObject {
     String topOfDiscardPile;
     Background background;
     CardDrawer cardDrawer;
+    GUI gui;
 
 
-
-    public UnoBoard(int SCREEN_WIDTH, int SCREEN_HEIGHT, ID id, String[] hands, int turnOfPlayer, String topOfDiscardPile){
+    public UnoBoard(int SCREEN_WIDTH, int SCREEN_HEIGHT, ID id, String[] hands, int turnOfPlayer, String topOfDiscardPile, GUI gui){
         super(0,0, id);
         this.SCREEN_HEIGHT = SCREEN_HEIGHT;
         this.SCREEN_WIDTH = SCREEN_WIDTH;
@@ -31,6 +31,12 @@ public class UnoBoard extends GameObject {
         this.turnOfPlayer = turnOfPlayer;
         this.topOfDiscardPile = topOfDiscardPile;
         background = new Background(SCREEN_WIDTH, SCREEN_HEIGHT, numberOfCardsinHands);
+        this.gui = gui;
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -40,6 +46,8 @@ public class UnoBoard extends GameObject {
 
     @Override
     public void render(Graphics g){
+        hands = gui.getHands();
+        topOfDiscardPile = gui.topOfDiscardPile;
         for (int i = 0; i < hands.length; i++){
             String[] cardsInHand = hands[i].split("x");
             numberOfCardsinHands[i] = cardsInHand.length;
