@@ -31,9 +31,9 @@ public class Main{
 
 
         //      System.out.println("Welcome to Uno");
-        //    System.out.println();
-        //  System.out.println("You are player " + p1.getID());
-        //h.addCards();
+        //      System.out.println();
+        //      System.out.println("You are player " + p1.getID())
+        //      h.addCards();
 
         GameLogic gameLogic = new GameLogic();
         Server server = new Server(gameLogic);
@@ -42,10 +42,6 @@ public class Main{
         GUI gui = new GUI(server);
         Thread gameLogicThread = new Thread(gameLogic, "GameLogic");
         gameLogicThread.start();
-
-
-
-
     }
 
 

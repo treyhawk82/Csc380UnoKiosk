@@ -1,5 +1,7 @@
 package Game;
 
+import Game.graphical_user_interface.ID;
+
 import java.awt.*;
 
 public abstract class GameObject {

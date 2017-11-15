@@ -1,6 +1,5 @@
 package Game.graphical_user_interface;
 
-import Game.ID;
 import Game.commServer.Server;
 
 import java.awt.*;
