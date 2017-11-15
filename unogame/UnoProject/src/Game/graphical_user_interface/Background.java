@@ -88,10 +88,10 @@ public class Background {
      * draws the background of the Unoboard, highlighting the active player by changing that colour every second,
      * displaying the number of cards in each players hand etc
      * @param g Graphics that draws the gui
-     * @param turnOfPlayer determines which players turn it is, in order to highlight that players part of the board
      */
-    public void drawBackground(Graphics g, int turnOfPlayer){
+    public void drawBackground(Graphics g) {
         hasBeenChanged();
+        this.turnOfPlayer = unoBoard.getTurnOfPlayer();
         drawBackgroundColours(g, blue, highlightBlue, trianglebluex, trianglebluey, 0, turnOfPlayer);
         drawBackgroundColours(g, yellow, highlightYellow, triangleyellowx, triangleyellowy, 1, turnOfPlayer);
         drawBackgroundColours(g, green, highlightGreen, trianglegreenx, trianglegreeny, 2, turnOfPlayer);

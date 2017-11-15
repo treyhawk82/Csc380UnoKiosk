@@ -49,6 +49,7 @@ public class UnoBoard extends GameObject {
     public void render(Graphics g){
         this.g = g;
         hands = gui.getHands();
+        turnOfPlayer = gui.getTurnOfPlayer();
         if(!(Arrays.equals(hands, oldHands))) {
             oldHands = hands;
             topOfDiscardPile = gui.topOfDiscardPile;
@@ -58,7 +59,7 @@ public class UnoBoard extends GameObject {
             }
 
         }
-        background.drawBackground(g, turnOfPlayer);
+        background.drawBackground(g);
 
     }
 

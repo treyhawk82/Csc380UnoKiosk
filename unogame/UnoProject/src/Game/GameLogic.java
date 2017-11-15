@@ -70,8 +70,15 @@ public class GameLogic implements Runnable {
          */
         int loop = 7;
         done = true;
+        long lasttime = System.currentTimeMillis();
         do {
-
+            if (System.currentTimeMillis() > lasttime + 5000) {
+                lasttime = System.currentTimeMillis();
+                if (turnOfPlayer < 3) {
+                    turnOfPlayer++;
+                } else turnOfPlayer = 0;
+                System.out.println(turnOfPlayer + " = turnOfPlayer in GameLogic");
+            }
             //System.out.println("test" + loop);
             loop++;
         } while (currentPlayer == 0);

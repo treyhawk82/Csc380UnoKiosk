@@ -70,7 +70,6 @@ public class Server implements Runnable{
         //}
         // saves the initialisation time of the method in order to restrain the method to only update every 1000ms
         long lastTime = System.currentTimeMillis();
-
         while (true) {
             if (System.currentTimeMillis() > lastTime + 1000) {
                 lastTime = System.currentTimeMillis();
@@ -118,5 +117,9 @@ public class Server implements Runnable{
      */
     public String getTopOfDiscardPile() {
         return topOfDiscardPile;
+    }
+
+    public int getTurnOfPlayer() {
+        return turnOfPlayer;
     }
 }

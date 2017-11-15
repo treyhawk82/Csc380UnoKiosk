@@ -81,6 +81,7 @@ public class GUI extends Canvas implements Runnable {
                     lastTime2 = System.currentTimeMillis();
                 }
                 this.topOfDiscardPile = server.getTopOfDiscardPile();
+                this.turnOfPlayer = server.getTurnOfPlayer();
             }
         }
         stop();
@@ -105,5 +106,9 @@ public class GUI extends Canvas implements Runnable {
 
     public String[] getHands(){
         return hands;
+    }
+
+    public int getTurnOfPlayer() {
+        return turnOfPlayer;
     }
 }
