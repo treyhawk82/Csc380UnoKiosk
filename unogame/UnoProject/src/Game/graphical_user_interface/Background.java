@@ -81,6 +81,7 @@ public class Background {
         this.turnOfPlayer = unoBoard.getTurnOfPlayer();
         this.g = unoBoard.getGraphics();
         this.unoBoard = unoBoard;
+        cardDrawer = new CardDrawer();
     }
 
     /**
@@ -97,7 +98,6 @@ public class Background {
         drawBackgroundColours(g, red, highlightRed, triangleredx, triangleredy, 3, turnOfPlayer);
 
 
-        cardDrawer = new CardDrawer();
         cardDrawer.drawPlayerCards(g, numberOfCardsinHands, unoBoard.getTopOfDiscardPile());
     }
 

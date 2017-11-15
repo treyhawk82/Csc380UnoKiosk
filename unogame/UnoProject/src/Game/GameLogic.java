@@ -16,6 +16,7 @@ public class GameLogic implements Runnable {
     static boolean uno;
     static Scanner s = new Scanner(System.in);
     boolean done = false;
+    static int turnOfPlayer;
 
     public void run() {
         /**
@@ -23,6 +24,11 @@ public class GameLogic implements Runnable {
          */
         deck.addCards();
         deck.shuffleDeck();
+
+        /**
+         * game starts with player blue being the first player
+         */
+        turnOfPlayer = 0;
 
         /**
          * add 7 cards to each players hand
@@ -137,7 +143,8 @@ public class GameLogic implements Runnable {
                     + player_red.getCommHandString();
 
             int discardPileSize = discardPile.getSize();
-            handSizesandHands = handSizesandHands + "-" + discardPile.getCard(discardPileSize - 1).getCommCardString();
+            handSizesandHands = handSizesandHands + "-"
+                    + discardPile.getCard(discardPileSize - 1).getCommCardString() + "-" + turnOfPlayer;
         }
         return handSizesandHands;
     }

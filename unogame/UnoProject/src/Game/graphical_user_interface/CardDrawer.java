@@ -8,8 +8,156 @@ import java.io.IOException;
 
 public class CardDrawer {
 
+    BufferedImage b0;
+    BufferedImage b1;
+    BufferedImage b2;
+    BufferedImage b3;
+    BufferedImage b4;
+    BufferedImage b5;
+    BufferedImage b6;
+    BufferedImage b7;
+    BufferedImage b8;
+    BufferedImage b9;
+    BufferedImage b10;
+    BufferedImage b11;
+    BufferedImage b12;
+
+    BufferedImage y0;
+    BufferedImage y1;
+    BufferedImage y2;
+    BufferedImage y3;
+    BufferedImage y4;
+    BufferedImage y5;
+    BufferedImage y6;
+    BufferedImage y7;
+    BufferedImage y8;
+    BufferedImage y9;
+    BufferedImage y10;
+    BufferedImage y11;
+    BufferedImage y12;
+
+    BufferedImage g0;
+    BufferedImage g1;
+    BufferedImage g2;
+    BufferedImage g3;
+    BufferedImage g4;
+    BufferedImage g5;
+    BufferedImage g6;
+    BufferedImage g7;
+    BufferedImage g8;
+    BufferedImage g9;
+    BufferedImage g10;
+    BufferedImage g11;
+    BufferedImage g12;
+
+    BufferedImage r0;
+    BufferedImage r1;
+    BufferedImage r2;
+    BufferedImage r3;
+    BufferedImage r4;
+    BufferedImage r5;
+    BufferedImage r6;
+    BufferedImage r7;
+    BufferedImage r8;
+    BufferedImage r9;
+    BufferedImage r10;
+    BufferedImage r11;
+    BufferedImage r12;
+
+    BufferedImage w13;
+    BufferedImage w13blue;
+    BufferedImage w13yellow;
+    BufferedImage w13green;
+    BufferedImage w13red;
+    BufferedImage w14;
+    BufferedImage w14blue;
+    BufferedImage w14yellow;
+    BufferedImage w14green;
+    BufferedImage w14red;
+
+    BufferedImage uno_cardback;
+    BufferedImage uno_cardback_right;
+    BufferedImage uno_cardback_left;
+
     public CardDrawer(){
+        try {
+            b0 = ImageIO.read(new File("src/Game/small/blue_0.png"));
+            b1 = ImageIO.read(new File("src/Game/small/blue_1.png"));
+            b2 = ImageIO.read(new File("src/Game/small/blue_2.png"));
+            b3 = ImageIO.read(new File("src/Game/small/blue_3.png"));
+            b4 = ImageIO.read(new File("src/Game/small/blue_4.png"));
+            b5 = ImageIO.read(new File("src/Game/small/blue_5.png"));
+            b6 = ImageIO.read(new File("src/Game/small/blue_6.png"));
+            b7 = ImageIO.read(new File("src/Game/small/blue_7.png"));
+            b8 = ImageIO.read(new File("src/Game/small/blue_8.png"));
+            b9 = ImageIO.read(new File("src/Game/small/blue_9.png"));
+            b10 = ImageIO.read(new File("src/Game/small/blue_skip.png"));
+            b11 = ImageIO.read(new File("src/Game/small/blue_picker.png"));
+            b12 = ImageIO.read(new File("src/Game/small/blue_reverse.png"));
+
+            y0 = ImageIO.read(new File("src/Game/small/yellow_0.png"));
+            y1 = ImageIO.read(new File("src/Game/small/yellow_1.png"));
+            y2 = ImageIO.read(new File("src/Game/small/yellow_2.png"));
+            y3 = ImageIO.read(new File("src/Game/small/yellow_3.png"));
+            y4 = ImageIO.read(new File("src/Game/small/yellow_4.png"));
+            y5 = ImageIO.read(new File("src/Game/small/yellow_5.png"));
+            y6 = ImageIO.read(new File("src/Game/small/yellow_6.png"));
+            y7 = ImageIO.read(new File("src/Game/small/yellow_7.png"));
+            y8 = ImageIO.read(new File("src/Game/small/yellow_8.png"));
+            y9 = ImageIO.read(new File("src/Game/small/yellow_9.png"));
+            y10 = ImageIO.read(new File("src/Game/small/yellow_skip.png"));
+            y11 = ImageIO.read(new File("src/Game/small/yellow_picker.png"));
+            y12 = ImageIO.read(new File("src/Game/small/yellow_reverse.png"));
+
+            g0 = ImageIO.read(new File("src/Game/small/green_0.png"));
+            g1 = ImageIO.read(new File("src/Game/small/green_1.png"));
+            g2 = ImageIO.read(new File("src/Game/small/green_2.png"));
+            g3 = ImageIO.read(new File("src/Game/small/green_3.png"));
+            g4 = ImageIO.read(new File("src/Game/small/green_4.png"));
+            g5 = ImageIO.read(new File("src/Game/small/green_5.png"));
+            g6 = ImageIO.read(new File("src/Game/small/green_6.png"));
+            g7 = ImageIO.read(new File("src/Game/small/green_7.png"));
+            g8 = ImageIO.read(new File("src/Game/small/green_8.png"));
+            g9 = ImageIO.read(new File("src/Game/small/green_9.png"));
+            g10 = ImageIO.read(new File("src/Game/small/green_skip.png"));
+            g11 = ImageIO.read(new File("src/Game/small/green_picker.png"));
+            g12 = ImageIO.read(new File("src/Game/small/green_reverse.png"));
+
+            r0 = ImageIO.read(new File("src/Game/small/red_0.png"));
+            r1 = ImageIO.read(new File("src/Game/small/red_1.png"));
+            r2 = ImageIO.read(new File("src/Game/small/red_2.png"));
+            r3 = ImageIO.read(new File("src/Game/small/red_3.png"));
+            r4 = ImageIO.read(new File("src/Game/small/red_4.png"));
+            r5 = ImageIO.read(new File("src/Game/small/red_5.png"));
+            r6 = ImageIO.read(new File("src/Game/small/red_6.png"));
+            r7 = ImageIO.read(new File("src/Game/small/red_7.png"));
+            r8 = ImageIO.read(new File("src/Game/small/red_8.png"));
+            r9 = ImageIO.read(new File("src/Game/small/red_9.png"));
+            r10 = ImageIO.read(new File("src/Game/small/red_skip.png"));
+            r11 = ImageIO.read(new File("src/Game/small/red_picker.png"));
+            r12 = ImageIO.read(new File("src/Game/small/red_reverse.png"));
+
+            uno_cardback = ImageIO.read(new File("src/Game/small/card_back.png"));
+            uno_cardback_left = ImageIO.read(new File("src/Game/small/card_back_left.png"));
+            uno_cardback_right = ImageIO.read(new File("src/Game/small/card_back_right.png"));
+
+            w13 = ImageIO.read(new File("src/Game/small/wild_color_changer.png"));
+            w13blue = ImageIO.read(new File("src/Game/small/wild_color_changer_blue.png"));
+            w13yellow = ImageIO.read(new File("src/Game/small/wild_color_changer_yellow.png"));
+            w13green = ImageIO.read(new File("src/Game/small/wild_color_changer_green.png"));
+            w13red = ImageIO.read(new File("src/Game/small/wild_color_changer_red.png"));
+
+            w14 = ImageIO.read(new File("src/Game/small/wild_pick_four.png"));
+            w14blue = ImageIO.read(new File("src/Game/small/wild_pick_four_blue.png"));
+            w14yellow = ImageIO.read(new File("src/Game/small/wild_pick_four_yellow.png"));
+            w14green = ImageIO.read(new File("src/Game/small/wild_pick_four_green.png"));
+            w14red = ImageIO.read(new File("src/Game/small/wild_pick_four_red.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+
 
     public void drawPlayerCards(Graphics g, int[] numberOfCardsinHands, String topOfDiscardPile){
         drawCardsPlayerBlue(g, numberOfCardsinHands);
@@ -21,30 +169,15 @@ public class CardDrawer {
     }
 
     public void drawCard_right(int x, int y, Graphics g){
-        try {
-            BufferedImage uno_cardback_right = ImageIO.read(new File("src/Game/small/card_back_right.png"));
-            ((Graphics2D) g).drawImage(uno_cardback_right, x, y, 182, 130, null);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        g.drawImage(uno_cardback_right, x, y, 182, 130, null);
     }
 
     public void drawCard_left(int x, int y, Graphics g){
-        try {
-            BufferedImage uno_cardback_left = ImageIO.read(new File("src/Game/small/card_back_left.png"));
-            ((Graphics2D) g).drawImage(uno_cardback_left, x, y, 182, 130, null);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        g.drawImage(uno_cardback_left, x, y, 182, 130, null);
     }
 
     public void drawCard(int x, int y, Graphics g){
-        try {
-            BufferedImage uno_cardback = ImageIO.read(new File("src/Game/small/card_back.png"));
-            ((Graphics2D) g).drawImage(uno_cardback, x, y, 130, 182, null);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        g.drawImage(uno_cardback, x, y, 130, 182, null);
     }
 
 
@@ -112,436 +245,166 @@ public class CardDrawer {
 
     public void drawTopOfDiscardPile(int x, int y, Graphics g, String topOfDiscardPile){
         if(topOfDiscardPile.equals("b0")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_0.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b0, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b1")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_1.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b1, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b2")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_2.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b2, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b3")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_3.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b3, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b4")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_4.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b4, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b5")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_5.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b5, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b6")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_6.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b6, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b7")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_7.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b7, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b8")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_8.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b8, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b9")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_9.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b9, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b10")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_skip.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b10, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b11")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_picker.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b11, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("b12")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/blue_reverse.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(b12, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y0")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_0.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y0, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y1")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_1.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y1, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y2")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_2.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y2, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y3")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_3.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y3, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y4")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_4.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y4, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y5")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_5.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y5, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y6")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_6.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y6, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y7")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_7.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y7, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y8")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_8.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y8, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y9")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_9.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y9, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y10")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_skip.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y10, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y11")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_picker.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y11, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("y12")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/yellow_reverse.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(y12, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g0")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_0.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g0, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g1")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_1.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g1, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g2")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_2.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g2, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g3")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_3.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g3, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g4")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_4.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g4, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g5")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_5.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g5, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g6")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_6.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g6, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g7")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_7.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g7, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g8")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_8.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g8, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g9")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_9.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g9, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g10")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_skip.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g10, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g11")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_picker.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g11, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("g12")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/green_reverse.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(g12, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r0")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_0.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r0, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r1")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_1.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r1, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r2")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_2.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r2, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r3")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_3.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r3, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r4")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_4.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r4, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r5")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_5.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r5, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r6")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_6.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r6, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r7")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_7.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r7, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r8")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_8.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r8, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r9")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_9.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r9, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r10")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_skip.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r10, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r11")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_picker.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r11, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("r12")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/red_reverse.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(r12, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("w13")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/wild_color_changer.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(w13, x, y, 130, 182, null);
         }
         if(topOfDiscardPile.equals("w14")){
-            try {
-                BufferedImage card = ImageIO.read(new File("src/Game/small/wild_pick_4.png"));
-                ((Graphics2D) g).drawImage(card, x, y, 130, 182, null);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            g.drawImage(w14, x, y, 130, 182, null);
         }
     }
 }

@@ -43,6 +43,7 @@ var player2NoOfCards;
 var player3NoOfCards;
 var playerHand;
 var cardsArray;
+var isTurnOfPlayer;
 
 function uno() {
     window.alert(playerNumber);
@@ -71,6 +72,7 @@ player1NoOfCards = serverStringArray[3];
 player2NoOfCards = serverStringArray[4];
 player3NoOfCards = serverStringArray[5];
 playerHand = serverStringArray[6];
+isTurnOfPlayer = serverStringArray[7];
 cardsArray = playerHand.split('x');
 
 
@@ -85,6 +87,7 @@ console.log(playerHand + " = complete hand of player " + playerNumber);
 for(var i = 0; i < cardsArray.length; i++){
 console.log(cardsArray[i] + " = card #" + i);
 }
+console.log(isTurnOfPlayer);
 };
 
 var colours = ['#00D7FC', '#FF6866', '#FFEA5C', '#35FFAF'];
