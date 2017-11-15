@@ -1,11 +1,13 @@
-package game;
+package Game;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Deal extends Handler {
 
     //fields
     private ArrayList<Card> hand;
+
 
     //instantiate hand
     public Deal(){
@@ -13,17 +15,11 @@ public class Deal extends Handler {
     }
 
     //computer deals cards to player and removed from top of drawpile
-    public void dealCard(Handler drawPile){
+    public void DealCard(Handler drawPile) {
         hand.add(0,drawPile.returnTop());
         drawPile.pop();
     }
 
-    //player plays a card?
-//    public void playCard(int element){
-//        hand.remove(element);
-//    }
-//
-// returns what card a user has?
 
     public Card getCard(int element){
         return hand.get(element);

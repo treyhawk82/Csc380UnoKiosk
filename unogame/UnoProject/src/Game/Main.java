@@ -1,7 +1,7 @@
 package Game;
 
 
-import Game.gui.GUI;
+//import Game.gui.GUI;
 import Game.commServer.*;
 
 public class Main{

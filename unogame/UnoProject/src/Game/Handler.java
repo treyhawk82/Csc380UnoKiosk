@@ -1,4 +1,4 @@
-package game;
+package Game;
 import java.util.Collections;
 import java.util.Stack;
 /**

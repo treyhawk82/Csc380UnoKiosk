@@ -69,6 +69,7 @@ public class GameLogic {
         }
     }
 
+
     /*******************************************
      * If you couldn't tell, these are methods *
      *******************************************/
