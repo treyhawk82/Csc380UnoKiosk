@@ -1,8 +1,8 @@
-package game.graphical_user_interface;
+package Game.graphical_user_interface;
 
-import game.Card;
-import game.GameObject;
-import game.ID;
+import Game.Card;
+import Game.GameObject;
+import Game.ID;
 
 import java.awt.*;
 import java.util.Arrays;

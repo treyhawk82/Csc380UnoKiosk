@@ -1,7 +1,7 @@
-package game.graphical_user_interface;
+package Game.graphical_user_interface;
 
-import game.ID;
-import game.commServer.Server;
+import Game.ID;
+import Game.commServer.Server;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;

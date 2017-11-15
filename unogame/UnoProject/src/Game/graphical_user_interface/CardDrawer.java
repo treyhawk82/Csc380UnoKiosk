@@ -1,4 +1,4 @@
-package game.graphical_user_interface;
+package Game.graphical_user_interface;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

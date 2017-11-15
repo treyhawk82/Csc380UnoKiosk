@@ -1,6 +1,6 @@
-package game.commServer;
+package Game.commServer;
 
-import game.GameLogic;
+import Game.GameLogic;
 
 import java.util.Date;
 

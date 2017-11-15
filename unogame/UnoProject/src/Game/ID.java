@@ -1,4 +1,4 @@
-package game;
+package Game;
 
 public enum ID {
     UnoBoard();

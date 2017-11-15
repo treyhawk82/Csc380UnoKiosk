@@ -15,7 +15,7 @@ public class Deal extends Handler {
     }
 
     //computer deals cards to player and removed from top of drawpile
-    public void DealCard(Handler drawPile) {
+    public void dealCard(Handler drawPile) {
         hand.add(0,drawPile.returnTop());
         drawPile.pop();
     }

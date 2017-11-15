@@ -1,7 +1,6 @@
-package game.graphical_user_interface;
+package Game.graphical_user_interface;
 
 import java.awt.*;
-import java.util.TimerTask;
 
 public class Background {
 
