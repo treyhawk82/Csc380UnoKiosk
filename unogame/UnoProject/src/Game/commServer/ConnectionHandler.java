@@ -39,7 +39,7 @@ public class ConnectionHandler extends WebSocketServer  {
      */
     private String[] hands;
 
-    private long[] lastConnectionTime;
+    private long[] lastConnectionTime = new long[4];
 
     private GameLogic gameLogic;
 
@@ -59,6 +59,7 @@ public class ConnectionHandler extends WebSocketServer  {
         this.hands = hands;
         for(int i = 0; i < NUMBER_OF_PLAYERS; i++){
             currentPlayerIPs[i] = "0";
+            lastConnectionTime[i] = System.currentTimeMillis();
         }
     }
 
@@ -77,6 +78,7 @@ public class ConnectionHandler extends WebSocketServer  {
             if(currentPlayerIPs[i].equals("0") && !filled){
                 currentPlayerIPs[i] = currentIP;
                 filled = true;
+                gameLogic.userConnected(i);
             }
         }
         System.out.println("New connection from " + currentIP);
@@ -123,6 +125,7 @@ public class ConnectionHandler extends WebSocketServer  {
             }
             if (lastConnectionTime[i] < System.currentTimeMillis() - 5000) {
                 conns.remove(i);
+                gameLogic.userDisconnected(i);
                 conn.closeConnection(123, "Timeout");
                 System.out.println("removed Connection: " + i);
             }

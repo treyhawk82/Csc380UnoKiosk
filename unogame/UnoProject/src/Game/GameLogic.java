@@ -25,11 +25,21 @@ public class GameLogic implements Runnable {
     static int draw2Stack = 0;
     static long turnStartTime;
     static boolean calledUno[] = new boolean[4];
+    static boolean connectedUser[] = new boolean[4];
 
     AI ai1 = new AI(player_blue, this, 0);
     AI ai2 = new AI(player_yellow, this, 1);
     AI ai3 = new AI(player_green, this, 2);
     AI ai4 = new AI(player_red, this, 3);
+
+    User u1 = new User(player_blue, this, this.server, 0);
+    User u2 = new User(player_yellow, this, this.server, 1);
+    User u3 = new User(player_green, this, this.server, 2);
+    User u4 = new User(player_red, this, this.server, 3);
+
+
+    AI[] ai = new AI[4];
+    User[] users = new User[4];
 
     Server server;
 
@@ -43,6 +53,19 @@ public class GameLogic implements Runnable {
          */
         resetBoard();
 
+        for (int i = 0; i < connectedUser.length; i++) {
+            connectedUser[i] = false;
+        }
+
+        ai[0] = ai1;
+        ai[1] = ai2;
+        ai[2] = ai3;
+        ai[3] = ai4;
+
+        users[0] = u1;
+        users[1] = u2;
+        users[2] = u3;
+        users[3] = u4;
         /**
          * if the first card is a wild then randomly select a color to begin the game
          */
@@ -140,23 +163,14 @@ public class GameLogic implements Runnable {
      */
     private void play() {
         Card playCard;
-        if (turnOfPlayer == 0) {
-            playCard = ai1.playTurn();
-            skipDraw2ReverseWinChecker(playCard, ai1.hand, 0);
-            turnOver(skip, reverse);
-        } else if (turnOfPlayer == 1) {
-            playCard = ai2.playTurn();
-            skipDraw2ReverseWinChecker(playCard, ai2.hand, 1);
-            turnOver(skip, reverse);
-        } else if (turnOfPlayer == 2) {
-            playCard = ai3.playTurn();
-            skipDraw2ReverseWinChecker(playCard, ai3.hand, 2);
-            turnOver(skip, reverse);
-        } else if (turnOfPlayer == 3) {
-            playCard = ai4.playTurn();
-            skipDraw2ReverseWinChecker(playCard, ai4.hand, 3);
-            turnOver(skip, reverse);
+        if (!connectedUser[turnOfPlayer]) {
+            playCard = ai[turnOfPlayer].playTurn();
+            skipDraw2ReverseWinChecker(playCard, ai[turnOfPlayer].hand, turnOfPlayer);
+        } else {
+            playCard = users[turnOfPlayer].playTurn();
+            skipDraw2ReverseWinChecker(playCard, users[turnOfPlayer].hand, turnOfPlayer);
         }
+        turnOver();
     }
 
     /**
@@ -201,10 +215,8 @@ public class GameLogic implements Runnable {
 
     /**
      * depending on the current status of skip and reverse, decides whos turn it is next
-     * @param skip skip status
-     * @param reverse reverse status
      */
-    private void turnOver(boolean skip, boolean reverse) {
+    private void turnOver() {
         if (skip) {
             if (reverse) {
                 if (turnOfPlayer == 0) {
@@ -357,5 +369,13 @@ public class GameLogic implements Runnable {
             player_red.dealCard(deck);
             player_red.dealCard(deck);
         }
+    }
+
+    public void userConnected(int id) {
+        connectedUser[id] = true;
+    }
+
+    public void userDisconnected(int id) {
+        connectedUser[id] = false;
     }
 }
