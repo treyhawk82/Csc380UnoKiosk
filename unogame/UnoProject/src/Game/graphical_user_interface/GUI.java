@@ -26,7 +26,7 @@ public class GUI extends Canvas implements Runnable {
         this.server = server;
         new Window(SCREEN_WIDTH, SCREEN_HEIGHT, "Test Game!", this);
 
-        guiHandler.addObject(new UnoBoard(SCREEN_WIDTH, SCREEN_HEIGHT, ID.UnoBoard, hands, turnOfPlayer, topOfDiscardPile, this));
+        guiHandler.addObject(new UnoBoard(SCREEN_WIDTH, SCREEN_HEIGHT, ID.UnoBoard, this));
     }
 
 
@@ -110,5 +110,9 @@ public class GUI extends Canvas implements Runnable {
 
     public int getTurnOfPlayer() {
         return turnOfPlayer;
+    }
+
+    public String getTopOfDiscardPile() {
+        return topOfDiscardPile;
     }
 }

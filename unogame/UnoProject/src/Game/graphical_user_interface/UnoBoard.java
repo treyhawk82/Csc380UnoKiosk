@@ -23,14 +23,14 @@ public class UnoBoard extends GameObject {
     Graphics g;
     boolean firstTime = true;
 
-    public UnoBoard(int SCREEN_WIDTH, int SCREEN_HEIGHT, ID id, String[] hands, int turnOfPlayer, String topOfDiscardPile, GUI gui){
+    public UnoBoard(int SCREEN_WIDTH, int SCREEN_HEIGHT, ID id, GUI gui) {
         super(0,0, id);
         this.SCREEN_HEIGHT = SCREEN_HEIGHT;
         this.SCREEN_WIDTH = SCREEN_WIDTH;
         this.id = id;
-        this.hands = hands;
-        this.turnOfPlayer = turnOfPlayer;
-        this.topOfDiscardPile = topOfDiscardPile;
+        this.hands = gui.getHands();
+        this.turnOfPlayer = gui.getTurnOfPlayer();
+        this.topOfDiscardPile = gui.getTopOfDiscardPile();
         background = new Background(SCREEN_WIDTH, SCREEN_HEIGHT, numberOfCardsinHands, this);
         this.gui = gui;
         try {
@@ -49,16 +49,15 @@ public class UnoBoard extends GameObject {
     public void render(Graphics g){
         this.g = g;
         hands = gui.getHands();
+
         turnOfPlayer = gui.getTurnOfPlayer();
-        if(!(Arrays.equals(hands, oldHands))) {
-            oldHands = hands;
             topOfDiscardPile = gui.topOfDiscardPile;
             for (int i = 0; i < hands.length; i++) {
                 String[] cardsInHand = hands[i].split("x");
                 numberOfCardsinHands[i] = cardsInHand.length;
-            }
 
-        }
+
+            }
         background.drawBackground(g);
 
     }
@@ -73,4 +72,8 @@ public class UnoBoard extends GameObject {
     }
 
     public String getTopOfDiscardPile(){ return topOfDiscardPile;}
+
+    public int[] getNumberOfCardsInHands() {
+        return numberOfCardsinHands;
+    }
 }

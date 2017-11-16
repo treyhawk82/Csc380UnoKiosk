@@ -96,9 +96,7 @@ public class Background {
         drawBackgroundColours(g, yellow, highlightYellow, triangleyellowx, triangleyellowy, 1, turnOfPlayer);
         drawBackgroundColours(g, green, highlightGreen, trianglegreenx, trianglegreeny, 2, turnOfPlayer);
         drawBackgroundColours(g, red, highlightRed, triangleredx, triangleredy, 3, turnOfPlayer);
-
-
-        cardDrawer.drawPlayerCards(g, numberOfCardsinHands, unoBoard.getTopOfDiscardPile());
+        cardDrawer.drawPlayerCards(g, unoBoard.getNumberOfCardsInHands(), unoBoard.getTopOfDiscardPile());
     }
 
     private void hasBeenChanged(){

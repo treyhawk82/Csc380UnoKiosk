@@ -17,6 +17,8 @@ public class GameLogic implements Runnable {
     static Scanner s = new Scanner(System.in);
     boolean done = false;
     static int turnOfPlayer;
+    static boolean skip;
+    static boolean reverse;
 
     public void run() {
         /**
@@ -44,7 +46,7 @@ public class GameLogic implements Runnable {
          * the card will be face up
          */
         discardPile.dealCard(deck);
-        // System.out.println(discardPile.getCard(0));
+        System.out.println(discardPile.getCard(0));
 
         /**
          * if the first card is a wild then randomly select a color to begin the game
@@ -65,6 +67,11 @@ public class GameLogic implements Runnable {
         Player p4 = new Player(3);      //computer player
         int currentPlayer = 0;      //this is the user
 
+        AI ai1 = new AI(player_blue, this);
+        AI ai2 = new AI(player_yellow, this);
+        AI ai3 = new AI(player_green, this);
+        AI ai4 = new AI(player_red, this);
+
         /**
          * this will be the game loop
          */
@@ -74,10 +81,18 @@ public class GameLogic implements Runnable {
         do {
             if (System.currentTimeMillis() > lasttime + 5000) {
                 lasttime = System.currentTimeMillis();
+                if (turnOfPlayer == 0) {
+                    ai1.playTurn();
+                } else if (turnOfPlayer == 1) {
+                    ai2.playTurn();
+                } else if (turnOfPlayer == 2) {
+                    ai3.playTurn();
+                } else if (turnOfPlayer == 3) {
+                    ai4.playTurn();
+                }
                 if (turnOfPlayer < 3) {
                     turnOfPlayer++;
                 } else turnOfPlayer = 0;
-                System.out.println(turnOfPlayer + " = turnOfPlayer in GameLogic");
             }
             //System.out.println("test" + loop);
             loop++;
@@ -156,5 +171,11 @@ public class GameLogic implements Runnable {
         return handSizesandHands;
     }
 
+    public Card returnTopOfDiscardPile() {
+        return discardPile.getCard(discardPile.getSize() - 1);
+    }
 
+    public void discardCard(Card cardToDiscard) {
+        discardPile.addCard(cardToDiscard);
+    }
 }

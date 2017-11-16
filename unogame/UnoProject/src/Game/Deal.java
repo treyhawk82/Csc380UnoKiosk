@@ -19,6 +19,21 @@ public class Deal extends Handler {
         drawPile.pop();
     }
 
+    public void addCard(Card cardToBeAdded) {
+        hand.add(cardToBeAdded);
+    }
+
+    public void discardCard(Card cardToBePlayed) {
+        boolean deletedOnce = false;
+        for (int i = 0; i < hand.size(); i++) {
+            if (hand.get(i).getCardColor().equalsIgnoreCase(cardToBePlayed.getCardColor())
+                    && hand.get(i).getCardNum() == cardToBePlayed.getCardNum() && !deletedOnce) {
+                deletedOnce = true;
+                hand.remove(i);
+            }
+        }
+    }
+
 
     public Card getCard(int element){
         return hand.get(element);
