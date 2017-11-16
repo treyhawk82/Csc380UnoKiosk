@@ -1,0 +1,8 @@
+What's missing?
+- draw 2 logic
+- wild draw 4 logic
+- victory screen of some sort
+- swap from AI to player
+	- need a method for every input the AI does
+- comments, I'm sorry :^)
+- TBC
