@@ -1,7 +1,7 @@
 What's missing?
 - draw 2 logic
 - wild draw 4 logic
-- victory screen of some sort
+- victory screen of some sort, CATS?
 - swap from AI to player
 	- Player class that accepts a String from the server on which card has been played and which colour has been selected
 - comments, I'm sorry :^)
