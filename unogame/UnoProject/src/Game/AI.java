@@ -2,9 +2,11 @@ package Game;
 
 import java.util.Random;
 
-public class AI {
+public class AI extends Player {
     Deal hand;
     GameLogic gameLogic;
+    private int id;
+    private boolean callsOut = false;
 
     /**
      * constructor of the AI
@@ -12,9 +14,10 @@ public class AI {
      * @param hand      the hand that has been given to the AI
      * @param gameLogic gameLogic to be able to use its methods
      */
-    public AI(Deal hand, GameLogic gameLogic) {
+    public AI(Deal hand, GameLogic gameLogic, int id) {
         this.hand = hand;
         this.gameLogic = gameLogic;
+        this.id = id;
     }
 
     /**
@@ -33,6 +36,12 @@ public class AI {
             System.out.println("card played: " + playCard.getCardColor() + playCard.getCardNum());
         }
         System.out.println("Handsize: " + hand.getSize());
+        if (callsOut) {
+            if (hand.getSize() == 1) {
+                gameLogic.callsUno(id);
+            }
+            gameLogic.callsOutUno();
+        }
         return playCard;
     }
 
@@ -74,4 +83,7 @@ public class AI {
         return noPlayableCard;
     }
 
+    public void activateCallout() {
+        callsOut = true;
+    }
 }

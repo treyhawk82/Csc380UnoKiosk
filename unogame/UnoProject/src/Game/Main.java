@@ -42,6 +42,7 @@ public class Main{
         GUI gui = new GUI(server);
         Thread gameLogicThread = new Thread(gameLogic, "GameLogic");
         gameLogicThread.start();
+        gameLogic.setServer(server);
     }
 
 

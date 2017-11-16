@@ -1,5 +1,6 @@
 package Game.commServer;
 
+import Game.GameLogic;
 import org.java_websocket.WebSocket;
 import org.java_websocket.handshake.ClientHandshake;
 import org.java_websocket.server.WebSocketServer;
@@ -23,7 +24,7 @@ public class ConnectionHandler extends WebSocketServer  {
     /**
      * saves the WebSocket connections we accepted in a set
      */
-    private Set<WebSocket> conns;
+    private ArrayList<WebSocket> conns;
     /**
      * saves the ip addresses of our current players
      */
@@ -31,11 +32,16 @@ public class ConnectionHandler extends WebSocketServer  {
     /**
      * saves the actions the players have taken to give them to the game to process
      */
-    private ArrayList<String> actions;
+    private String[] playerActions;
+    private long[] lastActionTime;
     /**
      * saves the hands of our current players
      */
     private String[] hands;
+
+    private long[] lastConnectionTime;
+
+    private GameLogic gameLogic;
 
     /**
      * constructor of the WebsocketServer class. Instantiates with the current hands of our players as well as the
@@ -47,8 +53,9 @@ public class ConnectionHandler extends WebSocketServer  {
         super(new InetSocketAddress(TCP_PORT));
         this.NUMBER_OF_PLAYERS = NUMBER_OF_PLAYERS;
         currentPlayerIPs = new String[NUMBER_OF_PLAYERS];
-        conns = new HashSet<>();
-        actions = new ArrayList<>();
+        conns = new ArrayList<>();
+        playerActions = new String[4];
+        lastActionTime = new long[4];
         this.hands = hands;
         for(int i = 0; i < NUMBER_OF_PLAYERS; i++){
             currentPlayerIPs[i] = "0";
@@ -109,6 +116,28 @@ public class ConnectionHandler extends WebSocketServer  {
     public void onMessage(WebSocket conn, String message) {
         Date currenttime = new Date(System.currentTimeMillis());
         System.out.println("Message from client " + conn.getRemoteSocketAddress().getAddress().getHostAddress() +": " + message + " at " + currenttime.toString());
+        //checks for inactive devices
+        for (int i = 0; i < conns.size(); i++) {
+            if (conn == conns.get(i)) {
+                lastConnectionTime[i] = System.currentTimeMillis();
+            }
+            if (lastConnectionTime[i] < System.currentTimeMillis() - 5000) {
+                conns.remove(i);
+                conn.closeConnection(123, "Timeout");
+                System.out.println("removed Connection: " + i);
+            }
+        }
+
+        //saves action string if message is not update
+        if (!message.equalsIgnoreCase("update")) {
+            for (int i = 0; i < conns.size(); i++) {
+                if (conn == conns.get(i)) {
+                    playerActions[i] = message;
+                    lastActionTime[i] = System.currentTimeMillis();
+                }
+            }
+        }
+        //sends update data
         for (WebSocket sock: conns
                 ) {
             String currentIP = sock.getRemoteSocketAddress().getAddress().getHostAddress();
@@ -158,5 +187,17 @@ public class ConnectionHandler extends WebSocketServer  {
             }
         }
         return 20;
+    }
+
+    public String returnActionOfPlayer(int playerNumber) {
+        return playerActions[playerNumber];
+    }
+
+    public long getLastActionTime(int playerNumber) {
+        return lastActionTime[playerNumber];
+    }
+
+    public void setGameLogic(GameLogic gameLogic) {
+        this.gameLogic = gameLogic;
     }
 }

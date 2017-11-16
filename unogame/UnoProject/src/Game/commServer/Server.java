@@ -2,7 +2,6 @@ package Game.commServer;
 
 import Game.GameLogic;
 
-import java.util.Date;
 
 public class Server implements Runnable{
 
@@ -53,6 +52,8 @@ public class Server implements Runnable{
      */
     private int turnOfPlayer = 0;
 
+    ConnectionHandler connectionHandler;
+
     private static String lastColourSelected = "blue";
 
     public Server(GameLogic gameLogic){
@@ -64,7 +65,8 @@ public class Server implements Runnable{
      * handsizes for each individual player every 1000ms and concatenates them again to pass it on to the gui
      */
     public void run(){
-        new ConnectionHandler(commstring, NUMBER_OF_PLAYERS).start();
+        connectionHandler = new ConnectionHandler(commstring, NUMBER_OF_PLAYERS);
+        connectionHandler.start();
         //just some random data to send to the clients atm TO-DO
         //for(int i = 0; i < NUMBER_OF_PLAYERS; i++){
             //top of discard pile - player number - player 0 # of cards - p1 # of cards - p2 # of cards - p3 # of cards - player hand
@@ -72,6 +74,7 @@ public class Server implements Runnable{
         //}
         // saves the initialisation time of the method in order to restrain the method to only update every 1000ms
         long lastTime = System.currentTimeMillis();
+        connectionHandler.setGameLogic(gameLogic);
         while (true) {
             if (System.currentTimeMillis() > lastTime + 1000) {
                 lastTime = System.currentTimeMillis();
@@ -128,5 +131,13 @@ public class Server implements Runnable{
 
     public String getLastColourSelected() {
         return lastColourSelected;
+    }
+
+    public long getlastActionTime(int playerNumber) {
+        return connectionHandler.getLastActionTime(playerNumber);
+    }
+
+    public String getPlayerAction(int playerNumber) {
+        return connectionHandler.returnActionOfPlayer(playerNumber);
     }
 }

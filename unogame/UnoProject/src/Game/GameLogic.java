@@ -1,5 +1,7 @@
 package Game;
 
+import Game.commServer.Server;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -21,11 +23,15 @@ public class GameLogic implements Runnable {
     static boolean reverse = false;
     static String lastWildCardColourSelected = "blue";
     static int draw2Stack = 0;
+    static long turnStartTime;
+    static boolean calledUno[] = new boolean[4];
 
-    AI ai1 = new AI(player_blue, this);
-    AI ai2 = new AI(player_yellow, this);
-    AI ai3 = new AI(player_green, this);
-    AI ai4 = new AI(player_red, this);
+    AI ai1 = new AI(player_blue, this, 0);
+    AI ai2 = new AI(player_yellow, this, 1);
+    AI ai3 = new AI(player_green, this, 2);
+    AI ai4 = new AI(player_red, this, 3);
+
+    Server server;
 
     public void run() {
         /**
@@ -62,6 +68,7 @@ public class GameLogic implements Runnable {
          * this will be the game loop
          */
         int loop = 7;
+        ai1.activateCallout();
         done = true;
         long lasttime = System.currentTimeMillis();
         do {
@@ -135,19 +142,19 @@ public class GameLogic implements Runnable {
         Card playCard;
         if (turnOfPlayer == 0) {
             playCard = ai1.playTurn();
-            skipDraw2ReverseWinChecker(playCard, ai1.hand);
+            skipDraw2ReverseWinChecker(playCard, ai1.hand, 0);
             turnOver(skip, reverse);
         } else if (turnOfPlayer == 1) {
             playCard = ai2.playTurn();
-            skipDraw2ReverseWinChecker(playCard, ai2.hand);
+            skipDraw2ReverseWinChecker(playCard, ai2.hand, 1);
             turnOver(skip, reverse);
         } else if (turnOfPlayer == 2) {
             playCard = ai3.playTurn();
-            skipDraw2ReverseWinChecker(playCard, ai3.hand);
+            skipDraw2ReverseWinChecker(playCard, ai3.hand, 2);
             turnOver(skip, reverse);
         } else if (turnOfPlayer == 3) {
             playCard = ai4.playTurn();
-            skipDraw2ReverseWinChecker(playCard, ai4.hand);
+            skipDraw2ReverseWinChecker(playCard, ai4.hand, 3);
             turnOver(skip, reverse);
         }
     }
@@ -159,13 +166,18 @@ public class GameLogic implements Runnable {
      * @param playCard card that a player has been played in the last turn
      * @param ai       the players hand
      */
-    private void skipDraw2ReverseWinChecker(Card playCard, Deal ai) {
+    private void skipDraw2ReverseWinChecker(Card playCard, Deal ai, int id) {
         if (ai.getSize() == 0) {
             resetBoard();
             skip = false;
             reverse = false;
             draw2Stack = 0;
         } else {
+            //check if uno has been called but player had to draw
+            if (ai.getSize() > 1) {
+                calledUno[id] = false;
+            }
+
             int CardNumber = playCard.getCardNum();
             if (CardNumber == 10) {
                 skip = true;
@@ -226,6 +238,7 @@ public class GameLogic implements Runnable {
                 } else turnOfPlayer = 0;
             }
         }
+        turnStartTime = System.currentTimeMillis();
     }
 
     /**
@@ -242,6 +255,7 @@ public class GameLogic implements Runnable {
         deck.addCards();
         deck.shuffleDeck();
         turnOfPlayer = 0;
+        turnStartTime = System.currentTimeMillis();
         for (int i = 0; i <= 6; i++) {
             player_blue.dealCard(deck);
             player_yellow.dealCard(deck);
@@ -312,5 +326,36 @@ public class GameLogic implements Runnable {
      */
     public String getLastWildCardColourSelected() {
         return lastWildCardColourSelected;
+    }
+
+    public void setServer(Server server) {
+        this.server = server;
+    }
+
+    public long getTurnStartTime() {
+        return turnStartTime;
+    }
+
+    public void callsUno(int id) {
+        calledUno[id] = true;
+    }
+
+    public void callsOutUno() {
+        if (player_blue.getSize() == 1 && !calledUno[0]) {
+            player_blue.dealCard(deck);
+            player_blue.dealCard(deck);
+        }
+        if (player_yellow.getSize() == 1 && !calledUno[1]) {
+            player_yellow.dealCard(deck);
+            player_yellow.dealCard(deck);
+        }
+        if (player_green.getSize() == 1 && !calledUno[2]) {
+            player_green.dealCard(deck);
+            player_green.dealCard(deck);
+        }
+        if (player_red.getSize() == 1 && !calledUno[3]) {
+            player_red.dealCard(deck);
+            player_red.dealCard(deck);
+        }
     }
 }

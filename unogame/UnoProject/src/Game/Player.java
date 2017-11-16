@@ -14,6 +14,12 @@ public class Player {
 
 
     //constructor
+    public Player() {
+    }
+
+    public Card playTurn() {
+        return new Card("noPlayableCard", 15);
+    }
 
     public Player(int ID) {
         this.ID = ID;
