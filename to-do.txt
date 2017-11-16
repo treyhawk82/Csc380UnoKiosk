@@ -3,7 +3,7 @@ What's missing?
 - wild draw 4 logic
 - victory screen of some sort
 - swap from AI to player
-	- need a method for every input the AI does
+	- Player class that accepts a String from the server on which card has been played and which colour has been selected
 - comments, I'm sorry :^)
 - the special effect of the first card on the discard pile is currently not considered
 - merge the play() and checkHandForPlayableCard() methods at some point, see comment on that
