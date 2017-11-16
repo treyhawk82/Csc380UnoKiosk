@@ -76,4 +76,8 @@ public class Deal extends Handler {
         }
         return commHandString;
     }
+
+    public void removeAll() {
+        hand.clear();
+    }
 }

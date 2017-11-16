@@ -18,8 +18,14 @@ public class GameLogic implements Runnable {
     boolean done = false;
     static int turnOfPlayer;
     static boolean skip;
-    static boolean reverse;
+    static boolean reverse = false;
     static String lastWildCardColourSelected = "blue";
+    static int draw2Stack = 0;
+
+    AI ai1 = new AI(player_blue, this);
+    AI ai2 = new AI(player_yellow, this);
+    AI ai3 = new AI(player_green, this);
+    AI ai4 = new AI(player_red, this);
 
     public void run() {
         /**
@@ -36,18 +42,11 @@ public class GameLogic implements Runnable {
         /**
          * add 7 cards to each players hand
          */
-        for (int i = 0; i <= 6; i++) {
-            player_blue.dealCard(deck);
-            player_yellow.dealCard(deck);
-            player_green.dealCard(deck);
-            player_red.dealCard(deck);
-        }
+        dealCards();
         /**
          * create a discard pile
          * the card will be face up
          */
-        discardPile.dealCard(deck);
-        System.out.println(discardPile.getCard(0));
 
         /**
          * if the first card is a wild then randomly select a color to begin the game
@@ -68,10 +67,7 @@ public class GameLogic implements Runnable {
         Player p4 = new Player(3);      //computer player
         int currentPlayer = 0;      //this is the user
 
-        AI ai1 = new AI(player_blue, this);
-        AI ai2 = new AI(player_yellow, this);
-        AI ai3 = new AI(player_green, this);
-        AI ai4 = new AI(player_red, this);
+
 
         /**
          * this will be the game loop
@@ -80,20 +76,9 @@ public class GameLogic implements Runnable {
         done = true;
         long lasttime = System.currentTimeMillis();
         do {
-            if (System.currentTimeMillis() > lasttime + 200) {
+            if (System.currentTimeMillis() > lasttime + 2000) {
                 lasttime = System.currentTimeMillis();
-                if (turnOfPlayer == 0) {
-                    ai1.playTurn();
-                } else if (turnOfPlayer == 1) {
-                    ai2.playTurn();
-                } else if (turnOfPlayer == 2) {
-                    ai3.playTurn();
-                } else if (turnOfPlayer == 3) {
-                    ai4.playTurn();
-                }
-                if (turnOfPlayer < 3) {
-                    turnOfPlayer++;
-                } else turnOfPlayer = 0;
+                play();
             }
             //System.out.println("test" + loop);
             loop++;
@@ -149,6 +134,107 @@ public class GameLogic implements Runnable {
         }
         System.out.println(newCard.toString());
         return newCard;
+    }
+
+    private void play() {
+        Card playCard;
+        if (turnOfPlayer == 0) {
+            playCard = ai1.playTurn();
+            skipDraw2ReverseWinChecker(playCard, ai1.hand);
+            turnOver(skip, reverse);
+        } else if (turnOfPlayer == 1) {
+            playCard = ai2.playTurn();
+            skipDraw2ReverseWinChecker(playCard, ai2.hand);
+            turnOver(skip, reverse);
+        } else if (turnOfPlayer == 2) {
+            playCard = ai3.playTurn();
+            skipDraw2ReverseWinChecker(playCard, ai3.hand);
+            turnOver(skip, reverse);
+        } else if (turnOfPlayer == 3) {
+            playCard = ai4.playTurn();
+            skipDraw2ReverseWinChecker(playCard, ai4.hand);
+            turnOver(skip, reverse);
+        }
+    }
+
+    private void skipDraw2ReverseWinChecker(Card playCard, Deal ai) {
+        if (ai.getSize() == 0) {
+            dealCards();
+            skip = false;
+            reverse = false;
+            draw2Stack = 0;
+        } else {
+            int CardNumber = playCard.getCardNum();
+            if (CardNumber == 10) {
+                skip = true;
+            }
+            if (CardNumber == 11) {
+                draw2Stack = +2;
+            }
+            if (CardNumber == 12) {
+                swapReverse(reverse);
+            }
+        }
+    }
+
+    private void swapReverse(boolean isReversed) {
+        if (reverse) reverse = false;
+        else reverse = true;
+    }
+
+    private void turnOver(boolean skip, boolean reverse) {
+        if (skip) {
+            if (reverse) {
+                if (turnOfPlayer == 0) {
+                    turnOfPlayer = 2;
+                } else if (turnOfPlayer == 1) {
+                    turnOfPlayer = 3;
+                } else {
+                    turnOfPlayer--;
+                    turnOfPlayer--;
+                }
+                this.skip = false;
+            } else {
+                if (turnOfPlayer == 2) {
+                    turnOfPlayer = 0;
+                } else if (turnOfPlayer == 3) {
+                    turnOfPlayer = 1;
+                } else {
+                    turnOfPlayer++;
+                    turnOfPlayer++;
+                }
+                this.skip = false;
+            }
+        } else {
+            if (reverse) {
+                if (turnOfPlayer > 0) {
+                    turnOfPlayer--;
+                } else turnOfPlayer = 3;
+            } else {
+                if (turnOfPlayer < 3) {
+                    turnOfPlayer++;
+                } else turnOfPlayer = 0;
+            }
+        }
+    }
+
+    private void dealCards() {
+        player_blue.removeAll();
+        player_yellow.removeAll();
+        player_green.removeAll();
+        player_red.removeAll();
+        deck = new Handler();
+        deck.addCards();
+        deck.shuffleDeck();
+        for (int i = 0; i <= 6; i++) {
+            player_blue.dealCard(deck);
+            player_yellow.dealCard(deck);
+            player_green.dealCard(deck);
+            player_red.dealCard(deck);
+
+            discardPile.dealCard(deck);
+            System.out.println(discardPile.getCard(0));
+        }
     }
 
     public String getHandSizesAndHands() {

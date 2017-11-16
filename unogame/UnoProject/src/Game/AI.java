@@ -11,7 +11,7 @@ public class AI {
         this.gameLogic = gameLogic;
     }
 
-    public void playTurn() {
+    public Card playTurn() {
         Card topOfDiscardPile = gameLogic.returnTopOfDiscardPile();
         Card playCard = checkHandForPlayableCard(topOfDiscardPile);
         if ((playCard.getCardColor().equalsIgnoreCase("noPlayableCard"))) {
@@ -23,6 +23,7 @@ public class AI {
             System.out.println("card played: " + playCard.getCardColor() + playCard.getCardNum());
         }
         System.out.println("Handsize: " + hand.getSize());
+        return playCard;
     }
 
     private Card checkHandForPlayableCard(Card topOfDiscardPile) {
