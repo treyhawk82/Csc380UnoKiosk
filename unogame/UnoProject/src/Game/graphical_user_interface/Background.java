@@ -1,5 +1,7 @@
 package Game.graphical_user_interface;
 
+import Game.commServer.Server;
+
 import java.awt.*;
 
 public class Background {
@@ -58,6 +60,9 @@ public class Background {
     UnoBoard unoBoard;
 
     CardDrawer cardDrawer;
+    GUI gui;
+    String lastColourSelected;
+    Server server;
 
     /**
      * Constructor of Background.
@@ -81,7 +86,8 @@ public class Background {
         this.turnOfPlayer = unoBoard.getTurnOfPlayer();
         this.g = unoBoard.getGraphics();
         this.unoBoard = unoBoard;
-        cardDrawer = new CardDrawer();
+        server = unoBoard.server;
+        cardDrawer = new CardDrawer(server);
     }
 
     /**
@@ -89,14 +95,14 @@ public class Background {
      * displaying the number of cards in each players hand etc
      * @param g Graphics that draws the gui
      */
-    public void drawBackground(Graphics g) {
+    public void drawBackground(Graphics g, String lastColourSelected) {
         hasBeenChanged();
         this.turnOfPlayer = unoBoard.getTurnOfPlayer();
         drawBackgroundColours(g, blue, highlightBlue, trianglebluex, trianglebluey, 0, turnOfPlayer);
         drawBackgroundColours(g, yellow, highlightYellow, triangleyellowx, triangleyellowy, 1, turnOfPlayer);
         drawBackgroundColours(g, green, highlightGreen, trianglegreenx, trianglegreeny, 2, turnOfPlayer);
         drawBackgroundColours(g, red, highlightRed, triangleredx, triangleredy, 3, turnOfPlayer);
-        cardDrawer.drawPlayerCards(g, unoBoard.getNumberOfCardsInHands(), unoBoard.getTopOfDiscardPile());
+        cardDrawer.drawPlayerCards(g, unoBoard.getNumberOfCardsInHands(), unoBoard.getTopOfDiscardPile(), lastColourSelected);
     }
 
     private void hasBeenChanged(){

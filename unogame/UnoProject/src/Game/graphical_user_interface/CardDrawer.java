@@ -1,5 +1,7 @@
 package Game.graphical_user_interface;
 
+import Game.commServer.Server;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -78,8 +80,12 @@ public class CardDrawer {
     BufferedImage uno_cardback;
     BufferedImage uno_cardback_right;
     BufferedImage uno_cardback_left;
+    GUI gui;
+    String lastColourSelected = "blue";
+    Server server;
 
-    public CardDrawer(){
+    public CardDrawer(Server server) {
+        this.server = server;
         try {
             b0 = ImageIO.read(new File("src/Game/small/blue_0.png"));
             b1 = ImageIO.read(new File("src/Game/small/blue_1.png"));
@@ -158,14 +164,13 @@ public class CardDrawer {
     }
 
 
-
-    public void drawPlayerCards(Graphics g, int[] numberOfCardsinHands, String topOfDiscardPile){
+    public void drawPlayerCards(Graphics g, int[] numberOfCardsinHands, String topOfDiscardPile, String lastColourSelected) {
         drawCardsPlayerBlue(g, numberOfCardsinHands);
         drawCardsPlayerGreen(g, numberOfCardsinHands);
         drawCardsPlayerRed(g, numberOfCardsinHands);
         drawCardsPlayerYellow(g, numberOfCardsinHands);
         drawDeck(g);
-        drawTopOfDiscardPile(810 ,449, g, topOfDiscardPile);
+        drawTopOfDiscardPile(810, 449, g, topOfDiscardPile, lastColourSelected);
     }
 
     public void drawCard_right(int x, int y, Graphics g){
@@ -240,171 +245,134 @@ public class CardDrawer {
     }
 
 
-
-
-
-    public void drawTopOfDiscardPile(int x, int y, Graphics g, String topOfDiscardPile){
+    public void drawTopOfDiscardPile(int x, int y, Graphics g, String topOfDiscardPile, String lastColourSelected) {
         if(topOfDiscardPile.equals("b0")){
             g.drawImage(b0, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b1")){
+        } else if (topOfDiscardPile.equals("b1")) {
             g.drawImage(b1, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b2")){
+        } else if (topOfDiscardPile.equals("b2")) {
             g.drawImage(b2, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b3")){
+        } else if (topOfDiscardPile.equals("b3")) {
             g.drawImage(b3, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b4")){
+        } else if (topOfDiscardPile.equals("b4")) {
             g.drawImage(b4, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b5")){
+        } else if (topOfDiscardPile.equals("b5")) {
             g.drawImage(b5, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b6")){
+        } else if (topOfDiscardPile.equals("b6")) {
             g.drawImage(b6, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b7")){
+        } else if (topOfDiscardPile.equals("b7")) {
             g.drawImage(b7, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b8")){
+        } else if (topOfDiscardPile.equals("b8")) {
             g.drawImage(b8, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b9")){
+        } else if (topOfDiscardPile.equals("b9")) {
             g.drawImage(b9, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b10")){
+        } else if (topOfDiscardPile.equals("b10")) {
             g.drawImage(b10, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b11")){
+        } else if (topOfDiscardPile.equals("b11")) {
             g.drawImage(b11, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("b12")){
+        } else if (topOfDiscardPile.equals("b12")) {
             g.drawImage(b12, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y0")){
+        } else if (topOfDiscardPile.equals("y0")) {
             g.drawImage(y0, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y1")){
+        } else if (topOfDiscardPile.equals("y1")) {
             g.drawImage(y1, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y2")){
+        } else if (topOfDiscardPile.equals("y2")) {
             g.drawImage(y2, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y3")){
+        } else if (topOfDiscardPile.equals("y3")) {
             g.drawImage(y3, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y4")){
+        } else if (topOfDiscardPile.equals("y4")) {
             g.drawImage(y4, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y5")){
+        } else if (topOfDiscardPile.equals("y5")) {
             g.drawImage(y5, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y6")){
+        } else if (topOfDiscardPile.equals("y6")) {
             g.drawImage(y6, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y7")){
+        } else if (topOfDiscardPile.equals("y7")) {
             g.drawImage(y7, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y8")){
+        } else if (topOfDiscardPile.equals("y8")) {
             g.drawImage(y8, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y9")){
+        } else if (topOfDiscardPile.equals("y9")) {
             g.drawImage(y9, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y10")){
+        } else if (topOfDiscardPile.equals("y10")) {
             g.drawImage(y10, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y11")){
+        } else if (topOfDiscardPile.equals("y11")) {
             g.drawImage(y11, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("y12")){
+        } else if (topOfDiscardPile.equals("y12")) {
             g.drawImage(y12, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g0")){
+        } else if (topOfDiscardPile.equals("g0")) {
             g.drawImage(g0, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g1")){
+        } else if (topOfDiscardPile.equals("g1")) {
             g.drawImage(g1, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g2")){
+        } else if (topOfDiscardPile.equals("g2")) {
             g.drawImage(g2, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g3")){
+        } else if (topOfDiscardPile.equals("g3")) {
             g.drawImage(g3, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g4")){
+        } else if (topOfDiscardPile.equals("g4")) {
             g.drawImage(g4, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g5")){
+        } else if (topOfDiscardPile.equals("g5")) {
             g.drawImage(g5, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g6")){
+        } else if (topOfDiscardPile.equals("g6")) {
             g.drawImage(g6, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g7")){
+        } else if (topOfDiscardPile.equals("g7")) {
             g.drawImage(g7, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g8")){
+        } else if (topOfDiscardPile.equals("g8")) {
             g.drawImage(g8, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g9")){
+        } else if (topOfDiscardPile.equals("g9")) {
             g.drawImage(g9, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g10")){
+        } else if (topOfDiscardPile.equals("g10")) {
             g.drawImage(g10, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g11")){
+        } else if (topOfDiscardPile.equals("g11")) {
             g.drawImage(g11, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("g12")){
+        } else if (topOfDiscardPile.equals("g12")) {
             g.drawImage(g12, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r0")){
+        } else if (topOfDiscardPile.equals("r0")) {
             g.drawImage(r0, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r1")){
+        } else if (topOfDiscardPile.equals("r1")) {
             g.drawImage(r1, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r2")){
+        } else if (topOfDiscardPile.equals("r2")) {
             g.drawImage(r2, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r3")){
+        } else if (topOfDiscardPile.equals("r3")) {
             g.drawImage(r3, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r4")){
+        } else if (topOfDiscardPile.equals("r4")) {
             g.drawImage(r4, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r5")){
+        } else if (topOfDiscardPile.equals("r5")) {
             g.drawImage(r5, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r6")){
+        } else if (topOfDiscardPile.equals("r6")) {
             g.drawImage(r6, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r7")){
+        } else if (topOfDiscardPile.equals("r7")) {
             g.drawImage(r7, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r8")){
+        } else if (topOfDiscardPile.equals("r8")) {
             g.drawImage(r8, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r9")){
+        } else if (topOfDiscardPile.equals("r9")) {
             g.drawImage(r9, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r10")){
+        } else if (topOfDiscardPile.equals("r10")) {
             g.drawImage(r10, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r11")){
+        } else if (topOfDiscardPile.equals("r11")) {
             g.drawImage(r11, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("r12")){
+        } else if (topOfDiscardPile.equals("r12")) {
             g.drawImage(r12, x, y, 130, 182, null);
         }
-        if(topOfDiscardPile.equals("w13")){
-            g.drawImage(w13, x, y, 130, 182, null);
-        }
-        if(topOfDiscardPile.equals("w14")){
-            g.drawImage(w14, x, y, 130, 182, null);
+        //else if(topOfDiscardPile.equals("w13")){
+        //    g.drawImage(w13, x, y, 130, 182, null);
+        //}
+        //else if(topOfDiscardPile.equals("w14")){
+        //    g.drawImage(w14, x, y, 130, 182, null);
+        //}
+        else if (topOfDiscardPile.equals("w13") && lastColourSelected.equalsIgnoreCase("blue")) {
+            g.drawImage(w13blue, x, y, 130, 182, null);
+        } else if (topOfDiscardPile.equals("w13") && lastColourSelected.equalsIgnoreCase("yellow")) {
+            g.drawImage(w13yellow, x, y, 130, 182, null);
+        } else if (topOfDiscardPile.equals("w13") && lastColourSelected.equalsIgnoreCase("green")) {
+            g.drawImage(w13green, x, y, 130, 182, null);
+        } else if (topOfDiscardPile.equals("w13") && lastColourSelected.equalsIgnoreCase("red")) {
+            g.drawImage(w13red, x, y, 130, 182, null);
+        } else if (topOfDiscardPile.equals("w14") && lastColourSelected.equalsIgnoreCase("blue")) {
+            g.drawImage(w14blue, x, y, 130, 182, null);
+        } else if (topOfDiscardPile.equals("w14") && lastColourSelected.equalsIgnoreCase("yellow")) {
+            g.drawImage(w14yellow, x, y, 130, 182, null);
+        } else if (topOfDiscardPile.equals("w14") && lastColourSelected.equalsIgnoreCase("green")) {
+            g.drawImage(w14green, x, y, 130, 182, null);
+        } else if (topOfDiscardPile.equals("w14") && lastColourSelected.equalsIgnoreCase("red")) {
+            g.drawImage(w14red, x, y, 130, 182, null);
         }
     }
 }

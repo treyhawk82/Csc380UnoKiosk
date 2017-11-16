@@ -15,6 +15,7 @@ public class GUI extends Canvas implements Runnable {
     private GUIHandler guiHandler;
     private Server server;
     private long lastTime2;
+    private String lastColourSelected = "blue";
 
 
     public String[] hands = {};
@@ -82,6 +83,7 @@ public class GUI extends Canvas implements Runnable {
                 }
                 this.topOfDiscardPile = server.getTopOfDiscardPile();
                 this.turnOfPlayer = server.getTurnOfPlayer();
+                this.lastColourSelected = server.getLastColourSelected();
             }
         }
         stop();
@@ -114,5 +116,13 @@ public class GUI extends Canvas implements Runnable {
 
     public String getTopOfDiscardPile() {
         return topOfDiscardPile;
+    }
+
+    public String getLastColourSelected() {
+        return lastColourSelected;
+    }
+
+    public Server getServer() {
+        return server;
     }
 }

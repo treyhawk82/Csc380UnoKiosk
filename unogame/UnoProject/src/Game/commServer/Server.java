@@ -53,6 +53,8 @@ public class Server implements Runnable{
      */
     private int turnOfPlayer = 0;
 
+    private static String lastColourSelected = "blue";
+
     public Server(GameLogic gameLogic){
         this.gameLogic = gameLogic;
     }
@@ -77,7 +79,7 @@ public class Server implements Runnable{
                 //gets a concatenated string of hands and handsizes for each individual player
                 String currentHandSizesAndHands = gameLogic.getHandSizesAndHands();
                 String parseHandString[] = currentHandSizesAndHands.split("-");
-                if (parseHandString.length == 10) {
+                if (parseHandString.length == 11) {
                     player_blue_handsize = Integer.parseInt(parseHandString[0]);
                     player_yellow_handsize = Integer.parseInt(parseHandString[1]);
                     player_green_handsize = Integer.parseInt(parseHandString[2]);
@@ -89,6 +91,7 @@ public class Server implements Runnable{
                     hands[3] = parseHandString[7];
                     topOfDiscardPile = parseHandString[8];
                     turnOfPlayer = Integer.parseInt(parseHandString[9]);
+                    lastColourSelected = parseHandString[10];
 
                     for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
                         boolean isPlayersTurn = false;
@@ -121,5 +124,9 @@ public class Server implements Runnable{
 
     public int getTurnOfPlayer() {
         return turnOfPlayer;
+    }
+
+    public String getLastColourSelected() {
+        return lastColourSelected;
     }
 }

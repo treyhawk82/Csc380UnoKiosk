@@ -1,6 +1,7 @@
 package Game.graphical_user_interface;
 
 import Game.GameObject;
+import Game.commServer.Server;
 
 import java.awt.*;
 import java.util.Arrays;
@@ -22,6 +23,8 @@ public class UnoBoard extends GameObject {
     GUI gui;
     Graphics g;
     boolean firstTime = true;
+    Server server;
+    String lastColourSelected = "blue";
 
     public UnoBoard(int SCREEN_WIDTH, int SCREEN_HEIGHT, ID id, GUI gui) {
         super(0,0, id);
@@ -58,7 +61,11 @@ public class UnoBoard extends GameObject {
 
 
             }
-        background.drawBackground(g);
+        server = gui.getServer();
+        lastColourSelected = server.getLastColourSelected();
+        background.drawBackground(g, lastColourSelected);
+
+
 
     }
 
@@ -75,5 +82,9 @@ public class UnoBoard extends GameObject {
 
     public int[] getNumberOfCardsInHands() {
         return numberOfCardsinHands;
+    }
+
+    public GUI getGui() {
+        return gui;
     }
 }

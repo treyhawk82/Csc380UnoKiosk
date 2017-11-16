@@ -19,6 +19,7 @@ public class GameLogic implements Runnable {
     static int turnOfPlayer;
     static boolean skip;
     static boolean reverse;
+    static String lastWildCardColourSelected = "blue";
 
     public void run() {
         /**
@@ -51,11 +52,11 @@ public class GameLogic implements Runnable {
         /**
          * if the first card is a wild then randomly select a color to begin the game
          */
-        if (discardPile.getCard(0).getCardNum() == 13) {
-            wildCard(13);
-        } else if ( discardPile.getCard(0).getCardNum() == 14) {
-            wildCard(14);
-        }
+        //if (discardPile.getCard(0).getCardNum() == 13) {
+        //    wildCard(13);
+        //} else if ( discardPile.getCard(0).getCardNum() == 14) {
+        //    wildCard(14);
+        //}
 
         /**
          * instantiate all players
@@ -79,7 +80,7 @@ public class GameLogic implements Runnable {
         done = true;
         long lasttime = System.currentTimeMillis();
         do {
-            if (System.currentTimeMillis() > lasttime + 5000) {
+            if (System.currentTimeMillis() > lasttime + 200) {
                 lasttime = System.currentTimeMillis();
                 if (turnOfPlayer == 0) {
                     ai1.playTurn();
@@ -166,7 +167,9 @@ public class GameLogic implements Runnable {
 
             int discardPileSize = discardPile.getSize();
             handSizesandHands = handSizesandHands + "-"
-                    + discardPile.getCard(discardPileSize - 1).getCommCardString() + "-" + turnOfPlayer;
+                    + discardPile.getCard(discardPileSize - 1).getCommCardString() + "-" + turnOfPlayer + "-"
+                    + getLastWildCardColourSelected();
+            System.out.println(lastWildCardColourSelected + " = last color GameLogic");
         }
         return handSizesandHands;
     }
@@ -177,5 +180,13 @@ public class GameLogic implements Runnable {
 
     public void discardCard(Card cardToDiscard) {
         discardPile.addCard(cardToDiscard);
+    }
+
+    public void selectColour(String colour) {
+        lastWildCardColourSelected = colour;
+    }
+
+    public String getLastWildCardColourSelected() {
+        return lastWildCardColourSelected;
     }
 }
