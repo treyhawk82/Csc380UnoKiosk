@@ -1,6 +1,7 @@
 What's missing?
 - draw 2 logic
 - wild draw 4 logic
+- currently the deck can run out of cards resulting in an exception, maybe check that in the dealCard() or whereever and rebase the deck
 - victory screen of some sort, CATS?
 - swap from AI to player
 	- Player class that accepts a String from the server on which card has been played and which colour has been selected
