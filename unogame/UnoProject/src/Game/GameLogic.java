@@ -30,23 +30,12 @@ public class GameLogic implements Runnable {
     public void run() {
         /**
          * create the deck and shuffle it
-         */
-        deck.addCards();
-        deck.shuffleDeck();
-
-        /**
          * game starts with player blue being the first player
-         */
-        turnOfPlayer = 0;
-
-        /**
          * add 7 cards to each players hand
-         */
-        dealCards();
-        /**
          * create a discard pile
          * the card will be face up
          */
+        resetBoard();
 
         /**
          * if the first card is a wild then randomly select a color to begin the game
@@ -136,6 +125,12 @@ public class GameLogic implements Runnable {
         return newCard;
     }
 
+    /**
+     * where the magic happens. Checks which players turn it is, then lets the selected player make a turn.
+     * After that turn, it checks if the Card is a special card (e.g. skip, draw2, reverse) and checks win condition.
+     * Then it calls the turnOver method which depending on the reverse and skip status changes the turn to the next
+     * player.
+     */
     private void play() {
         Card playCard;
         if (turnOfPlayer == 0) {
@@ -157,9 +152,16 @@ public class GameLogic implements Runnable {
         }
     }
 
+    /**
+     * first checks if wincondition is met, if not it checks if either a skip, reverse or draw 2 has been played,
+     * and takes the necessary actions.
+     *
+     * @param playCard card that a player has been played in the last turn
+     * @param ai       the players hand
+     */
     private void skipDraw2ReverseWinChecker(Card playCard, Deal ai) {
         if (ai.getSize() == 0) {
-            dealCards();
+            resetBoard();
             skip = false;
             reverse = false;
             draw2Stack = 0;
@@ -172,16 +174,24 @@ public class GameLogic implements Runnable {
                 draw2Stack = +2;
             }
             if (CardNumber == 12) {
-                swapReverse(reverse);
+                swapReverse();
             }
         }
     }
 
-    private void swapReverse(boolean isReversed) {
+    /**
+     * if reverse true, then change it to false; if reverse false, change it to true.
+     */
+    private void swapReverse() {
         if (reverse) reverse = false;
         else reverse = true;
     }
 
+    /**
+     * depending on the current status of skip and reverse, decides whos turn it is next
+     * @param skip skip status
+     * @param reverse reverse status
+     */
     private void turnOver(boolean skip, boolean reverse) {
         if (skip) {
             if (reverse) {
@@ -218,7 +228,12 @@ public class GameLogic implements Runnable {
         }
     }
 
-    private void dealCards() {
+    /**
+     * resets the whole board.
+     * Removes any residual cards from hands, creates new deck and shuffles it, resets turn of player to player blue/0.
+     * Then deals new cards to each player and lays down the first card onto the discard pile.
+     */
+    private void resetBoard() {
         player_blue.removeAll();
         player_yellow.removeAll();
         player_green.removeAll();
@@ -226,6 +241,7 @@ public class GameLogic implements Runnable {
         deck = new Handler();
         deck.addCards();
         deck.shuffleDeck();
+        turnOfPlayer = 0;
         for (int i = 0; i <= 6; i++) {
             player_blue.dealCard(deck);
             player_yellow.dealCard(deck);
@@ -237,6 +253,16 @@ public class GameLogic implements Runnable {
         }
     }
 
+    /**
+     * Concatenates every important information that we have to send to the client in one single parseble string.
+     * These information include:
+     *                          - handsizes of each player
+     *                          - hands of each player
+     *                          - top card on the discard pile
+     *                          - last wild colour selected
+     *                          - which players turn it is
+     * @return the concatenated string
+     */
     public String getHandSizesAndHands() {
 
         String handSizesandHands = "";
@@ -260,18 +286,30 @@ public class GameLogic implements Runnable {
         return handSizesandHands;
     }
 
+    /**
+     * @return top card of the discard pile
+     */
     public Card returnTopOfDiscardPile() {
         return discardPile.getCard(discardPile.getSize() - 1);
     }
 
+    /**
+     * @param cardToDiscard card that needs to be discardedd
+     */
     public void discardCard(Card cardToDiscard) {
         discardPile.addCard(cardToDiscard);
     }
 
+    /**
+     * @param colour colour that has been selected by the player
+     */
     public void selectColour(String colour) {
         lastWildCardColourSelected = colour;
     }
 
+    /**
+     * @return the selected colour last time a wild card has been played
+     */
     public String getLastWildCardColourSelected() {
         return lastWildCardColourSelected;
     }

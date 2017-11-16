@@ -6,11 +6,21 @@ public class AI {
     Deal hand;
     GameLogic gameLogic;
 
+    /**
+     * constructor of the AI
+     *
+     * @param hand      the hand that has been given to the AI
+     * @param gameLogic gameLogic to be able to use its methods
+     */
     public AI(Deal hand, GameLogic gameLogic) {
         this.hand = hand;
         this.gameLogic = gameLogic;
     }
 
+    /**
+     * checks the AI's hand from the start of the list for any playable cards. AI plays the first card it finds
+     * @return the playable card
+     */
     public Card playTurn() {
         Card topOfDiscardPile = gameLogic.returnTopOfDiscardPile();
         Card playCard = checkHandForPlayableCard(topOfDiscardPile);
@@ -26,6 +36,12 @@ public class AI {
         return playCard;
     }
 
+    /**
+     * checks the hand for playable card. This method only exists because I wanted to avoid having a return value
+     * in playTurn(), but later decided to do it anyways. should probably merge them at some point
+     * @param topOfDiscardPile
+     * @return
+     */
     private Card checkHandForPlayableCard(Card topOfDiscardPile) {
         int handSize = hand.getSize();
         String topOfDiscardPileColour = topOfDiscardPile.getCardColor();
