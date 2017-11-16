@@ -1,7 +1,7 @@
 What's missing?
 - draw 2 logic
 - wild draw 4 logic
-- uno callout logic
+- //uno callout logic is there, just has to be hooked up with client
 - currently the deck can run out of cards resulting in an exception, maybe check that in the dealCard() or whereever and rebase the deck
 - after a victory when the game resets, it then starts with player yellow / 1 instead of blue / 0 for some unknown reason
 - victory screen of some sort, CATS?
