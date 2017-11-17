@@ -79,7 +79,7 @@ public class AI extends Player {
                 return handCard;
             }
         }
-        Card noPlayableCard = new Card("noPlayableCard", 15);
+        Card noPlayableCard = new Card("noPlayableCard", 15, false);
         return noPlayableCard;
     }
 

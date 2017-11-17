@@ -42,6 +42,8 @@ public class GameLogic implements Runnable {
     User[] users = new User[4];
 
     Server server;
+    long[] lastActionTime;
+    long[] lastConnectionTimes;
 
     public void run() {
         /**
@@ -121,11 +123,11 @@ public class GameLogic implements Runnable {
     public static void getChoice() {
 
     }
+    /*
     /**
      * method to handle wild card logic
      * @param cardNum
      * @return Card
-     */
     public static Card wildCard(int cardNum) {
         System.out.println("Enter a color: ");
         String input = s.nextLine();
@@ -153,7 +155,7 @@ public class GameLogic implements Runnable {
         }
         System.out.println(newCard.toString());
         return newCard;
-    }
+    }*/
 
     /**
      * where the magic happens. Checks which players turn it is, then lets the selected player make a turn.
@@ -384,5 +386,21 @@ public class GameLogic implements Runnable {
 
     public boolean[] getCalledUno() {
         return calledUno;
+    }
+
+    public void setLastActionTime(long[] actionTimes) {
+        lastActionTime = actionTimes;
+    }
+
+    public long getActionTimeOfPlayer(int player_id) {
+        return lastActionTime[player_id];
+    }
+
+    public void setLastConnectionTimes(long[] connectionTimes) {
+        lastConnectionTimes = connectionTimes;
+    }
+
+    public long getLastConnectionTime(int player_id) {
+        return lastConnectionTimes[player_id];
     }
 }

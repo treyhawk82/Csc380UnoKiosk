@@ -18,7 +18,7 @@ public class Player {
     }
 
     public Card playTurn() {
-        return new Card("noPlayableCard", 15);
+        return new Card("noPlayableCard", 15, false);
     }
 
     public Player(int ID) {

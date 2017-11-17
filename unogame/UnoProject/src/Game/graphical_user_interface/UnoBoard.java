@@ -13,6 +13,8 @@ public class UnoBoard extends GameObject {
 
     int SCREEN_HEIGHT;
     int SCREEN_WIDTH;
+    double SCREEN_SCALE_WIDTH;
+    double SCREEN_SCALE_HEIGHT;
     ID id;
     String[] hands;
     String[] oldHands;
@@ -26,15 +28,17 @@ public class UnoBoard extends GameObject {
     Server server;
     String lastColourSelected = "blue";
 
-    public UnoBoard(int SCREEN_WIDTH, int SCREEN_HEIGHT, ID id, GUI gui) {
+    public UnoBoard(int SCREEN_WIDTH, double SCREEN_SCALE_WIDTH, int SCREEN_HEIGHT, double SCREEN_SCALE_HEIGHT, ID id, GUI gui) {
         super(0,0, id);
         this.SCREEN_HEIGHT = SCREEN_HEIGHT;
         this.SCREEN_WIDTH = SCREEN_WIDTH;
+        this.SCREEN_SCALE_WIDTH = SCREEN_SCALE_WIDTH;
+        this.SCREEN_SCALE_HEIGHT = SCREEN_SCALE_HEIGHT;
         this.id = id;
         this.hands = gui.getHands();
         this.turnOfPlayer = gui.getTurnOfPlayer();
         this.topOfDiscardPile = gui.getTopOfDiscardPile();
-        background = new Background(SCREEN_WIDTH, SCREEN_HEIGHT, numberOfCardsinHands, this);
+        background = new Background((int) Math.round(SCREEN_WIDTH / SCREEN_SCALE_WIDTH), SCREEN_SCALE_WIDTH, (int) Math.round(SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT), SCREEN_SCALE_HEIGHT, numberOfCardsinHands, this);
         this.gui = gui;
         try {
             Thread.sleep(200);

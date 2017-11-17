@@ -53,7 +53,7 @@ public class Background {
     private final int[] cardsLeftPositionsx = {860, 1225, 860, 475};
     private final int[] cardsLeftPositionsy = {375, 550, 755, 550};
 
-    Font font = new Font("TimesRoman", Font.PLAIN, 45);
+    Font font;
 
     Graphics g;
     int turnOfPlayer;
@@ -63,6 +63,8 @@ public class Background {
     GUI gui;
     String lastColourSelected;
     Server server;
+    double SCREEN_SCALE_WIDTH;
+    double SCREEN_SCALE_HEIGHT;
 
     /**
      * Constructor of Background.
@@ -70,9 +72,11 @@ public class Background {
      * @param SCREEN_HEIGHT the windows height
      * @param numberOfCardsinHands the number of cards in the hand of each individual player
      */
-    public Background (int SCREEN_WIDTH, int SCREEN_HEIGHT, int[] numberOfCardsinHands, UnoBoard unoBoard){
+    public Background(int SCREEN_WIDTH, double SCREEN_SCALE_WIDTH, int SCREEN_HEIGHT, double SCREEN_SCALE_HEIGHT, int[] numberOfCardsinHands, UnoBoard unoBoard) {
         this.SCREEN_HEIGHT = SCREEN_HEIGHT;
         this.SCREEN_WIDTH = SCREEN_WIDTH;
+        this.SCREEN_SCALE_WIDTH = SCREEN_SCALE_WIDTH;
+        this.SCREEN_SCALE_HEIGHT = SCREEN_SCALE_HEIGHT;
         this.numberOfCardsinHands = numberOfCardsinHands;
         this.colorchanged = false;
         trianglebluex = new int[]{0, SCREEN_WIDTH / 2, SCREEN_WIDTH};
@@ -87,7 +91,8 @@ public class Background {
         this.g = unoBoard.getGraphics();
         this.unoBoard = unoBoard;
         server = unoBoard.server;
-        cardDrawer = new CardDrawer(server);
+        cardDrawer = new CardDrawer(server, SCREEN_SCALE_WIDTH, SCREEN_SCALE_HEIGHT);
+        font = new Font("Arial", Font.PLAIN, (int) Math.round(45 / SCREEN_SCALE_WIDTH));
     }
 
     /**
@@ -129,7 +134,7 @@ public class Background {
         g.fillPolygon(new Polygon(trianglex, triangley, 3));
         g.setColor(Color.black);
         g.setFont(font);
-        g.drawString((numberOfCardsinHands[player] + " cards left"), cardsLeftPositionsx[player], cardsLeftPositionsy[player]);
+        g.drawString((numberOfCardsinHands[player] + " cards left"), (int) Math.round(cardsLeftPositionsx[player] / SCREEN_SCALE_WIDTH), (int) Math.round(cardsLeftPositionsy[player] / SCREEN_SCALE_HEIGHT));
     }
 
     public CardDrawer getCardDrawer() {

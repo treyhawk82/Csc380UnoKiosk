@@ -4,11 +4,13 @@ public class Card {
     //fields
     private String cardColor;
     private int cardNum;
+    private String secondCard = "";
 
     //constructor
-    public Card(String cardColor, int cardNum) {
+    public Card(String cardColor, int cardNum, boolean secondCard) {
         this.cardColor = cardColor;
         this.cardNum = cardNum;
+        if (secondCard) this.secondCard = this.secondCard + "e";
     }
 
 
@@ -20,6 +22,10 @@ public class Card {
         return cardNum;
     }
     public int getSpecificCardNum(Card card) { return card.cardNum; }
+
+    public String getSecondCard() {
+        return secondCard;
+    }
     @Override
     public String toString() {
         return "\ncolor: " + cardColor + " number: " + cardNum ;
@@ -45,8 +51,12 @@ public class Card {
         if(cardColor.equalsIgnoreCase("wild + 4")){
             commCardString = "w";
         }
-        commCardString = commCardString + cardNum;
+        commCardString = commCardString + cardNum + secondCard;
         return commCardString;
+    }
+
+    public void changeSecondCard(String appendix) {
+        this.secondCard = appendix;
     }
 }
 

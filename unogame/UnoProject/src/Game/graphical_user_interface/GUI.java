@@ -10,6 +10,9 @@ public class GUI extends Canvas implements Runnable {
     public static final int SCREEN_WIDTH = 1920;
     public static final int SCREEN_HEIGHT = 1080;
 
+    public static double SCREEN_SCALE_WIDTH = 1;
+    public static double SCREEN_SCALE_HEIGHT = 1;
+
     private Thread thread;
     private boolean running = false;
     private GUIHandler guiHandler;
@@ -26,9 +29,9 @@ public class GUI extends Canvas implements Runnable {
     public GUI(Server server){
         guiHandler = new GUIHandler();
         this.server = server;
-        new Window(SCREEN_WIDTH, SCREEN_HEIGHT, "Test Game!", this);
+        new Window((int) Math.round(SCREEN_WIDTH / SCREEN_SCALE_WIDTH), (int) Math.round(SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT), "Test Game!", this);
 
-        unoBoard = new UnoBoard(SCREEN_WIDTH, SCREEN_HEIGHT, ID.UnoBoard, this);
+        unoBoard = new UnoBoard(SCREEN_WIDTH, SCREEN_SCALE_WIDTH, SCREEN_HEIGHT, SCREEN_SCALE_HEIGHT, ID.UnoBoard, this);
         guiHandler.addObject(unoBoard);
     }
 

@@ -86,11 +86,15 @@ public class CardDrawer {
     String lastColourSelected = "blue";
     Server server;
     GameLogic gameLogic;
+    double SCREEN_SCALE_WIDTH;
+    double SCREEN_SCALE_HEIGHT;
 
     boolean unoCalled[] = new boolean[4];
 
-    public CardDrawer(Server server) {
+    public CardDrawer(Server server, double SCREEN_SCALE_WIDTH, double SCREEN_SCALE_HEIGHT) {
         this.server = server;
+        this.SCREEN_SCALE_WIDTH = SCREEN_SCALE_WIDTH;
+        this.SCREEN_SCALE_HEIGHT = SCREEN_SCALE_HEIGHT;
         try {
             b0 = ImageIO.read(new File("src/Game/small/blue_0.png"));
             b1 = ImageIO.read(new File("src/Game/small/blue_1.png"));
@@ -188,15 +192,15 @@ public class CardDrawer {
     }
 
     public void drawCard_right(int x, int y, Graphics g){
-        g.drawImage(uno_cardback_right, x, y, 182, 130, null);
+        g.drawImage(uno_cardback_right, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), null);
     }
 
     public void drawCard_left(int x, int y, Graphics g){
-        g.drawImage(uno_cardback_left, x, y, 182, 130, null);
+        g.drawImage(uno_cardback_left, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), null);
     }
 
     public void drawCard(int x, int y, Graphics g){
-        g.drawImage(uno_cardback, x, y, 130, 182, null);
+        g.drawImage(uno_cardback, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
     }
 
 
@@ -261,132 +265,132 @@ public class CardDrawer {
 
     public void drawTopOfDiscardPile(int x, int y, Graphics g, String topOfDiscardPile, String lastColourSelected) {
         if(topOfDiscardPile.equals("b0")){
-            g.drawImage(b0, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b1")) {
-            g.drawImage(b1, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b2")) {
-            g.drawImage(b2, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b3")) {
-            g.drawImage(b3, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b4")) {
-            g.drawImage(b4, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b5")) {
-            g.drawImage(b5, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b6")) {
-            g.drawImage(b6, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b7")) {
-            g.drawImage(b7, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b8")) {
-            g.drawImage(b8, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b9")) {
-            g.drawImage(b9, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b10")) {
-            g.drawImage(b10, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b11")) {
-            g.drawImage(b11, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("b12")) {
-            g.drawImage(b12, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y0")) {
-            g.drawImage(y0, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y1")) {
-            g.drawImage(y1, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y2")) {
-            g.drawImage(y2, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y3")) {
-            g.drawImage(y3, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y4")) {
-            g.drawImage(y4, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y5")) {
-            g.drawImage(y5, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y6")) {
-            g.drawImage(y6, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y7")) {
-            g.drawImage(y7, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y8")) {
-            g.drawImage(y8, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y9")) {
-            g.drawImage(y9, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y10")) {
-            g.drawImage(y10, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y11")) {
-            g.drawImage(y11, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("y12")) {
-            g.drawImage(y12, x, y, 130, 182, null);
+            g.drawImage(b0, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b1") || topOfDiscardPile.equalsIgnoreCase("b1e")) {
+            g.drawImage(b1, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b2") || topOfDiscardPile.equalsIgnoreCase("b2e")) {
+            g.drawImage(b2, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b3") || topOfDiscardPile.equalsIgnoreCase("b3e")) {
+            g.drawImage(b3, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b4") || topOfDiscardPile.equalsIgnoreCase("b4e")) {
+            g.drawImage(b4, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b5") || topOfDiscardPile.equalsIgnoreCase("b5e")) {
+            g.drawImage(b5, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b6") || topOfDiscardPile.equalsIgnoreCase("b6e")) {
+            g.drawImage(b6, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b7") || topOfDiscardPile.equalsIgnoreCase("b7e")) {
+            g.drawImage(b7, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b8") || topOfDiscardPile.equalsIgnoreCase("b8e")) {
+            g.drawImage(b8, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b9") || topOfDiscardPile.equalsIgnoreCase("b9e")) {
+            g.drawImage(b9, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b10") || topOfDiscardPile.equalsIgnoreCase("b10e")) {
+            g.drawImage(b10, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b11") || topOfDiscardPile.equalsIgnoreCase("b11e")) {
+            g.drawImage(b11, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("b12") || topOfDiscardPile.equalsIgnoreCase("b12e")) {
+            g.drawImage(b12, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y0") || topOfDiscardPile.equalsIgnoreCase("y0e")) {
+            g.drawImage(y0, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y1") || topOfDiscardPile.equalsIgnoreCase("y1e")) {
+            g.drawImage(y1, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y2") || topOfDiscardPile.equalsIgnoreCase("y2e")) {
+            g.drawImage(y2, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y3") || topOfDiscardPile.equalsIgnoreCase("y3e")) {
+            g.drawImage(y3, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y4") || topOfDiscardPile.equalsIgnoreCase("y4e")) {
+            g.drawImage(y4, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y5") || topOfDiscardPile.equalsIgnoreCase("y5e")) {
+            g.drawImage(y5, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y6") || topOfDiscardPile.equalsIgnoreCase("y6e")) {
+            g.drawImage(y6, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y7") || topOfDiscardPile.equalsIgnoreCase("y7e")) {
+            g.drawImage(y7, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y8") || topOfDiscardPile.equalsIgnoreCase("y8e")) {
+            g.drawImage(y8, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y9") || topOfDiscardPile.equalsIgnoreCase("y9e")) {
+            g.drawImage(y9, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y10") || topOfDiscardPile.equalsIgnoreCase("y10e")) {
+            g.drawImage(y10, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y11") || topOfDiscardPile.equalsIgnoreCase("y11e")) {
+            g.drawImage(y11, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("y12") || topOfDiscardPile.equalsIgnoreCase("y12e")) {
+            g.drawImage(y12, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
         } else if (topOfDiscardPile.equals("g0")) {
-            g.drawImage(g0, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g1")) {
-            g.drawImage(g1, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g2")) {
-            g.drawImage(g2, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g3")) {
-            g.drawImage(g3, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g4")) {
-            g.drawImage(g4, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g5")) {
-            g.drawImage(g5, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g6")) {
-            g.drawImage(g6, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g7")) {
-            g.drawImage(g7, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g8")) {
-            g.drawImage(g8, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g9")) {
-            g.drawImage(g9, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g10")) {
-            g.drawImage(g10, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g11")) {
-            g.drawImage(g11, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("g12")) {
-            g.drawImage(g12, x, y, 130, 182, null);
+            g.drawImage(g0, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g1") || topOfDiscardPile.equalsIgnoreCase("g1e")) {
+            g.drawImage(g1, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g2") || topOfDiscardPile.equalsIgnoreCase("g2e")) {
+            g.drawImage(g2, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g3") || topOfDiscardPile.equalsIgnoreCase("g3e")) {
+            g.drawImage(g3, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g4") || topOfDiscardPile.equalsIgnoreCase("g4e")) {
+            g.drawImage(g4, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g5") || topOfDiscardPile.equalsIgnoreCase("g5e")) {
+            g.drawImage(g5, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g6") || topOfDiscardPile.equalsIgnoreCase("g6e")) {
+            g.drawImage(g6, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g7") || topOfDiscardPile.equalsIgnoreCase("g7e")) {
+            g.drawImage(g7, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g8") || topOfDiscardPile.equalsIgnoreCase("g8e")) {
+            g.drawImage(g8, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g9") || topOfDiscardPile.equalsIgnoreCase("g9e")) {
+            g.drawImage(g9, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g10") || topOfDiscardPile.equalsIgnoreCase("g10e")) {
+            g.drawImage(g10, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g11") || topOfDiscardPile.equalsIgnoreCase("g11e")) {
+            g.drawImage(g11, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("g12") || topOfDiscardPile.equalsIgnoreCase("g12e")) {
+            g.drawImage(g12, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
         } else if (topOfDiscardPile.equals("r0")) {
-            g.drawImage(r0, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r1")) {
-            g.drawImage(r1, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r2")) {
-            g.drawImage(r2, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r3")) {
-            g.drawImage(r3, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r4")) {
-            g.drawImage(r4, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r5")) {
-            g.drawImage(r5, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r6")) {
-            g.drawImage(r6, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r7")) {
-            g.drawImage(r7, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r8")) {
-            g.drawImage(r8, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r9")) {
-            g.drawImage(r9, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r10")) {
-            g.drawImage(r10, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r11")) {
-            g.drawImage(r11, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("r12")) {
-            g.drawImage(r12, x, y, 130, 182, null);
+            g.drawImage(r0, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r1") || topOfDiscardPile.equalsIgnoreCase("r1e")) {
+            g.drawImage(r1, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r2") || topOfDiscardPile.equalsIgnoreCase("r2e")) {
+            g.drawImage(r2, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r3") || topOfDiscardPile.equalsIgnoreCase("r3e")) {
+            g.drawImage(r3, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r4") || topOfDiscardPile.equalsIgnoreCase("r4e")) {
+            g.drawImage(r4, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r5") || topOfDiscardPile.equalsIgnoreCase("r5e")) {
+            g.drawImage(r5, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r6") || topOfDiscardPile.equalsIgnoreCase("r6e")) {
+            g.drawImage(r6, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r7") || topOfDiscardPile.equalsIgnoreCase("r7e")) {
+            g.drawImage(r7, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r8") || topOfDiscardPile.equalsIgnoreCase("r8e")) {
+            g.drawImage(r8, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r9") || topOfDiscardPile.equalsIgnoreCase("r9e")) {
+            g.drawImage(r9, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r10") || topOfDiscardPile.equalsIgnoreCase("r10e")) {
+            g.drawImage(r10, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r11") || topOfDiscardPile.equalsIgnoreCase("r11e")) {
+            g.drawImage(r11, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if (topOfDiscardPile.equals("r12") || topOfDiscardPile.equalsIgnoreCase("r12e")) {
+            g.drawImage(r12, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
         }
         //else if(topOfDiscardPile.equals("w13")){
-        //    g.drawImage(w13, x, y, 130, 182, null);
+        //    g.drawImage(w13, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int)Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
         //}
         //else if(topOfDiscardPile.equals("w14")){
-        //    g.drawImage(w14, x, y, 130, 182, null);
+        //    g.drawImage(w14, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int)Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
         //}
-        else if (topOfDiscardPile.equals("w13") && lastColourSelected.equalsIgnoreCase("blue")) {
-            g.drawImage(w13blue, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("w13") && lastColourSelected.equalsIgnoreCase("yellow")) {
-            g.drawImage(w13yellow, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("w13") && lastColourSelected.equalsIgnoreCase("green")) {
-            g.drawImage(w13green, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("w13") && lastColourSelected.equalsIgnoreCase("red")) {
-            g.drawImage(w13red, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("w14") && lastColourSelected.equalsIgnoreCase("blue")) {
-            g.drawImage(w14blue, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("w14") && lastColourSelected.equalsIgnoreCase("yellow")) {
-            g.drawImage(w14yellow, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("w14") && lastColourSelected.equalsIgnoreCase("green")) {
-            g.drawImage(w14green, x, y, 130, 182, null);
-        } else if (topOfDiscardPile.equals("w14") && lastColourSelected.equalsIgnoreCase("red")) {
-            g.drawImage(w14red, x, y, 130, 182, null);
+        else if ((topOfDiscardPile.equals("w13") || topOfDiscardPile.equalsIgnoreCase("w13e") || topOfDiscardPile.equalsIgnoreCase("w13f") || topOfDiscardPile.equalsIgnoreCase("w13g")) && lastColourSelected.equalsIgnoreCase("blue")) {
+            g.drawImage(w13blue, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if ((topOfDiscardPile.equals("w13") || topOfDiscardPile.equalsIgnoreCase("w13e") || topOfDiscardPile.equalsIgnoreCase("w13f") || topOfDiscardPile.equalsIgnoreCase("w13g")) && lastColourSelected.equalsIgnoreCase("yellow")) {
+            g.drawImage(w13yellow, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if ((topOfDiscardPile.equals("w13") || topOfDiscardPile.equalsIgnoreCase("w13e") || topOfDiscardPile.equalsIgnoreCase("w13f") || topOfDiscardPile.equalsIgnoreCase("w13g")) && lastColourSelected.equalsIgnoreCase("green")) {
+            g.drawImage(w13green, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if ((topOfDiscardPile.equals("w13") || topOfDiscardPile.equalsIgnoreCase("w13e") || topOfDiscardPile.equalsIgnoreCase("w13f") || topOfDiscardPile.equalsIgnoreCase("w13g")) && lastColourSelected.equalsIgnoreCase("red")) {
+            g.drawImage(w13red, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if ((topOfDiscardPile.equals("w14") || topOfDiscardPile.equalsIgnoreCase("w14e") || topOfDiscardPile.equalsIgnoreCase("w14f") || topOfDiscardPile.equalsIgnoreCase("w14g")) && lastColourSelected.equalsIgnoreCase("blue")) {
+            g.drawImage(w14blue, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if ((topOfDiscardPile.equals("w14") || topOfDiscardPile.equalsIgnoreCase("w14e") || topOfDiscardPile.equalsIgnoreCase("w14f") || topOfDiscardPile.equalsIgnoreCase("w14g")) && lastColourSelected.equalsIgnoreCase("yellow")) {
+            g.drawImage(w14yellow, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if ((topOfDiscardPile.equals("w14") || topOfDiscardPile.equalsIgnoreCase("w14e") || topOfDiscardPile.equalsIgnoreCase("w14f") || topOfDiscardPile.equalsIgnoreCase("w14g")) && lastColourSelected.equalsIgnoreCase("green")) {
+            g.drawImage(w14green, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
+        } else if ((topOfDiscardPile.equals("w14") || topOfDiscardPile.equalsIgnoreCase("w14e") || topOfDiscardPile.equalsIgnoreCase("w14f") || topOfDiscardPile.equalsIgnoreCase("w14g")) && lastColourSelected.equalsIgnoreCase("red")) {
+            g.drawImage(w14red, (int) Math.round(x / SCREEN_SCALE_WIDTH), (int) Math.round(y / SCREEN_SCALE_HEIGHT), (int) Math.round(130 / SCREEN_SCALE_WIDTH), (int) Math.round(182 / SCREEN_SCALE_HEIGHT), null);
         }
     }
 

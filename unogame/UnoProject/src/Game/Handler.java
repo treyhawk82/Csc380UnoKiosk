@@ -43,70 +43,74 @@ public class Handler {
      **/
     public void addCards() {
          for (i =0; i <= 9; i++) {
-             Card c = new Card("Yellow", i);
+             Card c = new Card("Yellow", i, false);
             deck.push(c);
          }
          for (i =1; i <= 9; i++) {
-             Card c = new Card("Yellow", i);
+             Card c = new Card("Yellow", i, true);
              deck.push(c);
          }
          for (i =0; i <= 9; i++) {
-             Card c = new Card("Green", i);
+             Card c = new Card("Green", i, false);
              deck.push(c);
          }
          for (i =1; i <= 9; i++) {
-             Card c = new Card("Green", i);
+             Card c = new Card("Green", i, true);
              deck.push(c);
          }
          for (i =0; i <= 9; i++) {
-             Card c = new Card("Blue", i);
+             Card c = new Card("Blue", i, false);
              deck.push(c);
          }
          for (i =1; i <= 9; i++) {
-             Card c = new Card("Blue", i);
+             Card c = new Card("Blue", i, true);
              deck.push(c);
          }
          for (i =0; i <= 9; i++) {
-             Card c = new Card("Red", i);
+             Card c = new Card("Red", i, false);
              deck.push(c);
          }
          for (i =1; i <= 9; i++) {
-             Card c = new Card("Red", i);
+             Card c = new Card("Red", i, true);
              deck.push(c);
          }
 
-         deck.push(new Card("Yellow" , 10));    //skip
-         deck.push(new Card("Yellow" , 10));    //skip
-         deck.push(new Card("Green" , 10));     //skip
-         deck.push(new Card("Green" , 10));     //skip
-         deck.push(new Card("Blue" , 10));      //skip
-         deck.push(new Card("Blue" , 10));      //skip
-         deck.push(new Card("Red" , 10));       //ski[
-         deck.push(new Card("Red" , 10));       //skip
-         deck.push(new Card("Yellow" , 11));    //draw2
-         deck.push(new Card("Yellow" , 11));    //draw2
-         deck.push(new Card("Green" , 11));     //draw2
-         deck.push(new Card("Green" , 11));     //draw2
-         deck.push(new Card("Blue" , 11));      //draw2
-         deck.push(new Card("Blue" , 11));      //draw2
-         deck.push(new Card("Red" , 11));       //draw2[
-         deck.push(new Card("Red" , 11));       //draw2
-         deck.push(new Card("Yellow" , 12));    //reverse
-         deck.push(new Card("Yellow" , 12));    //reverse
-         deck.push(new Card("Green" , 12));     //reverse
-         deck.push(new Card("Green" , 12));     //reverse
-         deck.push(new Card("Blue" , 12));      //reverse
-         deck.push(new Card("Blue" , 12));      //reverse
-         deck.push(new Card("Red" , 12));       //reverse[
-         deck.push(new Card("Red" , 12));       //reverse
-         deck.push(new Card("Wild", 13));       //wild
-         deck.push(new Card("Wild", 13));       //wild
-         deck.push(new Card("Wild", 13));       //wild
-         deck.push(new Card("Wild", 13));       //wild
-         deck.push(new Card("Wild + 4", 14));       //wild+4
-         deck.push(new Card("Wild + 4", 14));       //wild+4
-         deck.push(new Card("Wild + 4", 14));       //wild+4
-         deck.push(new Card("Wild + 4", 14));       //wild+4
+        deck.push(new Card("Yellow", 10, false));    //skip
+        deck.push(new Card("Yellow", 10, true));    //skip
+        deck.push(new Card("Green", 10, false));     //skip
+        deck.push(new Card("Green", 10, true));     //skip
+        deck.push(new Card("Blue", 10, false));      //skip
+        deck.push(new Card("Blue", 10, true));      //skip
+        deck.push(new Card("Red", 10, false));       //ski[
+        deck.push(new Card("Red", 10, true));       //skip
+        deck.push(new Card("Yellow", 11, false));    //draw2
+        deck.push(new Card("Yellow", 11, true));    //draw2
+        deck.push(new Card("Green", 11, false));     //draw2
+        deck.push(new Card("Green", 11, true));     //draw2
+        deck.push(new Card("Blue", 11, false));      //draw2
+        deck.push(new Card("Blue", 11, true));      //draw2
+        deck.push(new Card("Red", 11, false));       //draw2[
+        deck.push(new Card("Red", 11, true));       //draw2
+        deck.push(new Card("Yellow", 12, false));    //reverse
+        deck.push(new Card("Yellow", 12, true));    //reverse
+        deck.push(new Card("Green", 12, false));     //reverse
+        deck.push(new Card("Green", 12, true));     //reverse
+        deck.push(new Card("Blue", 12, false));      //reverse
+        deck.push(new Card("Blue", 12, true));      //reverse
+        deck.push(new Card("Red", 12, false));       //reverse[
+        deck.push(new Card("Red", 12, true));       //reverse
+        deck.push(new Card("Wild", 13, false));       //wild
+        deck.push(new Card("Wild", 13, true));       //wild
+        Card w3 = new Card("Wild", 13, false);
+        w3.changeSecondCard("f");
+        Card w4 = new Card("Wild", 13, false);
+        w4.changeSecondCard("g");
+        deck.push(new Card("Wild + 4", 14, false));       //wild+4
+        deck.push(new Card("Wild + 4", 14, true));       //wild+4
+        Card w7 = new Card("Wild + 4", 14, false);
+        w7.changeSecondCard("f");
+        Card w8 = new Card("Wild + 4", 14, false);
+        w8.changeSecondCard("g");
     }
 
     public void shuffleDeck() {
