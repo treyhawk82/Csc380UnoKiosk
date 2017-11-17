@@ -87,4 +87,8 @@ public class UnoBoard extends GameObject {
     public GUI getGui() {
         return gui;
     }
+
+    public CardDrawer getCardDrawer() {
+        return background.getCardDrawer();
+    }
 }

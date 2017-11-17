@@ -267,6 +267,10 @@ public class GameLogic implements Runnable {
         deck.addCards();
         deck.shuffleDeck();
         turnOfPlayer = 0;
+        for (boolean calledUnos : calledUno
+                ) {
+            calledUnos = false;
+        }
         turnStartTime = System.currentTimeMillis();
         for (int i = 0; i <= 6; i++) {
             player_blue.dealCard(deck);
@@ -377,5 +381,9 @@ public class GameLogic implements Runnable {
 
     public void userDisconnected(int id) {
         connectedUser[id] = false;
+    }
+
+    public boolean[] getCalledUno() {
+        return calledUno;
     }
 }

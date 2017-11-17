@@ -43,6 +43,7 @@ public class Main{
         Thread gameLogicThread = new Thread(gameLogic, "GameLogic");
         gameLogicThread.start();
         gameLogic.setServer(server);
+        gui.getCardDrawer().setGameLogic(gameLogic);
     }
 
 

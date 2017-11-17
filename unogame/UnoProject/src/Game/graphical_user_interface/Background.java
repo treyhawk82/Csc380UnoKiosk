@@ -132,5 +132,9 @@ public class Background {
         g.drawString((numberOfCardsinHands[player] + " cards left"), cardsLeftPositionsx[player], cardsLeftPositionsy[player]);
     }
 
+    public CardDrawer getCardDrawer() {
+        return cardDrawer;
+    }
+
 
 }

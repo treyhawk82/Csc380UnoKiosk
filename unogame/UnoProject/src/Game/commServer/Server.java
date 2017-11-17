@@ -67,11 +67,7 @@ public class Server implements Runnable{
     public void run(){
         connectionHandler = new ConnectionHandler(commstring, NUMBER_OF_PLAYERS);
         connectionHandler.start();
-        //just some random data to send to the clients atm TO-DO
-        //for(int i = 0; i < NUMBER_OF_PLAYERS; i++){
-            //top of discard pile - player number - player 0 # of cards - p1 # of cards - p2 # of cards - p3 # of cards - player hand
-        //    commstring[i] = "y4-" + i + "-3-5-4-6-y1xg3xr0";
-        //}
+
         // saves the initialisation time of the method in order to restrain the method to only update every 1000ms
         long lastTime = System.currentTimeMillis();
         connectionHandler.setGameLogic(gameLogic);

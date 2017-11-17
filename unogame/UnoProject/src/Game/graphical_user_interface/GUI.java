@@ -16,6 +16,7 @@ public class GUI extends Canvas implements Runnable {
     private Server server;
     private long lastTime2;
     private String lastColourSelected = "blue";
+    private UnoBoard unoBoard;
 
 
     public String[] hands = {};
@@ -27,7 +28,8 @@ public class GUI extends Canvas implements Runnable {
         this.server = server;
         new Window(SCREEN_WIDTH, SCREEN_HEIGHT, "Test Game!", this);
 
-        guiHandler.addObject(new UnoBoard(SCREEN_WIDTH, SCREEN_HEIGHT, ID.UnoBoard, this));
+        unoBoard = new UnoBoard(SCREEN_WIDTH, SCREEN_HEIGHT, ID.UnoBoard, this);
+        guiHandler.addObject(unoBoard);
     }
 
 
@@ -124,5 +126,9 @@ public class GUI extends Canvas implements Runnable {
 
     public Server getServer() {
         return server;
+    }
+
+    public CardDrawer getCardDrawer() {
+        return unoBoard.getCardDrawer();
     }
 }

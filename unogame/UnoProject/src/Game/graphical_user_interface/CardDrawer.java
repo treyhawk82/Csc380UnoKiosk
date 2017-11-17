@@ -1,5 +1,6 @@
 package Game.graphical_user_interface;
 
+import Game.GameLogic;
 import Game.commServer.Server;
 
 import javax.imageio.ImageIO;
@@ -80,9 +81,13 @@ public class CardDrawer {
     BufferedImage uno_cardback;
     BufferedImage uno_cardback_right;
     BufferedImage uno_cardback_left;
+    BufferedImage uno_called;
     GUI gui;
     String lastColourSelected = "blue";
     Server server;
+    GameLogic gameLogic;
+
+    boolean unoCalled[] = new boolean[4];
 
     public CardDrawer(Server server) {
         this.server = server;
@@ -158,6 +163,13 @@ public class CardDrawer {
             w14yellow = ImageIO.read(new File("src/Game/small/wild_pick_four_yellow.png"));
             w14green = ImageIO.read(new File("src/Game/small/wild_pick_four_green.png"));
             w14red = ImageIO.read(new File("src/Game/small/wild_pick_four_red.png"));
+
+            uno_called = ImageIO.read(new File("src/Game/small/uno_called.png"));
+
+            for (boolean calledUnos : unoCalled
+                    ) {
+                calledUnos = false;
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -171,6 +183,8 @@ public class CardDrawer {
         drawCardsPlayerYellow(g, numberOfCardsinHands);
         drawDeck(g);
         drawTopOfDiscardPile(810, 449, g, topOfDiscardPile, lastColourSelected);
+        drawCalledUnos(g);
+
     }
 
     public void drawCard_right(int x, int y, Graphics g){
@@ -374,5 +388,25 @@ public class CardDrawer {
         } else if (topOfDiscardPile.equals("w14") && lastColourSelected.equalsIgnoreCase("red")) {
             g.drawImage(w14red, x, y, 130, 182, null);
         }
+    }
+
+    public void drawCalledUnos(Graphics g) {
+        unoCalled = gameLogic.getCalledUno();
+        if (unoCalled[0]) {
+            g.drawImage(uno_called, 615, 110, 106, 108, null);
+        }
+        if (unoCalled[1]) {
+            g.drawImage(uno_called, 1618, 195, 106, 108, null);
+        }
+        if (unoCalled[2]) {
+            g.drawImage(uno_called, 615, 788, 106, 108, null);
+        }
+        if (unoCalled[3]) {
+            g.drawImage(uno_called, 110, 195, 106, 108, null);
+        }
+    }
+
+    public void setGameLogic(GameLogic gameLogic) {
+        this.gameLogic = gameLogic;
     }
 }
