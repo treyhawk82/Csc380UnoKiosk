@@ -58,15 +58,10 @@ public class UnoBoard extends GameObject {
             for (int i = 0; i < hands.length; i++) {
                 String[] cardsInHand = hands[i].split("x");
                 numberOfCardsinHands[i] = cardsInHand.length;
-
-
             }
         server = gui.getServer();
         lastColourSelected = server.getLastColourSelected();
         background.drawBackground(g, lastColourSelected);
-
-
-
     }
 
 

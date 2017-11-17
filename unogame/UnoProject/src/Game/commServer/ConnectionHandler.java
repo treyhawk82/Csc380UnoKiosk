@@ -8,8 +8,6 @@ import org.java_websocket.server.WebSocketServer;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 public class ConnectionHandler extends WebSocketServer  {
     /**
@@ -33,7 +31,7 @@ public class ConnectionHandler extends WebSocketServer  {
      * saves the actions the players have taken to give them to the game to process
      */
     private String[] playerActions;
-    private long[] lastActionTime;
+    private long[] lastActionTime = {System.currentTimeMillis(), System.currentTimeMillis(), System.currentTimeMillis(), System.currentTimeMillis()};
     /**
      * saves the hands of our current players
      */
@@ -55,11 +53,11 @@ public class ConnectionHandler extends WebSocketServer  {
         currentPlayerIPs = new String[NUMBER_OF_PLAYERS];
         conns = new ArrayList<>();
         playerActions = new String[4];
-        lastActionTime = new long[4];
         this.hands = hands;
         for(int i = 0; i < NUMBER_OF_PLAYERS; i++){
             currentPlayerIPs[i] = "0";
             lastConnectionTime[i] = System.currentTimeMillis();
+            lastActionTime[i] = System.currentTimeMillis();
         }
     }
 
@@ -71,6 +69,17 @@ public class ConnectionHandler extends WebSocketServer  {
      */
     @Override
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
+        boolean isAlreadyConnected = false;
+        for (WebSocket con : conns
+                ) {
+            if (!isAlreadyConnected && con.getRemoteSocketAddress().getAddress().getHostAddress().equalsIgnoreCase(conn.getRemoteSocketAddress().getAddress().getHostAddress())) {
+                System.out.println("removed: " + con.getRemoteSocketAddress().getAddress().getHostAddress());
+                conn.send("already connected");
+                conn.close();
+                isAlreadyConnected = true;
+            }
+        }
+
         conns.add(conn);
         String currentIP = conn.getRemoteSocketAddress().getAddress().getHostAddress();
         boolean filled = false;
@@ -119,14 +128,16 @@ public class ConnectionHandler extends WebSocketServer  {
         Date currenttime = new Date(System.currentTimeMillis());
         System.out.println("Message from client " + conn.getRemoteSocketAddress().getAddress().getHostAddress() +": " + message + " at " + currenttime.toString());
         //checks for inactive devices
+
         for (int i = 0; i < conns.size(); i++) {
-            if (conn == conns.get(i)) {
+            WebSocket con = conns.get(i);
+            if (conn == con) {
                 lastConnectionTime[i] = System.currentTimeMillis();
             }
             if (lastConnectionTime[i] < System.currentTimeMillis() - 5000) {
                 conns.remove(i);
                 gameLogic.userDisconnected(i);
-                conn.closeConnection(123, "Timeout");
+                con.close();
                 System.out.println("removed Connection: " + i);
             }
         }
@@ -136,7 +147,7 @@ public class ConnectionHandler extends WebSocketServer  {
             for (int i = 0; i < conns.size(); i++) {
                 if (conn == conns.get(i)) {
                     playerActions[i] = message;
-                    lastActionTime[i] = System.currentTimeMillis();
+                    lastConnectionTime[i] = System.currentTimeMillis();
                 }
             }
         }
@@ -202,5 +213,15 @@ public class ConnectionHandler extends WebSocketServer  {
 
     public void setGameLogic(GameLogic gameLogic) {
         this.gameLogic = gameLogic;
+    }
+
+    public void runConnectionCheck() {
+        for (int i = 0; i < conns.size(); i++) {
+            if (lastConnectionTime[i] < System.currentTimeMillis() - 5000) {
+                System.out.println("removed connection: " + i);
+                conns.get(i).close();
+
+            }
+        }
     }
 }

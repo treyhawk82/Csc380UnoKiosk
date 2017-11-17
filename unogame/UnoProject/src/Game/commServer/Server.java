@@ -130,7 +130,8 @@ public class Server implements Runnable{
     }
 
     public long getlastActionTime(int playerNumber) {
-        return connectionHandler.getLastActionTime(playerNumber);
+        //return connectionHandler.getLastActionTime(playerNumber);
+        return System.currentTimeMillis();
     }
 
     public String getPlayerAction(int playerNumber) {

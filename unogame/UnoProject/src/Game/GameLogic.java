@@ -267,9 +267,8 @@ public class GameLogic implements Runnable {
         deck.addCards();
         deck.shuffleDeck();
         turnOfPlayer = 0;
-        for (boolean calledUnos : calledUno
-                ) {
-            calledUnos = false;
+        for (int i = 0; i < calledUno.length; i++) {
+            calledUno[i] = false;
         }
         turnStartTime = System.currentTimeMillis();
         for (int i = 0; i <= 6; i++) {

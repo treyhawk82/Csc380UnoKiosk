@@ -33,7 +33,7 @@ public class Background {
     private long time = System.currentTimeMillis();
 
     private final Color blue = new Color(0, 185, 217);
-    private final Color highlightBlue = new Color(0, 195, 229);
+    private final Color highlightBlue = new Color(20, 205, 239);
     private final Color yellow = new Color(230, 211, 83);
     private final Color highlightYellow = new Color(247, 227, 89);
     private final Color green = new Color(17,196,125);
