@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="eng">
 <head>
-<title>Player 1</title>
+<title>Player</title>
 
 <head charset="utf-8">
 	
@@ -9,13 +9,11 @@
 body{
 background-color:#000000;
 }
-
 div{
-width: 150px;
-height: 150px;
-overflow: scroll;
+width: 1400px;
+height: 250px;
+overflow-x: scroll;
 }
-
 </style>
 </head>
 <body>
@@ -27,9 +25,132 @@ overflow: scroll;
 </p>
 
 <p align="center" style="">
-<button type="button" onclick="select()" id="select" style="padding: 5% 10%; background-color:green; color:white; text-decoration: none;">Play Card</button>
+<button type="button" onclick="play()" id="select" style="padding: 5% 10%; background-color:green; color:white; text-decoration: none;">Play Card</button>
 </p>
 
+<br/>
+<br/>
+<div>
+<img src="small/blue_0.png" id="B0" class="blue 0" onclick="select(B0,topOfDiscardPile)" style="display:inline; border:10px; border-color:green;" name="">
+<img src="small/blue_1.png" id="B1" class="blue 1" onclick="select(B1,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_2.png" id="B2" class="blue 2" onclick="select(B2,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_3.png" id="B3" class="blue 3" onclick="select(B3,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_4.png" id="B4" class="blue 4" onclick="select(B4,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_5.png" id="B5" class="blue 5" onclick="select(B5,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_6.png" id="B6" class="blue 6" onclick="select(B6,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_7.png" id="B7" class="blue 7" onclick="select(B7,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_8.png" id="B8" class="blue 8" onclick="select(B8,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_9.png" id="B9" class="blue 9" onclick="select(B9,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_picker.png" id="BP" class="blue draw" onclick="select(BP,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_reverse.png" id="BR" class="blue reverse" onclick="select(BR,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_skip.png" id="BS" class="blue skip" onclick="select(BS,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_1.png" id="B1e" class="blue 1" onclick="select(B1e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_2.png" id="B2e" class="blue 2" onclick="select(B2e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_3.png" id="B3e" class="blue 3" onclick="select(B3e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_4.png" id="B4e" class="blue 4" onclick="select(B4e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_5.png" id="B5e" class="blue 5" onclick="select(B5e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_6.png" id="B6e" class="blue 6" onclick="select(B6e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_7.png" id="B7e" class="blue 7" onclick="select(B7e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_8.png" id="B8e" class="blue 8" onclick="select(B8e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_9.png" id="B9e" class="blue 9" onclick="select(B9e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_picker.png" id="BPe" class="blue draw" onclick="select(BPe,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_reverse.png" id="BRe" class="blue reverse" onclick="select(BRe,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_skip.png" id="BSe" class="blue skip" onclick="select(BSe,topOfDiscardPile)" style="display:inline" name="">
+
+<img src="small/red_0.png" id="R0" class="red 0" onclick="select(R0,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_1.png" id="R1" class="red 1" onclick="select(R1,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_2.png" id="R2" class="red 2" onclick="select(R2,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_3.png" id="R3" class="red 3" onclick="select(R3,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_4.png" id="R4" class="red 4" onclick="select(R4,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_5.png" id="R5" class="red 5" onclick="select(R5,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_6.png" id="R6" class="red 6" onclick="select(R6,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_7.png" id="R7" class="red 7" onclick="select(R7,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_8.png" id="R8" class="red 8" onclick="select(R8,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_9.png" id="R9" class="red 9" onclick="select(R9,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_picker.png" id="RP" class="red draw" onclick="select(RP,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_reverse.png" id="RR" class="red reverse" onclick="select(RR,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_skip.png" id="RS" class="red skip" onclick="select(RS,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_1.png" id="R1e" class="red 1" onclick="select(R1e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_2.png" id="R2e" class="red 2" onclick="select(R2e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_3.png" id="R3e" class="red 3" onclick="select(R3e,topOfDiscardPile)" style="display:inline" name=""> 
+<img src="small/red_4.png" id="R4e" class="red 4" onclick="select(R4e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_5.png" id="R5e" class="red 5" onclick="select(R5e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_6.png" id="R6e" class="red 6" onclick="select(R6e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_7.png" id="R7e" class="red 7" onclick="select(R7e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_8.png" id="R8e" class="red 8" onclick="select(R8e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_9.png" id="R9e" class="red 9" onclick="select(R9e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_picker.png" id="RPe" class="red draw" onclick="select(RPe,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_reverse.png" id="RRe" class="red reverse" onclick="select(RRe,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_skip.png" id="RSe" class="red skip" onclick="select(RSe,topOfDiscardPile)" style="display:inline" name=""> 
+
+
+<img src="small/green_0.png" id="G0" class="green 0"  onclick="select(G0,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_1.png" id="G1" class="green 1" onclick="select(G1,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_2.png" id="G2" class="green 2" onclick="select(G2,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_3.png" id="G3" class="green 3" onclick="select(G3,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_4.png" id="G4" class="green 4" onclick="select(G4,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_5.png" id="G5" class="green 5" onclick="select(G5,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_6.png" id="G6" class="green 6" onclick="select(G6,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_7.png" id="G7" class="green 7" onclick="select(G7,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_8.png" id="G8" class="green 8" onclick="select(G8,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_9.png" id="G9" class="green 9" onclick="select(G9,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_picker.png" id="GP" class="green draw" onclick="select(GP,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_reverse.png" id="GR" class="green reverse" onclick="select(GR,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_skip.png" id="GS" class="green skip" onclick="select(GS,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_1.png" id="G1e" class="green 1" onclick="select(G1e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_2.png" id="G2e" class="green 2" onclick="select(G2e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_3.png" id="G3e" class="green 3" onclick="select(G3e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_4.png" id="G4e" class="green 4" onclick="select(G4e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_5.png" id="G5e" class="green 5" onclick="select(G5e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_6.png" id="G6e" class="green 6" onclick="select(G6e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_7.png" id="G7e" class="green 7" onclick="select(G7e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_8.png" id="G8e" class="green 8" onclick="select(G8e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_9.png" id="G9e" class="green 9" onclick="select(G9e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_picker.png" id="GPe" class="green draw" onclick="select(GPe,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_reverse.png" id="GRe" class="green reverse" onclick="select(GRe,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_skip.png" id="GSe" class="green skip" onclick="select(GSe,topOfDiscardPile)" style="display:inline" name="">
+
+
+<img src="small/yellow_0.png" id="Y0" class="yellow 0" onclick="select(Y0,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_1.png" id="Y1" class="yellow 1" onclick="select(Y1,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_2.png" id="Y2" class="yellow 2" onclick="select(Y2,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_3.png" id="Y3" class="yellow 3" onclick="select(Y3,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_4.png" id="Y4" class="yellow 4" onclick="select(Y4,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_5.png" id="Y5" class="yellow 5" onclick="select(Y5,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_6.png" id="Y6" class="yellow 6" onclick="select(Y6,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_7.png" id="Y7" class="yellow 7" onclick="select(Y7,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_8.png" id="Y8" class="yellow 8" onclick="select(Y8,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_9.png" id="Y9" class="yellow 9" onclick="select(Y9,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_picker.png" id="YP" class="yellow draw" onclick="select(YP,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_reverse.png" id="YR" class="yellow reverse" onclick="select(YR,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_skip.png" id="YS" class="yellow skip" onclick="select(YS,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_1.png" id="Y1e" class="yellow 1" onclick="select(Y1e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_2.png" id="Y2e" class="yellow 2" onclick="select(Y2e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_3.png" id="Y3e" class="yellow 3" onclick="select(Y3e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_4.png" id="Y4e" class="yellow 4" onclick="select(Y4e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_5.png" id="Y5e" class="yellow 5" onclick="select(Y5e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_6.png" id="Y6e" class="yellow 6" onclick="select(Y6e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_7.png" id="Y7e" class="yellow 7" onclick="select(Y7e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_8.png" id="Y8e" class="yellow 8" onclick="select(Y8e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_9.png" id="Y9e" class="yellow 9" onclick="select(Y9e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_picker.png" id="YPe" class="yellow draw" onclick="select(YPe,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_reverse.png" id="YRe" class="yellow reverse" onclick="select(YRe,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_skip.png" id="YSe" class="yellow skip" onclick="select(YSe,topOfDiscardPile)" style="display:inline" name="">
+
+<img src="small/wild_pick_four.png" id="W14" class="wild" onclick="select(W1,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_pick_four.png" id="W14e" class="wild" onclick="select(W2,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_pick_four.png" id="W14f" class="wild" onclick="select(W3,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_pick_four.png" id="W14g" class="wild" onclick="select(W4,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_color_changer.png" id="W13" class="wild" onclick="select(W5,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_color_changer.png" id="W13e" class="wild" onclick="select(W6,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_color_changer.png" id="W13f" class="wild" onclick="select(W7,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_color_changer.png" id="W13g" class="wild" onclick="select(W8,topOfDiscardPile)" style="display:inline" name="">
+
+</div>
+<!-- test images
+<img src="small/wild_pick_four.png" id="W1" class="wild" onclick="test()" style="display:inline; border:5px solid green">
+<img src="small/wild_pick_four.png" id="W1" class="wild" onclick="test()" style="display:inline; border:5px solid red">
+-->
 <script>
 var connection = new WebSocket('ws://127.0.0.1:4444');
 var actions = 'No action taken';
@@ -45,21 +166,15 @@ var playerHand;
 var cardsArray;
 var isTurnOfPlayer;
 
-function uno() {
-    window.alert(playerNumber);
-}
 
 connection.onopen = function () {
 console.log('Connected!');
 connection.send('Ping'); // Send the message 'Ping' to the server
 };
-
 // Log errors
 connection.onerror = function (error) {
 console.log('WebSocket Error ' + error);
 };
-
-
 // Log messages from the server
 connection.onmessage = function (e) {
 console.log('Server: ' + e.data);
@@ -74,8 +189,6 @@ player3NoOfCards = serverStringArray[5];
 playerHand = serverStringArray[6];
 isTurnOfPlayer = serverStringArray[7];
 cardsArray = playerHand.split('x');
-
-
 console.log(serverString);
 console.log(topOfDiscardPile + " = top of discard pile");
 console.log(playerNumber + " = current player number");
@@ -89,17 +202,45 @@ console.log(cardsArray[i] + " = card #" + i);
 }
 console.log(isTurnOfPlayer);
 };
-
 var colours = ['#00D7FC', '#FF6866', '#FFEA5C', '#35FFAF'];
-
 setInterval(function () {
+console.log('test');
 connection.send('update');
 document.body.style.backgroundColor = colours[playerNumber];
 }, 2000);
+
+function uno() { 
+    if(player0NoOfCards == 1 || player1NoOfCards == 1 || player2NoOfCards == 1 || player3NoOfCards == 1){
+		connection.send('Uno');
+	}
+}
+var comparable = true;
+function select(x,y){
+	document.getElementsByName("selected").name="";
+	if(comparable == true){
+	document.getElementById("x").style="display:inline; border:10px; border-color:green;";
+	}else{
+	document.getElementById("x").style="display:inline; border:10px; border-color:red;";
+	}
+	window.alert("test");
+}
+function play(){
+
+}
+function test(){
+	window.alert("test");
+}
 </script>
 
-<div>
-
-</div>
-
 </html>
+© 2017 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
