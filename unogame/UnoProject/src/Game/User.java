@@ -18,13 +18,15 @@ public class User extends Player {
 
     public Card playTurn() {
         long lastActionTime = gameLogic.getActionTimeOfPlayer(id);
-        while (lastActionTime < gameLogic.getTurnStartTime()) {
-            if (gameLogic.getLastConnectionTime(id) > System.currentTimeMillis() - 5000) {
-
-            }
+        while (lastActionTime < gameLogic.getTurnStartTime() && gameLogic.checkIfStillConnected(id)) {
+            int i = 0;
         }
-        String playerAction = server.getPlayerAction(id);
-        String actionArray[] = playerAction.split("-");
-        return new Card("to-do", 42, false);
+        if (!gameLogic.checkIfStillConnected(id)) {
+            return new Card("disconnected", 123, false);
+        } else {
+            String playerAction = server.getPlayerAction(id);
+            String actionArray[] = playerAction.split("-");
+            return new Card("to-do", 42, false);
+        }
     }
 }

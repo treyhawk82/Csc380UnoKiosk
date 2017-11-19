@@ -106,9 +106,17 @@ public class ConnectionHandler extends WebSocketServer  {
      */
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
+        int connectionNumber = 0;
+        int counter = 0;
+        for (WebSocket con : conns
+                ) {
+            if (con == conn) connectionNumber = counter;
+            counter++;
+        }
         conns.remove(conn);
         String currentIP = conn.getRemoteSocketAddress().getAddress().getHostAddress();
         System.out.println("Closed connection to " + conn.getRemoteSocketAddress().getAddress().getHostAddress());
+        gameLogic.userDisconnected(connectionNumber);
         for (int i = 0; i < NUMBER_OF_PLAYERS; i++){
             if(currentPlayerIPs[i].equals(currentIP))currentPlayerIPs[i] = null;
         }
@@ -223,9 +231,15 @@ public class ConnectionHandler extends WebSocketServer  {
         for (int i = 0; i < conns.size(); i++) {
             if (lastConnectionTime[i] < System.currentTimeMillis() - 5000) {
                 System.out.println("removed connection: " + i);
-                conns.get(i).close();
-
+                WebSocket connection = conns.get(i);
+                conns.remove(i);
+                disconnectPlayerFromGameLogic(i);
+                connection.close();
             }
         }
+    }
+
+    public void disconnectPlayerFromGameLogic(int i) {
+        gameLogic.userDisconnected(i);
     }
 }

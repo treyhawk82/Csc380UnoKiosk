@@ -168,11 +168,13 @@ public class GameLogic implements Runnable {
         if (!connectedUser[turnOfPlayer]) {
             playCard = ai[turnOfPlayer].playTurn();
             skipDraw2ReverseWinChecker(playCard, ai[turnOfPlayer].hand, turnOfPlayer);
+            turnOver();
         } else {
             playCard = users[turnOfPlayer].playTurn();
-            skipDraw2ReverseWinChecker(playCard, users[turnOfPlayer].hand, turnOfPlayer);
+            if (!playCard.getCardColor().equalsIgnoreCase("disconnected")) {
+                skipDraw2ReverseWinChecker(playCard, users[turnOfPlayer].hand, turnOfPlayer);
+            }
         }
-        turnOver();
     }
 
     /**
@@ -382,6 +384,10 @@ public class GameLogic implements Runnable {
 
     public void userDisconnected(int id) {
         connectedUser[id] = false;
+    }
+
+    public boolean checkIfStillConnected(int player_id) {
+        return connectedUser[player_id];
     }
 
     public boolean[] getCalledUno() {
