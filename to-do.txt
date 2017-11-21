@@ -10,5 +10,6 @@ What's missing?
 - comments, I'm sorry :^)
 - the special effect of the first card on the discard pile is currently not considered
 - merge the play() and checkHandForPlayableCard() methods at some point, see comment on that
+- AI calls and calls out uno only in their turn - maybe change that later (low prio)
 - ...
 - TBC
