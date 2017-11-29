@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/commServer/Server.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/commServer/Server.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/GameLogic.java" afterPath="$PROJECT_DIR$/src/Game/GameLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/commServer/Server.java" afterPath="$PROJECT_DIR$/src/Game/commServer/Server.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,22 +45,22 @@
       <file leaf-file-name="GameLogic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/GameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+            <state relative-caret-position="157">
+              <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#12578#12579#0" expanded="true" />
-                <element signature="e#12619#12620#0" expanded="true" />
-                <element signature="e#12678#12679#0" expanded="true" />
-                <element signature="e#12725#12726#0" expanded="true" />
-                <element signature="e#12853#12854#0" expanded="true" />
-                <element signature="e#12897#12898#0" expanded="true" />
-                <element signature="e#12953#12954#0" expanded="true" />
-                <element signature="e#13001#13002#0" expanded="true" />
-                <element signature="e#13067#13068#0" expanded="true" />
-                <element signature="e#13120#13121#0" expanded="true" />
-                <element signature="e#13176#13177#0" expanded="true" />
-                <element signature="e#13229#13230#0" expanded="true" />
+                <element signature="e#12708#12709#0" expanded="true" />
+                <element signature="e#12749#12750#0" expanded="true" />
+                <element signature="e#12808#12809#0" expanded="true" />
+                <element signature="e#12855#12856#0" expanded="true" />
+                <element signature="e#12983#12984#0" expanded="true" />
+                <element signature="e#13027#13028#0" expanded="true" />
+                <element signature="e#13083#13084#0" expanded="true" />
+                <element signature="e#13131#13132#0" expanded="true" />
+                <element signature="e#13197#13198#0" expanded="true" />
+                <element signature="e#13250#13251#0" expanded="true" />
+                <element signature="e#13306#13307#0" expanded="true" />
+                <element signature="e#13359#13360#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -245,20 +245,6 @@
               <item name="UnoProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UnoProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="commServer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UnoProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Game" type="462c0819:PsiDirectoryNode" />
-              <item name="graphical_user_interface" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -594,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510952462030</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added draw2 and draw4 logic">
+      <created>1511994647656</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1511994647656</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -672,7 +665,8 @@
     <MESSAGE value="implemented gui visualisation on called Unos" />
     <MESSAGE value="played around with the server and small fixes" />
     <MESSAGE value="changed IDs for Paul" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed IDs for Paul" />
+    <MESSAGE value="Added draw2 and draw4 logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added draw2 and draw4 logic" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -936,22 +930,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+        <state relative-caret-position="157">
+          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#12578#12579#0" expanded="true" />
-            <element signature="e#12619#12620#0" expanded="true" />
-            <element signature="e#12678#12679#0" expanded="true" />
-            <element signature="e#12725#12726#0" expanded="true" />
-            <element signature="e#12853#12854#0" expanded="true" />
-            <element signature="e#12897#12898#0" expanded="true" />
-            <element signature="e#12953#12954#0" expanded="true" />
-            <element signature="e#13001#13002#0" expanded="true" />
-            <element signature="e#13067#13068#0" expanded="true" />
-            <element signature="e#13120#13121#0" expanded="true" />
-            <element signature="e#13176#13177#0" expanded="true" />
-            <element signature="e#13229#13230#0" expanded="true" />
+            <element signature="e#12708#12709#0" expanded="true" />
+            <element signature="e#12749#12750#0" expanded="true" />
+            <element signature="e#12808#12809#0" expanded="true" />
+            <element signature="e#12855#12856#0" expanded="true" />
+            <element signature="e#12983#12984#0" expanded="true" />
+            <element signature="e#13027#13028#0" expanded="true" />
+            <element signature="e#13083#13084#0" expanded="true" />
+            <element signature="e#13131#13132#0" expanded="true" />
+            <element signature="e#13197#13198#0" expanded="true" />
+            <element signature="e#13250#13251#0" expanded="true" />
+            <element signature="e#13306#13307#0" expanded="true" />
+            <element signature="e#13359#13360#0" expanded="true" />
           </folding>
         </state>
       </provider>

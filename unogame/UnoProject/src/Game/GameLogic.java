@@ -45,12 +45,21 @@ public class GameLogic implements Runnable {
     long[] lastActionTime;
     long[] lastConnectionTimes;
 
+    /**
+     * simple draw 2 logic
+     *
+     * @param player
+     */
     public void draw2Logic(Deal player) {
         for (int i = 0; i <= 1; i++) {
             player.addCard(deck.returnTop());
         }
     }
 
+    /**
+     *  simple draw 4 logic
+     * @param player
+     */
     public void draw4Logic(Deal player) {
         for (int i = 0; i <= 3; i++) {
             player.addCard(deck.returnTop());
