@@ -102,7 +102,6 @@ public class Server implements Runnable{
                                 + player_red_handsize + "-" + hands[i] + "-" + isPlayersTurn;
                     }
                 }
-
             }
         }
     }
