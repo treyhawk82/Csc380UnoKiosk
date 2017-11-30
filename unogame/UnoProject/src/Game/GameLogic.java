@@ -10,23 +10,35 @@ public class GameLogic implements Runnable {
     //fields
     static Handler deck = new Handler();
     static Deal discardPile = new Deal();
+    /*
+    players
+     */
     static Deal player_blue = new Deal();
     static Deal player_yellow = new Deal();
     static Deal player_green = new Deal();
     static Deal player_red = new Deal();
+
     static Random rn = new Random();
     static boolean uno;
     static Scanner s = new Scanner(System.in);
-    boolean done = false;
+    static boolean done = false;
     static int turnOfPlayer;
-    static boolean skip;
-    static boolean reverse = false;
     static String lastWildCardColourSelected = "blue";
     static int draw2Stack = 0;
     static long turnStartTime;
     static boolean calledUno[] = new boolean[4];
     static boolean connectedUser[] = new boolean[4];
+    /*
+    action cards
+     */
+    static boolean skip = false;
+    static boolean reverse = false;
+    static boolean draw2 = false;
+    static boolean draw4 = false;
 
+    /*
+    AI and User
+     */
     AI ai1 = new AI(player_blue, this, 0);
     AI ai2 = new AI(player_yellow, this, 1);
     AI ai3 = new AI(player_green, this, 2);
@@ -51,6 +63,7 @@ public class GameLogic implements Runnable {
      * @param player
      */
     public void draw2Logic(Deal player) {
+        System.out.println("Draw 2");
         for (int i = 0; i <= 1; i++) {
             player.addCard(deck.returnTop());
         }
@@ -61,6 +74,7 @@ public class GameLogic implements Runnable {
      * @param player
      */
     public void draw4Logic(Deal player) {
+        System.out.println("Draw 4");
         for (int i = 0; i <= 3; i++) {
             player.addCard(deck.returnTop());
         }
@@ -75,6 +89,23 @@ public class GameLogic implements Runnable {
          * the card will be face up
          */
         resetBoard();
+        System.out.println();
+        System.out.println("run initiated");
+        System.out.println();
+
+        System.out.println("player blue");
+        player_blue.printHand();
+        System.out.println();
+        System.out.println("player green");
+        player_green.printHand();
+        System.out.println();
+        System.out.println("player red");
+        player_red.printHand();
+        System.out.println();
+        System.out.println("player yello");
+        player_yellow.printHand();
+        System.out.println();
+
 
         for (int i = 0; i < connectedUser.length; i++) {
             connectedUser[i] = false;
@@ -206,11 +237,29 @@ public class GameLogic implements Runnable {
      * @param ai       the players hand
      */
     private void skipDraw2ReverseWinChecker(Card playCard, Deal ai, int id) {
+        System.out.println();
+
+        if (draw2) {
+            System.out.println("a player is drawing 2 cards");
+            ai.addCard(deck.returnTop());
+            ai.addCard(deck.returnTop());
+            draw2 = false;
+        }
+        if (draw4) {
+            System.out.println("a player is drawing 2 cards");
+            ai.addCard(deck.returnTop());
+            ai.addCard(deck.returnTop());
+            ai.addCard(deck.returnTop());
+            ai.addCard(deck.returnTop());
+        }
+
         if (ai.getSize() == 0) {
+            System.out.println("Someone Won!");
             resetBoard();
             skip = false;
             reverse = false;
             draw2Stack = 0;
+
         } else {
             //check if uno has been called but player had to draw
             if (ai.getSize() > 1) {
@@ -218,17 +267,27 @@ public class GameLogic implements Runnable {
             }
 
             int CardNumber = playCard.getCardNum();
+
+
             if (CardNumber == 10) {
                 skip = true;
             }
             if (CardNumber == 11) {
-                draw2Stack = +2;
+                draw2 = true;
+
             }
             if (CardNumber == 12) {
                 swapReverse();
             }
+            if (CardNumber == 14) {
+                draw4 = true;
+
+            }
         }
     }
+
+
+
 
     /**
      * if reverse true, then change it to false; if reverse false, change it to true.

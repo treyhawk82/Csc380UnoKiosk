@@ -30,20 +30,20 @@ public class Main{
 //        Handler deck = new Handler();
 
 
-        //      System.out.println("Welcome to Uno");
+        //   System.out.println("Welcome to Uno");
         //      System.out.println();
         //      System.out.println("You are player " + p1.getID())
         //      h.addCards();
 
         GameLogic gameLogic = new GameLogic();
-        Server server = new Server(gameLogic);
-        Thread serverThread = new Thread(server, "CommunicationServer");
-        serverThread.start();
-        GUI gui = new GUI(server);
+        //  Server server = new Server(gameLogic);
+        //   Thread serverThread = new Thread(server, "CommunicationServer");
+        //  serverThread.start();
+        //  GUI gui = new GUI(server);
         Thread gameLogicThread = new Thread(gameLogic, "GameLogic");
         gameLogicThread.start();
-        gameLogic.setServer(server);
-        gui.getCardDrawer().setGameLogic(gameLogic);
+        //  gameLogic.setServer(server);
+        //gui.getCardDrawer().setGameLogic(gameLogic);
     }
 
 

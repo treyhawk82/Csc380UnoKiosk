@@ -9,13 +9,13 @@ public class Deal extends Handler {
 
 
     //instantiate hand
-    public Deal(){
+    public Deal() {
         hand = new ArrayList<>();
     }
 
     //computer deals cards to player and removed from top of drawpile
     public void dealCard(Handler drawPile) {
-        hand.add(0,drawPile.returnTop());
+        hand.add(0, drawPile.returnTop());
         drawPile.pop();
     }
 
@@ -35,19 +35,19 @@ public class Deal extends Handler {
     }
 
 
-    public Card getCard(int element){
+    public Card getCard(int element) {
         return hand.get(element);
     }
-    
-    public int getSize(){
+
+    public int getSize() {
         return hand.size();
     }
 
-    public String getSizeString(){
+    public String getSizeString() {
         return "" + hand.size();
     }
 
-    public void printArray(){
+    public void printArray() {
         System.out.println(hand.toString());
     }
 
@@ -64,10 +64,10 @@ public class Deal extends Handler {
         }
     }
 
-    public String getCommHandString(){
+    public String getCommHandString() {
         boolean firstTime = true;
         String commHandString = "";
-        for (Card handCard: hand) {
+        for (Card handCard : hand) {
             if (!firstTime) {
                 commHandString = commHandString + "x";
             }
@@ -80,4 +80,6 @@ public class Deal extends Handler {
     public void removeAll() {
         hand.clear();
     }
+
+
 }
