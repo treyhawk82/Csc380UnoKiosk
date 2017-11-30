@@ -1,5 +1,6 @@
 package Game.graphical_user_interface;
 
+import Game.GameLogic;
 import Game.commServer.Server;
 
 import java.awt.*;
@@ -20,6 +21,7 @@ public class GUI extends Canvas implements Runnable {
     private long lastTime2;
     private String lastColourSelected = "blue";
     private UnoBoard unoBoard;
+    private GameLogic gameLogic;
 
 
     public String[] hands = {};
@@ -133,5 +135,10 @@ public class GUI extends Canvas implements Runnable {
 
     public CardDrawer getCardDrawer() {
         return unoBoard.getCardDrawer();
+    }
+
+    public void setGameLogic(GameLogic gameLogic) {
+        this.gameLogic = gameLogic;
+        unoBoard.setGameLogic(gameLogic);
     }
 }

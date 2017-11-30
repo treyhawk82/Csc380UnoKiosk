@@ -1,5 +1,6 @@
 package Game.graphical_user_interface;
 
+import Game.GameLogic;
 import Game.GameObject;
 import Game.commServer.Server;
 
@@ -27,6 +28,7 @@ public class UnoBoard extends GameObject {
     boolean firstTime = true;
     Server server;
     String lastColourSelected = "blue";
+    GameLogic gameLogic;
 
     public UnoBoard(int SCREEN_WIDTH, double SCREEN_SCALE_WIDTH, int SCREEN_HEIGHT, double SCREEN_SCALE_HEIGHT, ID id, GUI gui) {
         super(0,0, id);
@@ -89,5 +91,10 @@ public class UnoBoard extends GameObject {
 
     public CardDrawer getCardDrawer() {
         return background.getCardDrawer();
+    }
+
+    public void setGameLogic(GameLogic gameLogic) {
+        this.gameLogic = gameLogic;
+        background.setGameLogic(gameLogic);
     }
 }

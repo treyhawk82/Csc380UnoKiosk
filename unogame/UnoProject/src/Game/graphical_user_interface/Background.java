@@ -1,5 +1,6 @@
 package Game.graphical_user_interface;
 
+import Game.GameLogic;
 import Game.commServer.Server;
 
 import java.awt.*;
@@ -66,6 +67,9 @@ public class Background {
     double SCREEN_SCALE_WIDTH;
     double SCREEN_SCALE_HEIGHT;
 
+    private GameLogic gameLogic;
+    private long lastTimeWithoutWinner = System.currentTimeMillis();
+
     /**
      * Constructor of Background.
      * @param SCREEN_WIDTH the windows width
@@ -101,13 +105,23 @@ public class Background {
      * @param g Graphics that draws the gui
      */
     public void drawBackground(Graphics g, String lastColourSelected) {
-        hasBeenChanged();
-        this.turnOfPlayer = unoBoard.getTurnOfPlayer();
-        drawBackgroundColours(g, blue, highlightBlue, trianglebluex, trianglebluey, 0, turnOfPlayer);
-        drawBackgroundColours(g, yellow, highlightYellow, triangleyellowx, triangleyellowy, 1, turnOfPlayer);
-        drawBackgroundColours(g, green, highlightGreen, trianglegreenx, trianglegreeny, 2, turnOfPlayer);
-        drawBackgroundColours(g, red, highlightRed, triangleredx, triangleredy, 3, turnOfPlayer);
-        cardDrawer.drawPlayerCards(g, unoBoard.getNumberOfCardsInHands(), unoBoard.getTopOfDiscardPile(), lastColourSelected);
+        if (gameLogic.checkWin() == 4) {
+            hasBeenChanged();
+            this.turnOfPlayer = unoBoard.getTurnOfPlayer();
+            drawBackgroundColours(g, blue, highlightBlue, trianglebluex, trianglebluey, 0, turnOfPlayer);
+            drawBackgroundColours(g, yellow, highlightYellow, triangleyellowx, triangleyellowy, 1, turnOfPlayer);
+            drawBackgroundColours(g, green, highlightGreen, trianglegreenx, trianglegreeny, 2, turnOfPlayer);
+            drawBackgroundColours(g, red, highlightRed, triangleredx, triangleredy, 3, turnOfPlayer);
+            cardDrawer.drawPlayerCards(g, unoBoard.getNumberOfCardsInHands(), unoBoard.getTopOfDiscardPile(), lastColourSelected);
+            lastTimeWithoutWinner = System.currentTimeMillis();
+        } else {
+            if (lastTimeWithoutWinner + 7500 > System.currentTimeMillis()) {
+                drawWinScreen(g);
+            } else {
+                gameLogic.setWinFalseAfterVictoryScreen();
+            }
+
+        }
     }
 
     private void hasBeenChanged(){
@@ -137,8 +151,41 @@ public class Background {
         g.drawString((numberOfCardsinHands[player] + " cards left"), (int) Math.round(cardsLeftPositionsx[player] / SCREEN_SCALE_WIDTH), (int) Math.round(cardsLeftPositionsy[player] / SCREEN_SCALE_HEIGHT));
     }
 
+    private void drawWinScreen(Graphics g) {
+        int winner = gameLogic.checkWin();
+        if (winner == 0) {
+            g.setColor(blue);
+            g.fillRect(0, 0, (int) Math.round(SCREEN_WIDTH / SCREEN_SCALE_WIDTH), (int) Math.round(SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT));
+            g.setColor(Color.black);
+            g.setFont(font);
+            g.drawString("Player Blue Wins!", (int) Math.round((SCREEN_WIDTH / SCREEN_SCALE_WIDTH - 50 / SCREEN_SCALE_WIDTH) / 2), (int) Math.round((SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT - 50 / SCREEN_SCALE_HEIGHT) - 2));
+        } else if (winner == 1) {
+            g.setColor(yellow);
+            g.fillRect(0, 0, (int) Math.round(SCREEN_WIDTH / SCREEN_SCALE_WIDTH), (int) Math.round(SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT));
+            g.setColor(Color.black);
+            g.setFont(font);
+            g.drawString("Player Yellow Wins!", (int) Math.round((SCREEN_WIDTH / SCREEN_SCALE_WIDTH - 50 / SCREEN_SCALE_WIDTH) / 2), (int) Math.round((SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT - 50 / SCREEN_SCALE_HEIGHT) - 2));
+        } else if (winner == 2) {
+            g.setColor(green);
+            g.fillRect(0, 0, (int) Math.round(SCREEN_WIDTH / SCREEN_SCALE_WIDTH), (int) Math.round(SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT));
+            g.setColor(Color.black);
+            g.setFont(font);
+            g.drawString("Player Green Wins!", (int) Math.round((SCREEN_WIDTH / SCREEN_SCALE_WIDTH - 50 / SCREEN_SCALE_WIDTH) / 2), (int) Math.round((SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT - 50 / SCREEN_SCALE_HEIGHT) - 2));
+        } else if (winner == 3) {
+            g.setColor(red);
+            g.fillRect(0, 0, (int) Math.round(SCREEN_WIDTH / SCREEN_SCALE_WIDTH), (int) Math.round(SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT));
+            g.setColor(Color.black);
+            g.setFont(font);
+            g.drawString("Player Red Wins!", (int) Math.round((SCREEN_WIDTH / SCREEN_SCALE_WIDTH - 50 / SCREEN_SCALE_WIDTH) / 2), (int) Math.round((SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT - 50 / SCREEN_SCALE_HEIGHT) - 2));
+        }
+    }
+
     public CardDrawer getCardDrawer() {
         return cardDrawer;
+    }
+
+    public void setGameLogic(GameLogic gameLogic) {
+        this.gameLogic = gameLogic;
     }
 
 

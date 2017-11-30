@@ -35,6 +35,7 @@ public class GameLogic implements Runnable {
     static boolean reverse = false;
     static boolean draw2 = false;
     static boolean draw4 = false;
+    static int win = 4;
 
     /*
     AI and User
@@ -149,9 +150,11 @@ public class GameLogic implements Runnable {
         done = true;
         long lasttime = System.currentTimeMillis();
         do {
-            if (System.currentTimeMillis() > lasttime + 2000) {
-                lasttime = System.currentTimeMillis();
-                play();
+            if (win == 4) {
+                if (System.currentTimeMillis() > lasttime + 300) {
+                    lasttime = System.currentTimeMillis();
+                    play();
+                }
             }
             //System.out.println("test" + loop);
             loop++;
@@ -234,36 +237,37 @@ public class GameLogic implements Runnable {
      * and takes the necessary actions.
      *
      * @param playCard card that a player has been played in the last turn
-     * @param ai       the players hand
+     * @param handOfPlayer       the players hand
      */
-    private void skipDraw2ReverseWinChecker(Card playCard, Deal ai, int id) {
+    private void skipDraw2ReverseWinChecker(Card playCard, Deal handOfPlayer, int id) {
         System.out.println();
 
         if (draw2) {
             System.out.println("a player is drawing 2 cards");
-            ai.addCard(deck.returnTop());
-            ai.addCard(deck.returnTop());
+            handOfPlayer.addCard(deck.returnTop());
+            handOfPlayer.addCard(deck.returnTop());
             draw2 = false;
         }
         if (draw4) {
             System.out.println("a player is drawing 4 cards");
-            ai.addCard(deck.returnTop());
-            ai.addCard(deck.returnTop());
-            ai.addCard(deck.returnTop());
-            ai.addCard(deck.returnTop());
+            handOfPlayer.addCard(deck.returnTop());
+            handOfPlayer.addCard(deck.returnTop());
+            handOfPlayer.addCard(deck.returnTop());
+            handOfPlayer.addCard(deck.returnTop());
             draw4 = false;
         }
 
-        if (ai.getSize() == 0) {
+        if (handOfPlayer.getSize() == 0) {
             System.out.println("Someone Won!");
             resetBoard();
             skip = false;
             reverse = false;
             draw2Stack = 0;
+            win = turnOfPlayer;
 
         } else {
             //check if uno has been called but player had to draw
-            if (ai.getSize() > 1) {
+            if (handOfPlayer.getSize() > 1) {
                 calledUno[id] = false;
             }
 
@@ -489,5 +493,13 @@ public class GameLogic implements Runnable {
 
     public long getLastConnectionTime(int player_id) {
         return lastConnectionTimes[player_id];
+    }
+
+    public int checkWin() {
+        return win;
+    }
+
+    public void setWinFalseAfterVictoryScreen() {
+        win = 4;
     }
 }

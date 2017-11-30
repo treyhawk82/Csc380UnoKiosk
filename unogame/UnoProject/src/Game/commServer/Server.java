@@ -73,6 +73,7 @@ public class Server implements Runnable{
         connectionHandler.setGameLogic(gameLogic);
         while (true) {
             if (System.currentTimeMillis() > lastTime + 1000) {
+                connectionHandler.runConnectionCheck();
                 lastTime = System.currentTimeMillis();
                 gameLogic.getHandSizesAndHands();
                 //gets a concatenated string of hands and handsizes for each individual player
