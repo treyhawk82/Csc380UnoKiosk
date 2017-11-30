@@ -246,11 +246,12 @@ public class GameLogic implements Runnable {
             draw2 = false;
         }
         if (draw4) {
-            System.out.println("a player is drawing 2 cards");
+            System.out.println("a player is drawing 4 cards");
             ai.addCard(deck.returnTop());
             ai.addCard(deck.returnTop());
             ai.addCard(deck.returnTop());
             ai.addCard(deck.returnTop());
+            draw4 = false;
         }
 
         if (ai.getSize() == 0) {
