@@ -58,28 +58,6 @@ public class GameLogic implements Runnable {
     long[] lastActionTime;
     long[] lastConnectionTimes;
 
-    /**
-     * simple draw 2 logic
-     *
-     * @param player
-     */
-    public void draw2Logic(Deal player) {
-        System.out.println("Draw 2");
-        for (int i = 0; i <= 1; i++) {
-            player.addCard(deck.returnTop());
-        }
-    }
-
-    /**
-     *  simple draw 4 logic
-     * @param player
-     */
-    public void draw4Logic(Deal player) {
-        System.out.println("Draw 4");
-        for (int i = 0; i <= 3; i++) {
-            player.addCard(deck.returnTop());
-        }
-    }
 
     public void run() {
         /**
@@ -92,6 +70,7 @@ public class GameLogic implements Runnable {
         resetBoard();
         System.out.println();
         System.out.println("run initiated");
+        System.out.println();
         System.out.println();
 
         System.out.println("player blue");
@@ -141,7 +120,6 @@ public class GameLogic implements Runnable {
         int currentPlayer = 0;      //this is the user
 
 
-
         /**
          * this will be the game loop
          */
@@ -150,10 +128,29 @@ public class GameLogic implements Runnable {
         done = true;
         long lasttime = System.currentTimeMillis();
         do {
+            if (deck.size() == 0) {
+                Card Top = discardPile.getCard(discardPile.getSize() - 1);
+                discardPile.removeAll();
+                discardPile.addCard(Top);
+                deck = discardPile;
+
+
+            }
             if (win == 4) {
                 if (System.currentTimeMillis() > lasttime + 300) {
                     lasttime = System.currentTimeMillis();
                     play();
+
+                    System.out.println(deck.size());
+                    System.out.println("discarD: " + discardPile.getSize());
+//                    System.out.println("Discard hand:::::::::::");
+//                    discardPile.printHand();
+//                    System.out.println("::::::::::::::::::::::");
+
+//                    System.out.println("top============");
+//                    System.out.println(discardPile.getCard(discardPile.getSize()-1));
+//                    System.out.println("================");
+
                 }
             }
             //System.out.println("test" + loop);
@@ -162,12 +159,13 @@ public class GameLogic implements Runnable {
     }
 
     /*******************************************
-     * If you couldn't tell, these are methods *
+     *           these are methods              *
      *******************************************/
 
     /**
      * print the last card from the discard pile
      */
+
     public static void printDiscard(){
         System.out.println("Face up card: ");
         System.out.println(discardPile.returnTop());
@@ -366,9 +364,10 @@ public class GameLogic implements Runnable {
             player_green.dealCard(deck);
             player_red.dealCard(deck);
 
-            discardPile.dealCard(deck);
-            System.out.println(discardPile.getCard(0));
         }
+
+        discardPile.dealCard(deck);
+        System.out.println("Top Card: " + discardPile.getCard(0));
     }
 
     /**
@@ -410,13 +409,17 @@ public class GameLogic implements Runnable {
     public Card returnTopOfDiscardPile() {
         return discardPile.getCard(discardPile.getSize() - 1);
     }
-
     /**
      * @param cardToDiscard card that needs to be discardedd
      */
     public void discardCard(Card cardToDiscard) {
-        discardPile.addCard(cardToDiscard);
+        if (cardToDiscard.getCardNum() != 15) {
+            discardPile.addCard(cardToDiscard);
+        }
+
     }
+
+
 
     /**
      * @param colour colour that has been selected by the player

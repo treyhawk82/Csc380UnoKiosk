@@ -119,6 +119,9 @@ public class Handler {
         Collections.shuffle(deck);
     }
 
+    public int size() {
+        return deck.size();
+    }
 }
 
 
