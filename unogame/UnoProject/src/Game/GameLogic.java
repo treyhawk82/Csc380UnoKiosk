@@ -130,9 +130,11 @@ public class GameLogic implements Runnable {
         do {
             if (deck.size() == 0) {
                 Card Top = discardPile.getCard(discardPile.getSize() - 1);
+                for (int i = 0; i < discardPile.getSize(); i++) {
+                    deck.push(discardPile.getCard(i));
+                }
                 discardPile.removeAll();
                 discardPile.addCard(Top);
-                deck = discardPile;
 
 
             }
@@ -143,9 +145,9 @@ public class GameLogic implements Runnable {
 
                     System.out.println(deck.size());
                     System.out.println("discarD: " + discardPile.getSize());
-//                    System.out.println("Discard hand:::::::::::");
-//                    discardPile.printHand();
-//                    System.out.println("::::::::::::::::::::::");
+                    System.out.println("Discard hand:::::::::::");
+                    discardPile.printHand();
+                    System.out.println("::::::::::::::::::::::");
 
 //                    System.out.println("top============");
 //                    System.out.println(discardPile.getCard(discardPile.getSize()-1));
@@ -350,8 +352,10 @@ public class GameLogic implements Runnable {
         player_yellow.removeAll();
         player_green.removeAll();
         player_red.removeAll();
+        discardPile.removeAll();
         deck = new Handler();
         deck.addCards();
+        System.out.println(deck.size());
         deck.shuffleDeck();
         turnOfPlayer = 0;
         for (int i = 0; i < calledUno.length; i++) {
