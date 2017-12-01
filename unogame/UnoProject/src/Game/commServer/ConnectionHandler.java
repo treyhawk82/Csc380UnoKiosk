@@ -169,7 +169,7 @@ public class ConnectionHandler extends WebSocketServer  {
             System.out.println("Test " + currentIP);
             int currentPlayer = 0;
             while (currentPlayer < NUMBER_OF_PLAYERS){
-                if(currentPlayerIPs[currentPlayer].equals(currentIP))sock.send(hands[currentPlayer]);
+                if (currentPlayerIPs[currentPlayer].equals(currentIP)) sock.send(hands[currentPlayer].toUpperCase());
                 currentPlayer++;
             }
         }

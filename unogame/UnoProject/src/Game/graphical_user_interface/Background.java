@@ -152,7 +152,7 @@ public class Background {
     }
 
     private void drawWinScreen(Graphics g) {
-        int winner = gameLogic.checkWin();
+        int winner = gameLogic.getLastWinner();
         if (winner == 0) {
             g.setColor(blue);
             g.fillRect(0, 0, (int) Math.round(SCREEN_WIDTH / SCREEN_SCALE_WIDTH), (int) Math.round(SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT));

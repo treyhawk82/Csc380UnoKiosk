@@ -36,6 +36,7 @@ public class GameLogic implements Runnable {
     static boolean draw2 = false;
     static boolean draw4 = false;
     static int win = 4;
+    int lastWinner = 4;
 
     /*
     AI and User
@@ -125,6 +126,9 @@ public class GameLogic implements Runnable {
          */
         int loop = 7;
         ai1.activateCallout();
+        ai2.activateCallout();
+        ai3.activateCallout();
+        ai4.activateCallout();
         done = true;
         long lasttime = System.currentTimeMillis();
         do {
@@ -357,6 +361,7 @@ public class GameLogic implements Runnable {
         deck.addCards();
         System.out.println(deck.size());
         deck.shuffleDeck();
+        lastWinner = turnOfPlayer;
         turnOfPlayer = 0;
         for (int i = 0; i < calledUno.length; i++) {
             calledUno[i] = false;
@@ -508,6 +513,10 @@ public class GameLogic implements Runnable {
 
     public void setWinFalseAfterVictoryScreen() {
         win = 4;
+    }
+
+    public int getLastWinner() {
+        return lastWinner;
     }
 
     public void userPlayedCard(String message, int userID){
