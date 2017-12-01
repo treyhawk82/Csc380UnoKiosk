@@ -11,8 +11,8 @@ public class GUI extends Canvas implements Runnable {
     public static final int SCREEN_WIDTH = 1920;
     public static final int SCREEN_HEIGHT = 1080;
 
-    public static double SCREEN_SCALE_WIDTH = 1;
-    public static double SCREEN_SCALE_HEIGHT = 1;
+    public static double SCREEN_SCALE_WIDTH = 1.5;
+    public static double SCREEN_SCALE_HEIGHT = 1.5;
 
     private Thread thread;
     private boolean running = false;
