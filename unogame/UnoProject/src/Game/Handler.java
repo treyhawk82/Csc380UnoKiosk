@@ -102,6 +102,7 @@ public class Handler {
         deck.push(new Card("Wild", 13, false));       //wild
         deck.push(new Card("Wild", 13, true));       //wild
         Card w3 = new Card("Wild", 13, false);
+
         w3.changeSecondCard("f");
         Card w4 = new Card("Wild", 13, false);
         w4.changeSecondCard("g");
@@ -111,6 +112,10 @@ public class Handler {
         w7.changeSecondCard("f");
         Card w8 = new Card("Wild + 4", 14, false);
         w8.changeSecondCard("g");
+        deck.push(w3);
+        deck.push(w4);
+        deck.push(w7);
+        deck.push(w8);
     }
 
     public void shuffleDeck() {
@@ -121,6 +126,11 @@ public class Handler {
 
     public int size() {
         return deck.size();
+    }
+
+    public void push(Card card) {
+        deck.push(card);
+
     }
 }
 
