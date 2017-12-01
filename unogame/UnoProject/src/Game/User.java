@@ -8,6 +8,7 @@ public class User extends Player {
     GameLogic gameLogic;
     Server server;
     int id;
+    int lastPlayableCard;
 
     public User(Deal hand, GameLogic gameLogic, Server server, int id) {
         this.hand = hand;
@@ -24,9 +25,17 @@ public class User extends Player {
         if (!gameLogic.checkIfStillConnected(id)) {
             return new Card("disconnected", 123, false);
         } else {
-            String playerAction = server.getPlayerAction(id);
-            String actionArray[] = playerAction.split("-");
-            return new Card("to-do", 42, false);
+            Card playableCard = hand.getCard(lastPlayableCard);
+            hand.discardCard(playableCard);
+            return  playableCard;
+        }
+    }
+
+    public void cardPlayed(String message) {
+        for(int i = 0; i < hand.getSize(); i++){
+            if(hand.getCard(i).getCommCardString().equalsIgnoreCase(message)){
+                lastPlayableCard = i;
+            }
         }
     }
 }

@@ -505,4 +505,8 @@ public class GameLogic implements Runnable {
     public void setWinFalseAfterVictoryScreen() {
         win = 4;
     }
+
+    public void userPlayedCard(String message, int userID){
+        users[userID].cardPlayed(message);
+    }
 }

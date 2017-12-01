@@ -1,0 +1,497 @@
+<!DOCTy11E html>
+<html lang="eng">
+<head>
+<title>Player</title>
+
+<head char10et="utf-8">
+	
+<style>
+body{
+background-color:#000000;
+}
+div{
+width: 100%;
+height: 250px;
+overflow-x: scroll;
+}
+button{
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+</style>
+</head>
+<body>
+<p>
+<!-- old: width: 1400px;-->
+</p>
+<p style="padding-left:75%">
+<button type="button" onclick="uno()" id="uno" style="padding: 15% 20%">Uno</button>
+</p>
+
+<p align="center" style="">
+<button type="button" onclick="play()" id="select" style="padding: 5% 10%; background-color:green; color:white; text-decoration: none;">Play Card</button>
+</p>
+
+<b12/>
+<b12/>
+<div>
+<img src="small/blue_0.png" id="b0" class="blue 0" onclick="select(b0,topOfDiscardPile)" style="display:inline; border:10px; border-color:green;" name="">
+<img src="small/blue_1.png" id="b1" class="blue 1" onclick="select(b1,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_2.png" id="b2" class="blue 2" onclick="select(b2,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_3.png" id="b3" class="blue 3" onclick="select(b3,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_4.png" id="b4" class="blue 4" onclick="select(b4,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_5.png" id="b5" class="blue 5" onclick="select(b5,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_6.png" id="b6" class="blue 6" onclick="select(b6,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_7.png" id="b7" class="blue 7" onclick="select(b7,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_8.png" id="b8" class="blue 8" onclick="select(b8,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_9.png" id="b9" class="blue 9" onclick="select(b9,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_picker.png" id="b11" class="blue draw" onclick="select(b11,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_rever10e.png" id="b12" class="blue rever10e" onclick="select(b12,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_skip.png" id="b10" class="blue skip" onclick="select(b10,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_1.png" id="b1e" class="blue 1" onclick="select(b1e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_2.png" id="b2e" class="blue 2" onclick="select(b2e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_3.png" id="b3e" class="blue 3" onclick="select(b3e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_4.png" id="b4e" class="blue 4" onclick="select(b4e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_5.png" id="b5e" class="blue 5" onclick="select(b5e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_6.png" id="b6e" class="blue 6" onclick="select(b6e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_7.png" id="b7e" class="blue 7" onclick="select(b7e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_8.png" id="b8e" class="blue 8" onclick="select(b8e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_9.png" id="b9e" class="blue 9" onclick="select(b9e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_picker.png" id="b11e" class="blue draw" onclick="select(b11e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_rever10e.png" id="b12e" class="blue rever10e" onclick="select(b12e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/blue_skip.png" id="b10e" class="blue skip" onclick="select(b10e,topOfDiscardPile)" style="display:inline" name="">
+
+<img src="small/red_0.png" id="r0" class="red 0" onclick="select(r0,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_1.png" id="r1" class="red 1" onclick="select(r1,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_2.png" id="r2" class="red 2" onclick="select(r2,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_3.png" id="r3" class="red 3" onclick="select(r3,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_4.png" id="r4" class="red 4" onclick="select(r4,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_5.png" id="r5" class="red 5" onclick="select(r5,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_6.png" id="r6" class="red 6" onclick="select(r6,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_7.png" id="r7" class="red 7" onclick="select(r7,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_8.png" id="r8" class="red 8" onclick="select(r8,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_9.png" id="r9" class="red 9" onclick="select(r9,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_picker.png" id="r11" class="red draw" onclick="select(r11,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_rever10e.png" id="r12" class="red rever10e" onclick="select(r12,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_skip.png" id="r10" class="red skip" onclick="select(r10,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_1.png" id="r1e" class="red 1" onclick="select(r1e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_2.png" id="r2e" class="red 2" onclick="select(r2e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_3.png" id="r3e" class="red 3" onclick="select(r3e,topOfDiscardPile)" style="display:inline" name=""> 
+<img src="small/red_4.png" id="r4e" class="red 4" onclick="select(r4e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_5.png" id="r5e" class="red 5" onclick="select(r5e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_6.png" id="r6e" class="red 6" onclick="select(r6e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_7.png" id="r7e" class="red 7" onclick="select(r7e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_8.png" id="r8e" class="red 8" onclick="select(r8e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_9.png" id="r9e" class="red 9" onclick="select(r9e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_picker.png" id="r11e" class="red draw" onclick="select(r11e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_rever10e.png" id="r12e" class="red rever10e" onclick="select(r12e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/red_skip.png" id="r10e" class="red skip" onclick="select(r10e,topOfDiscardPile)" style="display:inline" name=""> 
+
+
+<img src="small/green_0.png" id="g0" class="green 0"  onclick="select(g0,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_1.png" id="g1" class="green 1" onclick="select(g1,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_2.png" id="g2" class="green 2" onclick="select(g2,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_3.png" id="g3" class="green 3" onclick="select(g3,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_4.png" id="g4" class="green 4" onclick="select(g4,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_5.png" id="g5" class="green 5" onclick="select(g5,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_6.png" id="g6" class="green 6" onclick="select(g6,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_7.png" id="g7" class="green 7" onclick="select(g7,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_8.png" id="g8" class="green 8" onclick="select(g8,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_9.png" id="g9" class="green 9" onclick="select(g9,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_picker.png" id="g11" class="green draw" onclick="select(g11,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_rever10e.png" id="g12" class="green rever10e" onclick="select(g12,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_skip.png" id="g10" class="green skip" onclick="select(g10,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_1.png" id="g1e" class="green 1" onclick="select(g1e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_2.png" id="g2e" class="green 2" onclick="select(g2e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_3.png" id="g3e" class="green 3" onclick="select(g3e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_4.png" id="g4e" class="green 4" onclick="select(g4e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_5.png" id="g5e" class="green 5" onclick="select(g5e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_6.png" id="g6e" class="green 6" onclick="select(g6e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_7.png" id="g7e" class="green 7" onclick="select(g7e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_8.png" id="g8e" class="green 8" onclick="select(g8e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_9.png" id="g9e" class="green 9" onclick="select(g9e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_picker.png" id="g11e" class="green draw" onclick="select(g11e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_rever10e.png" id="g12e" class="green rever10e" onclick="select(g12e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/green_skip.png" id="g10e" class="green skip" onclick="select(g10e,topOfDiscardPile)" style="display:inline" name="">
+
+
+<img src="small/yellow_0.png" id="y0" class="yellow 0" onclick="select(y0,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_1.png" id="y1" class="yellow 1" onclick="select(y1,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_2.png" id="y2" class="yellow 2" onclick="select(y2,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_3.png" id="y3" class="yellow 3" onclick="select(y3,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_4.png" id="y4" class="yellow 4" onclick="select(y4,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_5.png" id="y5" class="yellow 5" onclick="select(y5,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_6.png" id="y6" class="yellow 6" onclick="select(y6,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_7.png" id="y7" class="yellow 7" onclick="select(y7,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_8.png" id="y8" class="yellow 8" onclick="select(y8,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_9.png" id="y9" class="yellow 9" onclick="select(y9,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_picker.png" id="y11" class="yellow draw" onclick="select(y11,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_rever10e.png" id="y12" class="yellow rever10e" onclick="select(y12,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_skip.png" id="y10" class="yellow skip" onclick="select(y10,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_1.png" id="y1e" class="yellow 1" onclick="select(y1e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_2.png" id="y2e" class="yellow 2" onclick="select(y2e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_3.png" id="y3e" class="yellow 3" onclick="select(y3e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_4.png" id="y4e" class="yellow 4" onclick="select(y4e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_5.png" id="y5e" class="yellow 5" onclick="select(y5e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_6.png" id="y6e" class="yellow 6" onclick="select(y6e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_7.png" id="y7e" class="yellow 7" onclick="select(y7e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_8.png" id="y8e" class="yellow 8" onclick="select(y8e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_9.png" id="y9e" class="yellow 9" onclick="select(y9e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_picker.png" id="y11e" class="yellow draw" onclick="select(y11e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_rever10e.png" id="y12e" class="yellow rever10e" onclick="select(y12e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/yellow_skip.png" id="y10e" class="yellow skip" onclick="select(y10e,topOfDiscardPile)" style="display:inline" name="">
+
+<img src="small/wild_pick_four.png" id="w14" class="wild" onclick="select(w14,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_pick_four.png" id="w14e" class="wild" onclick="select(w14e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_pick_four.png" id="w14f" class="wild" onclick="select(w14f,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_pick_four.png" id="w14g" class="wild" onclick="select(w14g,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_color_changer.png" id="w13" class="wild" onclick="select(w13,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_color_changer.png" id="w13e" class="wild" onclick="select(w13e,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_color_changer.png" id="w13f" class="wild" onclick="select(w13f,topOfDiscardPile)" style="display:inline" name="">
+<img src="small/wild_color_changer.png" id="w13g" class="wild" onclick="select(w13g,topOfDiscardPile)" style="display:inline" name="">
+
+</div>
+<!--
+<img src="small/wild_pick_four.png" id="W1" class="wild" onclick="test()" style="display:inline; border:5px solid green">
+<img src="small/wild_pick_four.png" id="W1" class="wild" onclick="test()" style="display:inline; border:5px solid red">
+-->
+<script>
+var connection = new WebSocket('ws://127.0.0.1:4444');
+var actions = 'No action taken';
+var serverString;
+var serverStringArray;
+var topOfDiscardPile;
+var playerNumber;
+var player0NoOfCards;
+var player1NoOfCards;
+var player2NoOfCards;
+var player3NoOfCards;
+var playerHand;
+var cardsArray;
+var isTurnOfPlayer;
+
+
+connection.onopen = function () {
+console.log('Connected!');
+connection.send('Ping'); // Send the message 'Ping' to the server
+};
+// Log er12or10
+connection.oner12or = function (er12or) {
+console.log('Web10ocket Er12or ' + er12or);
+};
+// Log messages from the server
+connection.onmessage = function (e) {
+console.log('Server: ' + e.data);
+serverString = e.data;
+serverStringArray = serverString.split('-');
+topOfDiscardPile = serverStringArray[0];
+playerNumber = serverStringArray[1];
+player0NoOfCards = serverStringArray[2];
+player1NoOfCards = serverStringArray[3];
+player2NoOfCards = serverStringArray[4];
+player3NoOfCards = serverStringArray[5];
+playerHand = serverStringArray[6];
+isTurnOfPlayer = serverStringArray[7];
+cardsArray = playerHand.split('x');
+console.log(serverString);
+console.log(topOfDiscardPile + " = top of discard pile");
+console.log(playerNumber + " = cur12ent player number");
+console.log(player0NoOfCards + " = player 0 # cards");
+console.log(player1NoOfCards + " = player 1 # cards");
+console.log(player2NoOfCards + " = player 2 # cards");
+console.log(player3NoOfCards + " = player 3 # cards");
+console.log(playerHand + " = complete hand of player " + playerNumber);
+cards = document.getElementsByName('');
+for(var j = 0; j < cards.length; j++){
+cards[j].style="display:none;";
+}
+for(var i = 0; i < cardsArray.length; i++){
+console.log(cardsArray[i] + " = card #" + i);
+document.getElementById(cardsArray[i]).style="display:inline;";
+}
+console.log(isTurnOfPlayer);
+};
+var colour10 = ['#00D7FC', '#FF6866', '#FFEA5C', '#35FFAF'];
+setInterval(function () {
+console.log('test');
+connection.send('update');
+document.body.style.backgroundColor = colour10[playerNumber];
+}, 2000);
+
+function uno() { 
+    if(player0NoOfCards == 1 || player1NoOfCards == 1 || player2NoOfCards == 1 || player3NoOfCards == 1){
+		connection.send('Uno');
+	}
+}
+
+function comparable(x,y){
+////BLUE CARDS///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	if(x == b0 && (y == b1 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == b0 || y == r0 || y == g0 || y == y0|| y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g)){
+	return true;
+	}else if(x == b1 && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b1 || y == r1 || y == g1 || y == y1 || y == b1e || y == r1e || y == g1e || y == y1e)){
+	return true;
+	}else if(x == b2 && (y == b0 || y == b1 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b2 || y == r2 || y == g2 || y == y2 || y == b2e || y == r2e || y == g2e || y == y2e)){
+	return true;
+	}else if(x == b3 && (y == b0 || y == b2 || y == b1 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b3 || y == r3 || y == g3 || y == y3 || y == b3e || y == r3e || y == g3e || y == y3e)){
+	return true;
+	}else if(x == b4 && (y == b0 || y == b2 || y == b3 || y == b1 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b4 || y == r4 || y == g4 || y == y4 || y == b4e || y == r4e || y == g4e || y == y4e)){
+	return true;
+	}else if(x == b5 && (y == b0 || y == b2 || y == b3 || y == b4 || y == b1 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b5 || y == r5 || y == g5 || y == y5 || y == b5e || y == r5e || y == g5e || y == y5e)){
+	return true;
+	}else if(x == b6 && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b1 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b6 || y == r6 || y == g6 || y == y6 || y == b6e || y == r6e || y == g6e || y == y6e)){
+	return true;
+	}else if(x == b7 && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b1 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b7 || y == r7 || y == g7 || y == y7 || y == b7e || y == r7e || y == g7e || y == y7e)){
+	return true;
+	}else if(x == b8 && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b1 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b8 || y == r8 || y == g8 || y == y8 || y == b8e || y == r8e || y == g8e || y == y8e)){
+	return true;
+	}else if(x == b9 && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b1 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b9 || y == r9 || y == g9 || y == y9 || y == b9e || y == r9e || y == g9e || y == y9e)){
+	return true;
+	}else if(x == b11 && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b1 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b11 || y == r11 || y == g11 || y == y11 || y == b11e || y == r11e || y == g11e || y == y11e)){
+	return true;
+	}else if(x == b12 && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b1 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b12 || y == r12 || y == g12 || y == y12 || y == b12e || y == r12e || y == g12e || y == y12e)){
+	return true;
+	}else if(x == b10 && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b1 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b10 || y == r10 || y == g10 || y == y10 || y == b10e || y == r10e || y == g10e || y == y10e)){
+	return true;
+	}else if(x == b1e && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g|| y == b1 || y == r1 || y == g1 || y == y1 || y == b1e || y == r1e || y == g1e || y == y1e)){
+	return true;
+	}else if(x == b2e && (y == b0 || y == b1 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b2 || y == r2 || y == g2 || y == y2 || y == b2e || y == r2e || y == g2e || y == y2e)){
+	return true;
+	}else if(x == b3e && (y == b0 || y == b2 || y == b1 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b3 || y == r3 || y == g3 || y == y3 || y == b3e || y == r3e || y == g3e || y == y3e)){
+	return true;
+	}else if(x == b4e && (y == b0 || y == b2 || y == b3 || y == b1 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b4 || y == r4 || y == g4 || y == y4 || y == b4e || y == r4e || y == g4e || y == y4e)){
+	return true;
+	}else if(x == b5e && (y == b0 || y == b2 || y == b3 || y == b4 || y == b1 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b5 || y == r5 || y == g5 || y == y5 || y == b5e || y == r5e || y == g5e || y == y5e)){
+	return true;
+	}else if(x == b6e && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b1 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b6 || y == r6 || y == g6 || y == y6 || y == b6e || y == r6e || y == g6e || y == y6e)){
+	return true;
+	}else if(x == b7e && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b1 || y == b8 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b7 || y == r7 || y == g7 || y == y7 || y == b7e || y == r7e || y == g7e || y == y7e)){
+	return true;
+	}else if(x == b8e && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b1 || y == b9 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b8 || y == r8 || y == g8 || y == y8 || y == b8e || y == r8e || y == g8e || y == y8e)){
+	return true;
+	}else if(x == b9e && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b1 || y == b11 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b9 || y == r9 || y == g9 || y == y9 || y == b9e || y == r9e || y == g9e || y == y9e)){
+	return true;
+	}else if(x == b11e && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b1 || y == b12 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b11 || y == r11 || y == g11 || y == y11 || y == b11e || y == r11e || y == g11e || y == y11e)){
+	return true;
+	}else if(x == b12e && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b1 || y==b10 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b12 || y == r12 || y == g12 || y == y12 || y == b12e || y == r12e || y == g12e || y == y12e)){
+	return true;
+	}else if(x == b10e && (y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b1 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b10 || y == r10 || y == g10 || y == y10 || y == b10e || y == r10e || y == g10e || y == y10e)){
+	return true;
+	}
+////RED CARDS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	else if(x == r0 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b0 || y == r0 || y == g0 || y == y0)){
+	return true;
+	}else if(x == r1 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b1 || y == r1 || y == g1 || y == y1 || y == b1e || y == r1e || y == g1e || y == y1e)){
+	return true;
+	}else if(x == r2 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b2 || y == r2 || y == g2 || y == y2 || y == b2e || y == r2e || y == g2e || y == y2e)){
+	return true;
+	}else if(x == r3 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b3 || y == r3 || y == g3 || y == y3 || y == b3e || y == r3e || y == g3e || y == y3e)){
+	return true;
+	}else if(x == r4 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b4 || y == r4 || y == g4 || y == y4 || y == b4e || y == r4e || y == g4e || y == y4e)){
+	return true;
+	}else if(x == r5 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b5 || y == r5 || y == g5 || y == y5 || y == b5e || y == r5e || y == g5e || y == y5e)){
+	return true;
+	}else if(x == r6 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b6 || y == r6 || y == g6 || y == y6 || y == b6e || y == r6e || y == g6e || y == y6e)){
+	return true;
+	}else if(x == r7 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b7 || y == r7 || y == g7 || y == y7 || y == b7e || y == r7e || y == g7e || y == y7e)){
+	return true;
+	}else if(x == r8 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b8 || y == r8 || y == g8 || y == y8 || y == b8e || y == r8e || y == g8e || y == y8e)){
+	return true;
+	}else if(x == r9 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b9 || y == r9 || y == g9 || y == y9 || y == b9e || y == r9e || y == g9e || y == y9e)){
+	return true;
+	}else if(x == r11 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b11 || y == r11 || y == g11 || y == y11 || y == b11e || y == r11e || y == g11e || y == y11e)){
+	return true;
+	}else if(x == r12 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b12 || y == r12 || y == g12 || y == y12 || y == b12e || y == r12e || y == g12e || y == y12e)){
+	return true;
+	}else if(x == r10 && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b10 || y == r10 || y == g10 || y == y10 || y == b10e || y == r10e || y == g10e || y == y10e)){
+	return true;
+	}else if(x == r1e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b1 || y == r1 || y == g1 || y == y1 || y == b1e || y == r1e || y == g1e || y == y1e)){
+	return true;
+	}else if(x == r2e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b2 || y == r2 || y == g2 || y == y2 || y == b2e || y == r2e || y == g2e || y == y2e)){
+	return true;
+	}else if(x == r3e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b3 || y == r3 || y == g3 || y == y3 || y == b3e || y == r3e || y == g3e || y == y3e)){
+	return true;
+	}else if(x == r4e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b4 || y == r4 || y == g4 || y == y4 || y == b4e || y == r4e || y == g4e || y == y4e)){
+	return true;
+	}else if(x == r5e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b5 || y == r5 || y == g5 || y == y5 || y == b5e || y == r5e || y == g5e || y == y5e)){
+	return true;
+	}else if(x == r6e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b6 || y == r6 || y == g6 || y == y6 || y == b6e || y == r6e || y == g6e || y == y6e)){
+	return true;
+	}else if(x == r7e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b7 || y == r7 || y == g7 || y == y7 || y == b7e || y == r7e || y == g7e || y == y7e)){
+	return true;
+	}else if(x == r8e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b8 || y == r8 || y == g8 || y == y8 || y == b8e || y == r8e || y == g8e || y == y8e)){
+	return true;
+	}else if(x == r9e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b9 || y == r9 || y == g9 || y == y9 || y == b9e || y == r9e || y == g9e || y == y9e)){
+	return true;
+	}else if(x == r11e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b11 || y == r11 || y == g11 || y == y11 || y == b11e || y == r11e || y == g11e || y == y11e)){
+	return true;
+	}else if(x == r12e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b12 || y == r12 || y == g12 || y == y12 || y == b12e || y == r12e || y == g12e || y == y12e)){
+	return true;
+	}else if(x == r10e && (y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b10 || y == r10 || y == g10 || y == y10 || y == b10e || y == r10e || y == g10e || y == y10e)){
+	return true;
+	}
+///Green cards///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	else if(x == g0 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b0 || y == r0 || y == g0 || y == y0)){
+	return true;
+	}else if(x == g1 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b1 || y == r1 || y == g1 || y == y1 || y == b1e || y == r1e || y == g1e || y == y1e)){
+	return true;
+	}else if(x == g2 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b2 || y == r2 || y == g2 || y == y2 || y == b2e || y == r2e || y == g2e || y == y2e)){
+	return true;
+	}else if(x == g3 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b3 || y == r3 || y == g3 || y == y3 || y == b3e || y == r3e || y == g3e || y == y3e)){
+	return true;
+	}else if(x == g4 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b4 || y == r4 || y == g4 || y == y4 || y == b4e || y == r4e || y == g4e || y == y4e)){
+	return true;
+	}else if(x == g5 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b5 || y == r5 || y == g5 || y == y5 || y == b5e || y == r5e || y == g5e || y == y5e)){
+	return true;
+	}else if(x == g6 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b6 || y == r6 || y == g6 || y == y6 || y == b6e || y == r6e || y == g6e || y == y6e)){
+	return true;
+	}else if(x == g7 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b7 || y == r7 || y == g7 || y == y7 || y == b7e || y == r7e || y == g7e || y == y7e)){
+	return true;
+	}else if(x == g8 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b8 || y == r8 || y == g8 || y == y8 || y == b8e || y == r8e || y == g8e || y == y8e)){
+	return true;
+	}else if(x == g9 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b9 || y == r9 || y == g9 || y == y9 || y == b9e || y == r9e || y == g9e || y == y9e)){
+	return true;
+	}else if(x == g11 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b11 || y == r11 || y == g11 || y == y11 || y == b11e || y == r11e || y == g11e || y == y11e)){
+	return true;
+	}else if(x == g12 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b12 || y == r12 || y == g12 || y == y12 || y == b12e || y == r12e || y == g12e || y == y12e)){
+	return true;
+	}else if(x == g10 && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b10 || y == r10 || y == g10 || y == y10 || y == b10e || y == r10e || y == g10e || y == y10e)){
+	return true;
+	}else if(x == g1e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g|| y == b1 || y == r1 || y == g1 || y == y1 || y == b1e || y == r1e || y == g1e || y == y1e)){
+	return true;
+	}else if(x == g2e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b2 || y == r2 || y == g2 || y == y2 || y == b2e || y == r2e || y == g2e || y == y2e)){
+	return true;
+	}else if(x == g3e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b3 || y == r3 || y == g3 || y == y3 || y == b3e || y == r3e || y == g3e || y == y3e)){
+	return true;
+	}else if(x == g4e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b4 || y == r4 || y == g4 || y == y4 || y == b4e || y == r4e || y == g4e || y == y4e)){
+	return true;
+	}else if(x == g5e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b5 || y == r5 || y == g5 || y == y5 || y == b5e || y == r5e || y == g5e || y == y5e)){
+	return true;
+	}else if(x == g6e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b6 || y == r6 || y == g6 || y == y6 || y == b6e || y == r6e || y == g6e || y == y6e)){
+	return true;
+	}else if(x == g7e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b7 || y == r7 || y == g7 || y == y7 || y == b7e || y == r7e || y == g7e || y == y7e)){
+	return true;
+	}else if(x == g8e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b8 || y == r8 || y == g8 || y == y8 || y == b8e || y == r8e || y == g8e || y == y8e)){
+	return true;
+	}else if(x == g9e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b9 || y == r9 || y == g9 || y == y9 || y == b9e || y == r9e || y == g9e || y == y9e)){
+	return true;
+	}else if(x == g11e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b11 || y == r11 || y == g11 || y == y11 || y == b11e || y == r11e || y == g11e || y == y11e)){
+	return true;
+	}else if(x == g12e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b12 || y == r12 || y == g12 || y == y12 || y == b12e || y == r12e || y == g12e || y == y12e)){
+	return true;
+	}else if(x == g10e && (y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b10 || y == r10 || y == g10 || y == y10 || y == b10e || y == r10e || y == g10e || y == y10e)){
+	return true;
+	}
+////Yellow cards//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	else if(x == y0 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b0 || y == r0 || y == g0 || y == y0)){
+	return true;
+	}else if(x == y1 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b1 || y == r1 || y == g1 || y == y1 || y == b1e || y == r1e || y == g1e || y == y1e)){
+	return true;
+	}else if(x == y2 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b2 || y == r2 || y == g2 || y == y2 || y == b2e || y == r2e || y == g2e || y == y2e)){
+	return true;
+	}else if(x == y3 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b3 || y == r3 || y == g3 || y == y3 || y == b3e || y == r3e || y == g3e || y == y3e)){
+	return true;
+	}else if(x == y4 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b4 || y == r4 || y == g4 || y == y4 || y == b4e || y == r4e || y == g4e || y == y4e)){
+	return true;
+	}else if(x == y5 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b5 || y == r5 || y == g5 || y == y5 || y == b5e || y == r5e || y == g5e || y == y5e)){
+	return true;
+	}else if(x == y6 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b6 || y == r6 || y == g6 || y == y6 || y == b6e || y == r6e || y == g6e || y == y6e)){
+	return true;
+	}else if(x == y7 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b7 || y == r7 || y == g7 || y == y7 || y == b7e || y == r7e || y == g7e || y == y7e)){
+	return true;
+	}else if(x == y8 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b8 || y == r8 || y == g8 || y == y8 || y == b8e || y == r8e || y == g8e || y == y8e)){
+	return true;
+	}else if(x == y9 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b9 || y == r9 || y == g9 || y == y9 || y == b9e || y == r9e || y == g9e || y == y9e)){
+	return true;
+	}else if(x == y11 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b11 || y == r11 || y == g11 || y == y11 || y == b11e || y == r11e || y == g11e || y == y11e)){
+	return true;
+	}else if(x == y12 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b12 || y == r12 || y == g12 || y == y12 || y == b12e || y == r12e || y == g12e || y == y12e)){
+	return true;
+	}else if(x == y10 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b10 || y == r10 || y == g10 || y == y10 || y == b10e || y == r10e || y == g10e || y == y10e)){
+	return true;
+	}else if(x == y1e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g|| y == b1 || y == r1 || y == g1 || y == y1 || y == b1e || y == r1e || y == g1e || y == y1e)){
+	return true;
+	}else if(x == y2e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b2 || y == r2 || y == g2 || y == y2 || y == b2e || y == r2e || y == g2e || y == y2e)){
+	return true;
+	}else if(x == y3e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b3 || y == r3 || y == g3 || y == y3 || y == b3e || y == r3e || y == g3e || y == y3e)){
+	return true;
+	}else if(x == y4e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b4 || y == r4 || y == g4 || y == y4 || y == b4e || y == r4e || y == g4e || y == y4e)){
+	return true;
+	}else if(x == y5e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b5 || y == r5 || y == g5 || y == y5 || y == b5e || y == r5e || y == g5e || y == y5e)){
+	return true;
+	}else if(x == y6e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b6 || y == r6 || y == g6 || y == y6 || y == b6e || y == r6e || y == g6e || y == y6e)){
+	return true;
+	}else if(x == y7e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b7 || y == r7 || y == g7 || y == y7 || y == b7e || y == r7e || y == g7e || y == y7e)){
+	return true;
+	}else if(x == y8e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b8 || y == r8 || y == g8 || y == y8 || y == b8e || y == r8e || y == g8e || y == y8e)){
+	return true;
+	}else if(x == y9e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b9 || y == r9 || y == g9 || y == y9 || y == b9e || y == r9e || y == g9e || y == y9e)){
+	return true;
+	}else if(x == y11e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b11 || y == r11 || y == g11 || y == y11 || y == b11e || y == r11e || y == g11e || y == y11e)){
+	return true;
+	}else if(x == y12e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b12 || y == r12 || y == g12 || y == y12 || y == b12e || y == r12e || y == g12e || y == y12e)){
+	return true;
+	}else if(x == y10e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g || y == b10 || y == r10 || y == g10 || y == y10 || y == b10e || y == r10e || y == g10e || y == y10e)){
+	return true;
+	}
+	//Wild cards/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	else if(x == w13 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e ||y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b1 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g)){
+	return true;
+	}else if(x == w13e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b1 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g)){
+	return true;
+	}else if(x == w13f && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b1 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g)){
+	return true;
+	}else if(x == w13g && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b1 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g)){
+	return true;
+	}else if(x == w14 && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b1 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g)){
+	return true;
+	}else if(x == w14e && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b1 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g)){
+	return true;
+	}else if(x == w14f && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b1 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g)){
+	return true;
+	}else if(x == w14g && (y == y0 || y == y1 || y == y2 || y == y3 || y == y4 || y == y5 || y == y6 || y == y7 || y == y8 || y == y9 || y == y11 || y == y12 || y==y10 || y == y1e || y == y2e || y == y3e || y == y4e || y == y5e || y == y6e || y == y7e || y == y8e || y == y9e || y == y11e || y == y12e || y==y10e || y == g0 || y == g1 || y == g2 || y == g3 || y == g4 || y == g5 || y == g6 || y == g7 || y == g8 || y == g9 || y == g11 || y == g12 || y==g10 || y == g1e || y == g2e || y == g3e || y == g4e || y == g5e || y == g6e || y == g7e || y == g8e || y == g9e || y == g11e || y == g12e || y==g10e || y == r0 || y == r1 || y == r2 || y == r3 || y == r4 || y == r5 || y == r6 || y == r7 || y == r8 || y == r9 || y == r11 || y == r12 || y==r10 || y == r1e || y == r2e || y == r3e || y == r4e || y == r5e || y == r6e || y == r7e || y == r8e || y == r9e || y == r11e || y == r12e || y==r10e || y == b0 || y == b2 || y == b3 || y == b4 || y == b5 || y == b6 || y == b7 || y == b8 || y == b9 || y == b11 || y == b12 || y==b1 || y == b1e || y == b2e || y == b3e || y == b4e || y == b5e || y == b6e || y == b7e || y == b8e || y == b9e || y == b11e || y == b12e || y==b10e || y == w13 || y == w13e || y == w13f || y == w13g || y == w14 || y == w14e || y == w14f || y == w14g)){
+	return true;
+	} else{
+	return false;}
+	}
+	
+	var selectedCard;
+	var test;
+	
+function select(x,y){
+	test.style="border:none;"; 
+	selectedCard = x;
+	console.log(selectedCard.id);
+	if(comparable(selectedCard,topOfDiscardPile)){
+	x.style="display:inline; border:5px solid green";
+	test = x;
+	}else{
+	x.style="display:inline; border:5px solid red";
+	test = x;
+	}
+	
+}
+function play(){
+ 
+ if(comparable(selectedCard, topOfDiscardPile) == true && isTurnOfPlayer == true){
+	connection.send(selectedCard.id);
+	 selectedCard.style = "border:none;";
+     selectedCard = null;
+	}
+}
+function test(){
+	window.alert("test");
+}
+</script>
+
+</html>
+© 2017 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog

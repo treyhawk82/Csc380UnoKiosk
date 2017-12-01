@@ -138,10 +138,12 @@ public class ConnectionHandler extends WebSocketServer  {
         //checks for inactive devices
         gameLogic.setLastActionTime(lastActionTime);
         gameLogic.setLastConnectionTimes(lastConnectionTime);
+        int playerNumber = -1;
         for (int i = 0; i < conns.size(); i++) {
             WebSocket con = conns.get(i);
             if (conn == con) {
                 lastConnectionTime[i] = System.currentTimeMillis();
+                playerNumber = i;
             }
             if (lastConnectionTime[i] < System.currentTimeMillis() - 5000) {
                 conns.remove(i);
@@ -152,10 +154,10 @@ public class ConnectionHandler extends WebSocketServer  {
         }
 
         //saves action string if message is not update
-        if (!message.equalsIgnoreCase("update")) {
+        if (!message.equalsIgnoreCase("update") && !message.equalsIgnoreCase("Uno")) {
             for (int i = 0; i < conns.size(); i++) {
                 if (conn == conns.get(i)) {
-                    playerActions[i] = message;
+                    communicatePlayedCardToGameLogic(message, playerNumber);
                     lastConnectionTime[i] = System.currentTimeMillis();
                 }
             }
@@ -238,5 +240,9 @@ public class ConnectionHandler extends WebSocketServer  {
 
     public void disconnectPlayerFromGameLogic(int i) {
         gameLogic.userDisconnected(i);
+    }
+
+    public void communicatePlayedCardToGameLogic(String message, int userID){
+        gameLogic.userPlayedCard(message, userID);
     }
 }
