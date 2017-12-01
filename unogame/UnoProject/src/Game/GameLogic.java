@@ -143,11 +143,11 @@ public class GameLogic implements Runnable {
                     lasttime = System.currentTimeMillis();
                     play();
 
-                    System.out.println(deck.size());
+                    System.out.println("Deck Size::::::: " + deck.size());
                     System.out.println("discarD: " + discardPile.getSize());
-                    System.out.println("Discard hand:::::::::::");
-                    discardPile.printHand();
-                    System.out.println("::::::::::::::::::::::");
+//                    System.out.println("Discard hand:::::::::::");
+//                    discardPile.printHand();
+//                    System.out.println("::::::::::::::::::::::");
 
 //                    System.out.println("top============");
 //                    System.out.println(discardPile.getCard(discardPile.getSize()-1));
@@ -245,15 +245,26 @@ public class GameLogic implements Runnable {
         if (draw2) {
             System.out.println("a player is drawing 2 cards");
             handOfPlayer.addCard(deck.returnTop());
+            deck.pop();
             handOfPlayer.addCard(deck.returnTop());
+            deck.pop();
+
             draw2 = false;
         }
         if (draw4) {
             System.out.println("a player is drawing 4 cards");
             handOfPlayer.addCard(deck.returnTop());
+            deck.pop();
+
             handOfPlayer.addCard(deck.returnTop());
+            deck.pop();
+
             handOfPlayer.addCard(deck.returnTop());
+            deck.pop();
+
             handOfPlayer.addCard(deck.returnTop());
+            deck.pop();
+
             draw4 = false;
         }
 
