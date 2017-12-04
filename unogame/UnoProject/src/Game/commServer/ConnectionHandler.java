@@ -68,7 +68,6 @@ public class ConnectionHandler extends WebSocketServer  {
      * @param conn Websocket connection to a client
      * @param handshake handshake that is needed to establish the connection
      */
-    @Override
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
         boolean isAlreadyConnected = false;
         gameLogic.setLastActionTime(lastActionTime);

@@ -143,7 +143,7 @@ public class GameLogic implements Runnable {
 
             }
             if (win == 4) {
-                if (System.currentTimeMillis() > lasttime + 300) {
+                if (System.currentTimeMillis() > lasttime + 3000) {
                     lasttime = System.currentTimeMillis();
                     play();
 
@@ -226,7 +226,9 @@ public class GameLogic implements Runnable {
         Card playCard;
         if (!connectedUser[turnOfPlayer]) {
             playCard = ai[turnOfPlayer].playTurn();
+
             skipDraw2ReverseWinChecker(playCard, ai[turnOfPlayer].hand, turnOfPlayer);
+
             turnOver();
         } else {
             playCard = users[turnOfPlayer].playTurn();
@@ -244,7 +246,8 @@ public class GameLogic implements Runnable {
      * @param handOfPlayer       the players hand
      */
     private void skipDraw2ReverseWinChecker(Card playCard, Deal handOfPlayer, int id) {
-        System.out.println();
+        System.out.println("");
+
 
         if (draw2) {
             System.out.println("a player is drawing 2 cards");
@@ -254,6 +257,7 @@ public class GameLogic implements Runnable {
             deck.pop();
 
             draw2 = false;
+
         }
         if (draw4) {
             System.out.println("a player is drawing 4 cards");
@@ -271,6 +275,22 @@ public class GameLogic implements Runnable {
 
             draw4 = false;
         }
+        int CardNumber = playCard.getCardNum();
+
+        if (CardNumber == 10) {
+            skip = true;
+        }
+        if (CardNumber == 11) {
+            draw2 = true;
+
+        }
+        if (CardNumber == 12) {
+            swapReverse();
+        }
+        if (CardNumber == 14) {
+            draw4 = true;
+
+        }
 
         if (handOfPlayer.getSize() == 0) {
             System.out.println("Someone Won!");
@@ -286,23 +306,8 @@ public class GameLogic implements Runnable {
                 calledUno[id] = false;
             }
 
-            int CardNumber = playCard.getCardNum();
 
 
-            if (CardNumber == 10) {
-                skip = true;
-            }
-            if (CardNumber == 11) {
-                draw2 = true;
-
-            }
-            if (CardNumber == 12) {
-                swapReverse();
-            }
-            if (CardNumber == 14) {
-                draw4 = true;
-
-            }
         }
     }
 
