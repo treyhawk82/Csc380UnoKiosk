@@ -182,11 +182,14 @@ public class GameLogic implements Runnable {
     public static void getChoice() {
 
     }
+
+
     /*
     /**
      * method to handle wild card logic
      * @param cardNum
      * @return Card
+
     public static Card wildCard(int cardNum) {
         System.out.println("Enter a color: ");
         String input = s.nextLine();
@@ -226,7 +229,7 @@ public class GameLogic implements Runnable {
         Card playCard;
         if (!connectedUser[turnOfPlayer]) {
             playCard = ai[turnOfPlayer].playTurn();
-
+            // System.out.println("-----------------  "+ turnOfPlayer);
             skipDraw2ReverseWinChecker(playCard, ai[turnOfPlayer].hand, turnOfPlayer);
         } else {
             playCard = users[turnOfPlayer].playTurn();
@@ -248,7 +251,7 @@ public class GameLogic implements Runnable {
 
 
         if (draw2) {
-            System.out.println("a player is drawing 2 cards");
+            System.out.println("----------player " + id + " is drawing 2 cards-------");
             handOfPlayer.addCard(deck.returnTop());
             deck.pop();
             handOfPlayer.addCard(deck.returnTop());
@@ -273,22 +276,7 @@ public class GameLogic implements Runnable {
 
             draw4 = false;
         }
-        int CardNumber = playCard.getCardNum();
 
-        if (CardNumber == 10) {
-            skip = true;
-        }
-        if (CardNumber == 11) {
-            draw2 = true;
-
-        }
-        if (CardNumber == 12) {
-            swapReverse();
-        }
-        if (CardNumber == 14) {
-            draw4 = true;
-
-        }
 
         if (handOfPlayer.getSize() == 0) {
             System.out.println("Someone Won!");
@@ -307,11 +295,36 @@ public class GameLogic implements Runnable {
 
 
         }
+
         turnOver();
+        int CardNumber = playCard.getCardNum();
+
+        if (CardNumber == 10) {
+            skip = true;
+        }
+        if (CardNumber == 11) {
+            draw2 = true;
+            //  System.out.println(playCard + " ***** draw 2 = true ******");
+
+        }
+        if (CardNumber == 12) {
+            swapReverse();
+        }
+        if (CardNumber == 14) {
+            draw4 = true;
+
+        }
     }
 
 
+    private void timeOut(User user) {
+        if (getActionTimeOfPlayer(1) == 30 + getActionTimeOfPlayer(1)) {
 
+            System.out.println("---------player timed out------------");
+
+
+        }
+    }
 
     /**
      * if reverse true, then change it to false; if reverse false, change it to true.
