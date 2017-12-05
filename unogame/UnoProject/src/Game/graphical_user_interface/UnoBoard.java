@@ -61,9 +61,13 @@ public class UnoBoard extends GameObject {
 
         turnOfPlayer = gui.getTurnOfPlayer();
             topOfDiscardPile = gui.topOfDiscardPile;
+        try {
             for (int i = 0; i < hands.length; i++) {
                 String[] cardsInHand = hands[i].split("x");
                 numberOfCardsinHands[i] = cardsInHand.length;
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
             }
         server = gui.getServer();
         lastColourSelected = server.getLastColourSelected();

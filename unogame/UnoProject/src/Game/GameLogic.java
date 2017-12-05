@@ -228,8 +228,6 @@ public class GameLogic implements Runnable {
             playCard = ai[turnOfPlayer].playTurn();
 
             skipDraw2ReverseWinChecker(playCard, ai[turnOfPlayer].hand, turnOfPlayer);
-
-            turnOver();
         } else {
             playCard = users[turnOfPlayer].playTurn();
             if (!playCard.getCardColor().equalsIgnoreCase("disconnected")) {
@@ -309,6 +307,7 @@ public class GameLogic implements Runnable {
 
 
         }
+        turnOver();
     }
 
 
@@ -537,5 +536,6 @@ public class GameLogic implements Runnable {
 
     public void userPlayedCard(String message, int userID){
         users[userID].cardPlayed(message);
+        System.out.println(message + " = Message, User ID = " + userID + " userPlayedCard method");
     }
 }

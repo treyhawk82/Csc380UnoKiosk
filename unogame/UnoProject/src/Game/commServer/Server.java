@@ -100,7 +100,7 @@ public class Server implements Runnable{
                         }
                         commstring[i] = topOfDiscardPile + "-" + i + "-" + player_blue_handsize + "-"
                                 + player_yellow_handsize + "-" + player_green_handsize + "-"
-                                + player_red_handsize + "-" + hands[i] + "-" + isPlayersTurn;
+                                + player_red_handsize + "-" + hands[i] + "-" + isPlayersTurn + "-" + lastColourSelected;
                     }
                 }
             }

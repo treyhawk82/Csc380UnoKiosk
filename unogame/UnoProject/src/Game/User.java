@@ -9,6 +9,8 @@ public class User extends Player {
     Server server;
     int id;
     int lastPlayableCard;
+    boolean hasPlayableCard = false;
+    long lastActionTime = System.currentTimeMillis();
 
     public User(Deal hand, GameLogic gameLogic, Server server, int id) {
         this.hand = hand;
@@ -18,23 +20,49 @@ public class User extends Player {
     }
 
     public Card playTurn() {
-        long lastActionTime = gameLogic.getActionTimeOfPlayer(id);
-        while (lastActionTime < gameLogic.getTurnStartTime() && gameLogic.checkIfStillConnected(id)) {
-            int i = 0;
+        int handSize = hand.getSize();
+        Card topOfDiscardPile = gameLogic.returnTopOfDiscardPile();
+        String topOfDiscardPileColour = topOfDiscardPile.getCardColor();
+        int topOfDiscardPileNumber = topOfDiscardPile.getCardNum();
+        for (int i = 0; i < handSize; i++) {
+            Card handCard = hand.getCard(i);
+            if (handCard.getCardColor().equalsIgnoreCase(topOfDiscardPileColour)
+                    || handCard.getCardNum() == topOfDiscardPileNumber
+                    || handCard.getCardColor().equalsIgnoreCase("wild")
+                    || handCard.getCardColor().equalsIgnoreCase("wild + 4")) {
+                hasPlayableCard = true;
+            }
         }
-        if (!gameLogic.checkIfStillConnected(id)) {
-            return new Card("disconnected", 123, false);
-        } else {
-            Card playableCard = hand.getCard(lastPlayableCard);
-            hand.discardCard(playableCard);
-            return  playableCard;
+        if (hasPlayableCard) {
+            int counter = 0;
+            while (lastActionTime < gameLogic.getTurnStartTime() && gameLogic.checkIfStillConnected(id)) {
+                counter++;
+                //System.out.println(lastActionTime + " = lastActionTime, TurnStartTime = " + gameLogic.getTurnStartTime() + ", still connected = " + gameLogic.checkIfStillConnected(id));
+            }
+            System.out.println("Broke out of actiontime loop");
+            hasPlayableCard = false;
+            if (!gameLogic.checkIfStillConnected(id)) {
+                return new Card("disconnected", 123, false);
+            } else {
+                Card playableCard = hand.getCard(lastPlayableCard);
+                hand.discardCard(playableCard);
+                gameLogic.discardCard(playableCard);
+                System.out.println("card played: " + playableCard.getCardColor() + playableCard.getCardNum());
+                return playableCard;
+            }
         }
+        hasPlayableCard = false;
+        hand.dealCard(gameLogic.deck);
+        Card noPlayableCard = new Card("noPlayableCard", 15, false);
+        return noPlayableCard;
     }
 
     public void cardPlayed(String message) {
         for(int i = 0; i < hand.getSize(); i++){
             if(hand.getCard(i).getCommCardString().equalsIgnoreCase(message)){
                 lastPlayableCard = i;
+                System.out.println("Card found: " + lastPlayableCard);
+                lastActionTime = System.currentTimeMillis();
             }
         }
     }

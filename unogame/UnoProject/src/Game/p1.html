@@ -3,7 +3,7 @@
 <head>
 <title>Player</title>
 
-<head char10et="utf-8">
+    <head charset="utf-8">
 	
 <style>
 body{
@@ -14,10 +14,7 @@ width: 100%;
 height: 250px;
 overflow-x: scroll;
 }
-button{
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-}
+
 </style>
 </head>
 <body>
@@ -28,12 +25,32 @@ button{
 <button type="button" onclick="uno()" id="uno" style="padding: 15% 20%">Uno</button>
 </p>
 
-<p align="center" style="">
+<p align="center" style="" id="play">
 <button type="button" onclick="play()" id="select" style="padding: 5% 10%; background-color:green; color:white; text-decoration: none;">Play Card</button>
 </p>
 
-<b/>
-<b/>
+<br/>
+<br/>
+
+<p id="wild_buttons" style="display:none;">
+
+    <button type="button" onclick="wild('blue')" id="select"
+            style="padding: 5% 10%; background-color:blue; color:white; text-decoration: none;">Play Blue
+    </button>
+    <button type="button" onclick="wild('red')" id="select"
+            style="padding: 5% 10%; background-color:red; color:white; text-decoration: none;">Play Red
+    </button>
+    <button type="button" onclick="wild('green')" id="select"
+            style="padding: 5% 10%; background-color:green; color:white; text-decoration: none;">Play Green
+    </button>
+    <button type="button" onclick="wild('yellow')" id="select"
+            style="padding: 5% 10%; background-color:yellow; text-decoration: none;">Play Yellow
+    </button>
+
+    <br/>
+    <br/>
+</p>
+
 <div>
 <img src="small/blue_0.png" id="b0" class="blue 0" onclick="select(b0,topOfDiscardPile)" style="display:inline; border:10px; border-color:green;" name="">
 <img src="small/blue_1.png" id="b1" class="blue 1" onclick="select(b1,topOfDiscardPile)" style="display:inline" name="">
@@ -141,14 +158,22 @@ button{
 <img src="small/yellow_reverse.png" id="y12e" class="yellow reverse" onclick="select(y12e,topOfDiscardPile)" style="display:inline" name="">
 <img src="small/yellow_skip.png" id="y10e" class="yellow skip" onclick="select(y10e,topOfDiscardPile)" style="display:inline" name="">
 
-<img src="small/wild_pick_four.png" id="w14" class="wild" onclick="select(w14,topOfDiscardPile)" style="display:inline" name="">
-<img src="small/wild_pick_four.png" id="w14e" class="wild" onclick="select(w14e,topOfDiscardPile)" style="display:inline" name="">
-<img src="small/wild_pick_four.png" id="w14f" class="wild" onclick="select(w14f,topOfDiscardPile)" style="display:inline" name="">
-<img src="small/wild_pick_four.png" id="w14g" class="wild" onclick="select(w14g,topOfDiscardPile)" style="display:inline" name="">
-<img src="small/wild_color_changer.png" id="w13" class="wild" onclick="select(w13,topOfDiscardPile)" style="display:inline" name="">
-<img src="small/wild_color_changer.png" id="w13e" class="wild" onclick="select(w13e,topOfDiscardPile)" style="display:inline" name="">
-<img src="small/wild_color_changer.png" id="w13f" class="wild" onclick="select(w13f,topOfDiscardPile)" style="display:inline" name="">
-<img src="small/wild_color_changer.png" id="w13g" class="wild" onclick="select(w13g,topOfDiscardPile)" style="display:inline" name="">
+    <img src="small/wild_pick_four.png" id="w14" class="wild" onclick="wild(w14,topOfDiscardPile)"
+         style="display:inline" name="">
+    <img src="small/wild_pick_four.png" id="w14e" class="wild" onclick="wild(w14e,topOfDiscardPile)"
+         style="display:inline" name="">
+    <img src="small/wild_pick_four.png" id="w14f" class="wild" onclick="wild(w14f,topOfDiscardPile)"
+         style="display:inline" name="">
+    <img src="small/wild_pick_four.png" id="w14g" class="wild" onclick="wild(w14g,topOfDiscardPile)"
+         style="display:inline" name="">
+    <img src="small/wild_color_changer.png" id="w13" class="wild" onclick="wild(w13,topOfDiscardPile)"
+         style="display:inline" name="">
+    <img src="small/wild_color_changer.png" id="w13e" class="wild" onclick="wild(w13e,topOfDiscardPile)"
+         style="display:inline" name="">
+    <img src="small/wild_color_changer.png" id="w13f" class="wild" onclick="wild(w13f,topOfDiscardPile)"
+         style="display:inline" name="">
+    <img src="small/wild_color_changer.png" id="w13g" class="wild" onclick="wild(w13g,topOfDiscardPile)"
+         style="display:inline" name="">
 
 </div>
 <!--
@@ -184,7 +209,7 @@ connection.onmessage = function (e) {
 console.log('Server: ' + e.data);
 serverString = e.data;
 serverStringArray = serverString.split('-');
-topOfDiscardPile = serverStringArray[0];
+    topOfDiscardPile = document.getElementById(serverStringArray[0]);
 playerNumber = serverStringArray[1];
 player0NoOfCards = serverStringArray[2];
 player1NoOfCards = serverStringArray[3];
@@ -192,6 +217,7 @@ player2NoOfCards = serverStringArray[4];
 player3NoOfCards = serverStringArray[5];
 playerHand = serverStringArray[6];
 isTurnOfPlayer = serverStringArray[7];
+    lastColourSelected = serverStringArray[8];
 cardsArray = playerHand.split('x');
 console.log(serverString);
 console.log(topOfDiscardPile + " = top of discard pile");
@@ -206,16 +232,17 @@ for(var j = 0; j < cards.length; j++){
 cards[j].style="display:none;";
 }
 for(var i = 0; i < cardsArray.length; i++){
-console.log(cardsArray[i] + " = card #" + i);
 document.getElementById(cardsArray[i]).style="display:inline;";
+    select(test, topOfDiscardPile);//test to see if we can fix border issue
+    console.log(cardsArray[i] + " = card #" + i);
 }
 console.log(isTurnOfPlayer);
 };
-var colour10 = ['#00D7FC', '#FF6866', '#FFEA5C', '#35FFAF'];
+var colours = ['#00D7FC', '#FF6866', '#FFEA5C', '#35FFAF'];
 setInterval(function () {
 console.log('test');
 connection.send('update');
-document.body.style.backgroundColor = colour10[playerNumber];
+    document.body.style.backgroundColor = colours[playerNumber];
 }, 2000);
 
 function uno() { 
@@ -456,29 +483,70 @@ function comparable(x,y){
 	
 	var selectedCard;
 	var test;
+//more tsest variables
+isTurnOfPlayer = true;
+topOfDiscardPile = b0;
 	
 function select(x,y){
-	test.style="border:none;"; 
+	test.style="border:none;";
+    document.getElementById('wild_buttons').style = "display:none;";
+    document.getElementById('play').style = "display:block";
 	selectedCard = x;
-	console.log(selectedCard.id + " = selected Card");
+    console.log(selectedCard.id);
 	if(comparable(selectedCard,topOfDiscardPile)){
 	x.style="display:inline; border:5px solid green";
 	test = x;
 	}else{
 	x.style="display:inline; border:5px solid red";
 	test = x;
-	console.log(selectedCard.id + " != " + topOfDiscardPile);
 	}
 	
 }
 function play(){
- 
- if(comparable(selectedCard, topOfDiscardPile) == true && isTurnOfPlayer == true){
+    test.style = "border:none;";
+    selectedCard.style = "display:inline; border:none;";
+    test = selectedCard;
+    console.log("success to send " + selectedCard.id);
 	connection.send(selectedCard.id);
-	 selectedCard.style = "border:none;";
-     selectedCard = null;
-	}
 }
+
+function wild(x, y) {
+    select(x, y);
+    document.getElementById('wild_buttons').style = "display:block";
+    document.getElementById('play').style = "display:none";
+}
+
+function wild_button(x) {
+    if (x == "blue" && serverStringArray[7] == "true") {
+        document.getElementById('wild_buttons').style = "display:none";
+        connection.send(selectedCard.id + "xb");
+        selectedCard.style = "border:none;";
+        console.log("success to send " + selectedCard.id);
+        selectedCard = null;
+    } else if (x == "red" && serverStringArray[7] == "true") {
+        document.getElementById('wild_buttons').style = "display:none";
+        connection.send(selectedCard.id + "xr");
+        selectedCard.style = "border:none;";
+        console.log("success to send " + selectedCard.id);
+        selectedCard = null;
+    } else if (x == "green" && serverStringArray[7] == "true") {
+        document.getElementById('wild_buttons').style = "display:none";
+        connection.send(selectedCard.id + "xg");
+        selectedCard.style = "border:none;";
+        console.log("success to send " + selectedCard.id);
+        selectedCard = null;
+    } else if (x == "yellow" && serverStringArray[7] == "true") {
+        document.getElementById('wild_buttons').style = "display:none";
+        connection.send(selectedCard.id + "xy");
+        selectedCard.style = "border:none;";
+        console.log("success to send " + selectedCard.id);
+        selectedCard = null;
+    } else {
+        console.log("failure to send " + selectedCard);
+    }
+
+}
+
 function test(){
 	window.alert("test");
 }
