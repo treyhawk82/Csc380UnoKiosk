@@ -83,7 +83,7 @@ public class GUI extends Canvas implements Runnable {
             }
 
 
-            if(System.currentTimeMillis() > lastTime2 + 1000) {
+            if (System.currentTimeMillis() > lastTime2 + 100) {
                 hands = server.getHands();
                 for (int i = 0; i < hands.length; i++) {
                     lastTime2 = System.currentTimeMillis();
