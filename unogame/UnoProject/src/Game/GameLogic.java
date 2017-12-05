@@ -145,6 +145,7 @@ public class GameLogic implements Runnable {
             if (win == 4) {
                 if (System.currentTimeMillis() > lasttime + 3000) {
                     lasttime = System.currentTimeMillis();
+                    checkIfPlayerHasToDraw(ai[turnOfPlayer].hand, turnOfPlayer);
                     play();
 
                     System.out.println("Deck Size::::::: " + deck.size());
@@ -239,19 +240,9 @@ public class GameLogic implements Runnable {
         }
     }
 
-    /**
-     * first checks if wincondition is met, if not it checks if either a skip, reverse or draw 2 has been played,
-     * and takes the necessary actions.
-     *
-     * @param playCard card that a player has been played in the last turn
-     * @param handOfPlayer       the players hand
-     */
-    private void skipDraw2ReverseWinChecker(Card playCard, Deal handOfPlayer, int id) {
-        System.out.println("");
-
-
+    private void checkIfPlayerHasToDraw(Deal handOfPlayer, int player_id) {
         if (draw2) {
-            System.out.println("----------player " + id + " is drawing 2 cards-------");
+            System.out.println("----------player " + player_id + " is drawing 2 cards-------");
             handOfPlayer.addCard(deck.returnTop());
             deck.pop();
             handOfPlayer.addCard(deck.returnTop());
@@ -261,7 +252,7 @@ public class GameLogic implements Runnable {
 
         }
         if (draw4) {
-            System.out.println("----------player " + id + " is drawing 4 cards-------");
+            System.out.println("----------player " + player_id + " is drawing 4 cards-------");
             handOfPlayer.addCard(deck.returnTop());
             deck.pop();
 
@@ -276,8 +267,17 @@ public class GameLogic implements Runnable {
 
             draw4 = false;
         }
+    }
 
-
+    /**
+     * first checks if wincondition is met, if not it checks if either a skip, reverse or draw 2 has been played,
+     * and takes the necessary actions.
+     *
+     * @param playCard card that a player has been played in the last turn
+     * @param handOfPlayer       the players hand
+     */
+    private void skipDraw2ReverseWinChecker(Card playCard, Deal handOfPlayer, int id) {
+        System.out.println("");
         if (handOfPlayer.getSize() == 0) {
             System.out.println("Someone Won!");
             resetBoard();

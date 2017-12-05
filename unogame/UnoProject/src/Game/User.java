@@ -35,8 +35,11 @@ public class User extends Player {
         }
         if (hasPlayableCard) {
             int counter = 0;
+            long printTimer = System.currentTimeMillis();
             while (lastActionTime < gameLogic.getTurnStartTime() && gameLogic.checkIfStillConnected(id)) {
-                counter++;
+                if (System.currentTimeMillis() > printTimer + 4000) {
+                    System.out.println("Waiting for Player " + id + " to play a Card.");
+                }
                 //System.out.println(lastActionTime + " = lastActionTime, TurnStartTime = " + gameLogic.getTurnStartTime() + ", still connected = " + gameLogic.checkIfStillConnected(id));
             }
             System.out.println("Broke out of actiontime loop");
