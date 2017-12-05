@@ -229,7 +229,7 @@ public class GameLogic implements Runnable {
         Card playCard;
         if (!connectedUser[turnOfPlayer]) {
             playCard = ai[turnOfPlayer].playTurn();
-            // System.out.println("-----------------  "+ turnOfPlayer);
+            System.out.println("-----------------  " + turnOfPlayer);
             skipDraw2ReverseWinChecker(playCard, ai[turnOfPlayer].hand, turnOfPlayer);
         } else {
             playCard = users[turnOfPlayer].playTurn();
@@ -261,7 +261,7 @@ public class GameLogic implements Runnable {
 
         }
         if (draw4) {
-            System.out.println("a player is drawing 4 cards");
+            System.out.println("----------player " + id + " is drawing 4 cards-------");
             handOfPlayer.addCard(deck.returnTop());
             deck.pop();
 
@@ -296,7 +296,6 @@ public class GameLogic implements Runnable {
 
         }
 
-        turnOver();
         int CardNumber = playCard.getCardNum();
 
         if (CardNumber == 10) {
@@ -314,6 +313,8 @@ public class GameLogic implements Runnable {
             draw4 = true;
 
         }
+        turnOver();
+
     }
 
 
