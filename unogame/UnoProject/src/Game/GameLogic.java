@@ -2,9 +2,6 @@ package Game;
 
 import Game.commServer.Server;
 
-import java.util.Random;
-import java.util.Scanner;
-
 public class GameLogic implements Runnable {
 
     //fields
@@ -18,13 +15,9 @@ public class GameLogic implements Runnable {
     static Deal player_green = new Deal();
     static Deal player_red = new Deal();
 
-    static Random rn = new Random();
-    static boolean uno;
-    static Scanner s = new Scanner(System.in);
     static boolean done = false;
     static int turnOfPlayer;
     static String lastWildCardColourSelected = "blue";
-    static int draw2Stack = 0;
     static long turnStartTime;
     static boolean calledUno[] = new boolean[4];
     static boolean connectedUser[] = new boolean[4];
@@ -279,7 +272,6 @@ public class GameLogic implements Runnable {
             resetBoard();
             skip = false;
             reverse = false;
-            draw2Stack = 0;
             win = turnOfPlayer;
 
         } else {
