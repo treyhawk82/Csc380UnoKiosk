@@ -12,6 +12,7 @@ public class User extends Player {
     boolean hasPlayableCard = false;
     long lastActionTime = System.currentTimeMillis();
 
+
     public User(Deal hand, GameLogic gameLogic, Server server, int id) {
         this.hand = hand;
         this.gameLogic = gameLogic;
