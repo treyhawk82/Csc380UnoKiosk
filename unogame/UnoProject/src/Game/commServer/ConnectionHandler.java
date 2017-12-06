@@ -153,10 +153,31 @@ public class ConnectionHandler extends WebSocketServer  {
         }
 
         //saves action string if message is not update
+        if (message.equalsIgnoreCase("Uno")) {
+            if (gameLogic.getHandSize(playerNumber) == 1 && !gameLogic.checkCalledUno(playerNumber)) {
+                gameLogic.callsUno(playerNumber);
+            } else {
+                for (int i = 0; i < 4; i++) {
+                    gameLogic.callsOutUno();
+                }
+            }
+        }
         if (!message.equalsIgnoreCase("update") && !message.equalsIgnoreCase("Uno")) {
             for (int i = 0; i < conns.size(); i++) {
                 if (conn == conns.get(i)) {
-                    communicatePlayedCardToGameLogic(message, playerNumber);
+                    String[] splitMessage = message.split("x");
+                    communicatePlayedCardToGameLogic(splitMessage[0], playerNumber);
+                    if (splitMessage.length > 1) {
+                        if (splitMessage[1].equalsIgnoreCase("b")) {
+                            gameLogic.selectColour("blue");
+                        } else if (splitMessage[1].equalsIgnoreCase("y")) {
+                            gameLogic.selectColour("yellow");
+                        } else if (splitMessage[1].equalsIgnoreCase("g")) {
+                            gameLogic.selectColour("green");
+                        } else if (splitMessage[1].equalsIgnoreCase("r")) {
+                            gameLogic.selectColour("red");
+                        }
+                    }
                     lastConnectionTime[i] = System.currentTimeMillis();
                 }
             }

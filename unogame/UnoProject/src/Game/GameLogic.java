@@ -125,10 +125,6 @@ public class GameLogic implements Runnable {
          * this will be the game loop
          */
         int loop = 7;
-        ai1.activateCallout();
-        ai2.activateCallout();
-        ai3.activateCallout();
-        ai4.activateCallout();
         done = true;
         long lasttime = System.currentTimeMillis();
         do {
@@ -520,6 +516,10 @@ public class GameLogic implements Runnable {
         return calledUno;
     }
 
+    public boolean checkCalledUno(int player_id) {
+        return calledUno[player_id];
+    }
+
     public void setLastActionTime(long[] actionTimes) {
         lastActionTime = actionTimes;
     }
@@ -546,6 +546,10 @@ public class GameLogic implements Runnable {
 
     public int getLastWinner() {
         return lastWinner;
+    }
+
+    public int getHandSize(int player_id) {
+        return ai[player_id].hand.getSize();
     }
 
     public void userPlayedCard(String message, int userID){
