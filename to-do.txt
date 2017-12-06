@@ -1,12 +1,8 @@
 What's missing?
-- //uno callout logic is there, just has to be hooked up with client
-- currently the deck can run out of cards resulting in an exception, maybe check that in the dealCard() or whereever and rebase the deck
+- timeout function
+- synchronization
+- limiting connections
 - after a victory when the game resets, it then starts with player yellow / 1 instead of blue / 0 for some unknown reason
-- victory screen of some sort, CATS?
-- swap from AI to player
-	- Player class that accepts a String from the server on which card has been played and which colour has been selected
-- comments, I'm sorry :^)
-- the special effect of the first card on the discard pile is currently not considered
 - merge the play() and checkHandForPlayableCard() methods at some point, see comment on that
 - AI calls and calls out uno only in their turn - maybe change that later (low prio)
 - Updated Documentation of artifacts(85% Done)
