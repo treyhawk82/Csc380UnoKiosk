@@ -41,6 +41,7 @@ public class User extends Player {
                 if (System.currentTimeMillis() > printTimer + 4000) {
                     System.out.println("Waiting for Player " + id + " to play a Card.");
                     printTimer = System.currentTimeMillis();
+                    //TIMEOUT TO-DO
                 }
                 //System.out.println(lastActionTime + " = lastActionTime, TurnStartTime = " + gameLogic.getTurnStartTime() + ", still connected = " + gameLogic.checkIfStillConnected(id));
             }
