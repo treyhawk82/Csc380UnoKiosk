@@ -43,7 +43,7 @@ public class UnoBoard extends GameObject {
         background = new Background((int) Math.round(SCREEN_WIDTH / SCREEN_SCALE_WIDTH), SCREEN_SCALE_WIDTH, (int) Math.round(SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT), SCREEN_SCALE_HEIGHT, numberOfCardsinHands, this);
         this.gui = gui;
         try {
-            Thread.sleep(200);
+            Thread.sleep(50);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

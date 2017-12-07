@@ -45,6 +45,7 @@ public class User extends Player {
                 }
                 //System.out.println(lastActionTime + " = lastActionTime, TurnStartTime = " + gameLogic.getTurnStartTime() + ", still connected = " + gameLogic.checkIfStillConnected(id));
             }
+            gameLogic.setLastTime(System.currentTimeMillis());
             System.out.println("Broke out of actiontime loop");
             hasPlayableCard = false;
             if (!gameLogic.checkIfStillConnected(id)) {

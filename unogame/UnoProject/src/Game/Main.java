@@ -35,16 +35,20 @@ public class Main{
         //      System.out.println("You are player " + p1.getID())
         //      h.addCards();
 
-        GameLogic gameLogic = new GameLogic();
-        Server server = new Server(gameLogic);
-        Thread serverThread = new Thread(server, "CommunicationServer");
-        serverThread.start();
-        GUI gui = new GUI(server);
-        Thread gameLogicThread = new Thread(gameLogic, "GameLogic");
-        gameLogicThread.start();
-        gameLogic.setServer(server);
-        gui.getCardDrawer().setGameLogic(gameLogic);
-        gui.setGameLogic(gameLogic);
+        try {
+            GameLogic gameLogic = new GameLogic();
+            Server server = new Server(gameLogic);
+            Thread serverThread = new Thread(server, "CommunicationServer");
+            serverThread.start();
+            GUI gui = new GUI(server);
+            Thread gameLogicThread = new Thread(gameLogic, "GameLogic");
+            gameLogicThread.start();
+            gameLogic.setServer(server);
+            gui.getCardDrawer().setGameLogic(gameLogic);
+            gui.setGameLogic(gameLogic);
+        } catch (java.util.ConcurrentModificationException e) {
+            Main main = new Main();
+        }
     }
 
 

@@ -65,45 +65,51 @@ public class Server implements Runnable{
      * handsizes for each individual player every 1000ms and concatenates them again to pass it on to the gui
      */
     public void run(){
-        connectionHandler = new ConnectionHandler(commstring, NUMBER_OF_PLAYERS);
-        connectionHandler.start();
+        try {
+            connectionHandler = new ConnectionHandler(commstring, NUMBER_OF_PLAYERS);
+            connectionHandler.start();
 
-        // saves the initialisation time of the method in order to restrain the method to only update every 1000ms
-        long lastTime = System.currentTimeMillis();
-        connectionHandler.setGameLogic(gameLogic);
-        while (true) {
-            if (System.currentTimeMillis() > lastTime + 100) {
-                connectionHandler.runConnectionCheck();
-                lastTime = System.currentTimeMillis();
-                gameLogic.getHandSizesAndHands();
-                //gets a concatenated string of hands and handsizes for each individual player
-                String currentHandSizesAndHands = gameLogic.getHandSizesAndHands();
-                String parseHandString[] = currentHandSizesAndHands.split("-");
-                if (parseHandString.length == 11) {
-                    player_blue_handsize = Integer.parseInt(parseHandString[0]);
-                    player_yellow_handsize = Integer.parseInt(parseHandString[1]);
-                    player_green_handsize = Integer.parseInt(parseHandString[2]);
-                    player_red_handsize = Integer.parseInt(parseHandString[3]);
+            // saves the initialisation time of the method in order to restrain the method to only update every 1000ms
+            long lastTime = System.currentTimeMillis();
+            connectionHandler.setGameLogic(gameLogic);
+            while (true) {
+                if (System.currentTimeMillis() > lastTime + 50) {
+                    connectionHandler.runConnectionCheck();
+                    lastTime = System.currentTimeMillis();
+                    gameLogic.getHandSizesAndHands();
+                    //gets a concatenated string of hands and handsizes for each individual player
+                    String currentHandSizesAndHands = gameLogic.getHandSizesAndHands();
+                    String parseHandString[] = currentHandSizesAndHands.split("-");
+                    if (parseHandString.length == 11) {
+                        player_blue_handsize = Integer.parseInt(parseHandString[0]);
+                        player_yellow_handsize = Integer.parseInt(parseHandString[1]);
+                        player_green_handsize = Integer.parseInt(parseHandString[2]);
+                        player_red_handsize = Integer.parseInt(parseHandString[3]);
 
-                    hands[0] = parseHandString[4];
-                    hands[1] = parseHandString[5];
-                    hands[2] = parseHandString[6];
-                    hands[3] = parseHandString[7];
-                    topOfDiscardPile = parseHandString[8];
-                    turnOfPlayer = Integer.parseInt(parseHandString[9]);
-                    lastColourSelected = parseHandString[10];
+                        hands[0] = parseHandString[4];
+                        hands[1] = parseHandString[5];
+                        hands[2] = parseHandString[6];
+                        hands[3] = parseHandString[7];
+                        topOfDiscardPile = parseHandString[8];
+                        turnOfPlayer = Integer.parseInt(parseHandString[9]);
+                        lastColourSelected = parseHandString[10];
 
-                    for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
-                        boolean isPlayersTurn = false;
-                        if (turnOfPlayer == i) {
-                            isPlayersTurn = true;
+                        for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
+                            boolean isPlayersTurn = false;
+                            if (turnOfPlayer == i) {
+                                isPlayersTurn = true;
+                            }
+                            commstring[i] = topOfDiscardPile + "-" + i + "-" + player_blue_handsize + "-"
+                                    + player_yellow_handsize + "-" + player_green_handsize + "-"
+                                    + player_red_handsize + "-" + hands[i] + "-" + isPlayersTurn + "-" + lastColourSelected;
                         }
-                        commstring[i] = topOfDiscardPile + "-" + i + "-" + player_blue_handsize + "-"
-                                + player_yellow_handsize + "-" + player_green_handsize + "-"
-                                + player_red_handsize + "-" + hands[i] + "-" + isPlayersTurn + "-" + lastColourSelected;
                     }
                 }
             }
+        } catch (java.util.ConcurrentModificationException e) {
+            Server server = this;
+            server = new Server(gameLogic);
+            gameLogic.setServer(server);
         }
     }
 

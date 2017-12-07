@@ -30,6 +30,7 @@ public class GameLogic implements Runnable {
     static boolean draw4 = false;
     static int win = 4;
     int lastWinner = 4;
+    long lastTime = System.currentTimeMillis();
 
     /*
     AI and User
@@ -119,7 +120,6 @@ public class GameLogic implements Runnable {
          */
         int loop = 7;
         done = true;
-        long lasttime = System.currentTimeMillis();
         do {
             if (deck.size() == 0) {
                 Card Top = discardPile.getCard(discardPile.getSize() - 1);
@@ -132,8 +132,8 @@ public class GameLogic implements Runnable {
 
             }
             if (win == 4) {
-                if (System.currentTimeMillis() > lasttime + 3000) {
-                    lasttime = System.currentTimeMillis();
+                if (System.currentTimeMillis() > lastTime + 3000) {
+                    lastTime = System.currentTimeMillis();
                     checkIfPlayerHasToDraw(ai[turnOfPlayer].hand, turnOfPlayer);
                     play();
 
@@ -424,7 +424,11 @@ public class GameLogic implements Runnable {
             handSizesandHands = handSizesandHands + "-"
                     + discardPile.getCard(discardPileSize - 1).getCommCardString() + "-" + turnOfPlayer + "-"
                     + getLastWildCardColourSelected();
-            System.out.println(lastWildCardColourSelected + " = last color GameLogic");
+            long lastColorConsoleTimer = System.currentTimeMillis();
+            if (System.currentTimeMillis() > lastColorConsoleTimer + 5000) {
+                System.out.println(lastWildCardColourSelected + " = last color GameLogic");
+                lastColorConsoleTimer = System.currentTimeMillis();
+            }
         }
         return handSizesandHands;
     }
@@ -436,7 +440,7 @@ public class GameLogic implements Runnable {
         return discardPile.getCard(discardPile.getSize() - 1);
     }
     /**
-     * @param cardToDiscard card that needs to be discardedd
+     * @param cardToDiscard card that needs to be discarded
      */
     public void discardCard(Card cardToDiscard) {
         if (cardToDiscard.getCardNum() != 15) {
@@ -547,5 +551,13 @@ public class GameLogic implements Runnable {
     public void userPlayedCard(String message, int userID){
         users[userID].cardPlayed(message);
         System.out.println(message + " = Message, User ID = " + userID + " userPlayedCard method");
+    }
+
+    public int getTurnOfPlayer() {
+        return turnOfPlayer;
+    }
+
+    public void setLastTime(long newTime) {
+        lastTime = newTime;
     }
 }

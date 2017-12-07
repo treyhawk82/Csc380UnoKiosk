@@ -31,7 +31,7 @@ public class GUI extends Canvas implements Runnable {
     public GUI(Server server){
         guiHandler = new GUIHandler();
         this.server = server;
-        new Window((int) Math.round(SCREEN_WIDTH / SCREEN_SCALE_WIDTH), (int) Math.round(SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT), "Test Game!", this);
+        new Window((int) Math.round(SCREEN_WIDTH / SCREEN_SCALE_WIDTH), (int) Math.round(SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT), "UNO", this);
 
         unoBoard = new UnoBoard(SCREEN_WIDTH, SCREEN_SCALE_WIDTH, SCREEN_HEIGHT, SCREEN_SCALE_HEIGHT, ID.UnoBoard, this);
         guiHandler.addObject(unoBoard);
@@ -78,12 +78,11 @@ public class GUI extends Canvas implements Runnable {
 
             if(System.currentTimeMillis() - timer > 1000){
                 timer += 1000;
-                System.out.println("FPS: " + frames);
                 frames = 0;
             }
 
 
-            if (System.currentTimeMillis() > lastTime2 + 100) {
+            if (System.currentTimeMillis() > lastTime2 + 50) {
                 hands = server.getHands();
                 for (int i = 0; i < hands.length; i++) {
                     lastTime2 = System.currentTimeMillis();
@@ -140,5 +139,9 @@ public class GUI extends Canvas implements Runnable {
     public void setGameLogic(GameLogic gameLogic) {
         this.gameLogic = gameLogic;
         unoBoard.setGameLogic(gameLogic);
+    }
+
+    public void setServer(Server server) {
+        this.server = server;
     }
 }

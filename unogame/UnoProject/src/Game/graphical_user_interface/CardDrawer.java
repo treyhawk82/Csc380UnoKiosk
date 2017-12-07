@@ -397,16 +397,16 @@ public class CardDrawer {
     public void drawCalledUnos(Graphics g) {
         unoCalled = gameLogic.getCalledUno();
         if (unoCalled[0]) {
-            g.drawImage(uno_called, 615, 110, 106, 108, null);
+            g.drawImage(uno_called, 615 / (int) Math.round(SCREEN_SCALE_WIDTH), 110 / (int) Math.round(SCREEN_SCALE_HEIGHT), 106 / (int) Math.round(SCREEN_SCALE_WIDTH), 108 / (int) Math.round(SCREEN_SCALE_HEIGHT), null);
         }
         if (unoCalled[1]) {
-            g.drawImage(uno_called, 1618, 195, 106, 108, null);
+            g.drawImage(uno_called, 1618 / (int) Math.round(SCREEN_SCALE_WIDTH), 195 / (int) Math.round(SCREEN_SCALE_HEIGHT), 106 / (int) Math.round(SCREEN_SCALE_WIDTH), 108 / (int) Math.round(SCREEN_SCALE_HEIGHT), null);
         }
         if (unoCalled[2]) {
-            g.drawImage(uno_called, 615, 788, 106, 108, null);
+            g.drawImage(uno_called, 615 / (int) Math.round(SCREEN_SCALE_WIDTH), 788 / (int) Math.round(SCREEN_SCALE_HEIGHT), 106 / (int) Math.round(SCREEN_SCALE_WIDTH), 108 / (int) Math.round(SCREEN_SCALE_HEIGHT), null);
         }
         if (unoCalled[3]) {
-            g.drawImage(uno_called, 110, 195, 106, 108, null);
+            g.drawImage(uno_called, 110 / (int) Math.round(SCREEN_SCALE_WIDTH), 195 / (int) Math.round(SCREEN_SCALE_HEIGHT), 106 / (int) Math.round(SCREEN_SCALE_WIDTH), 108 / (int) Math.round(SCREEN_SCALE_HEIGHT), null);
         }
     }
 

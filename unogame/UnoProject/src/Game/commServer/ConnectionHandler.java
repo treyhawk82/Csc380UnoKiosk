@@ -70,29 +70,29 @@ public class ConnectionHandler extends WebSocketServer  {
      */
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
         boolean isAlreadyConnected = false;
-        gameLogic.setLastActionTime(lastActionTime);
-        gameLogic.setLastConnectionTimes(lastConnectionTime);
         for (WebSocket con : conns
                 ) {
             if (!isAlreadyConnected && con.getRemoteSocketAddress().getAddress().getHostAddress().equalsIgnoreCase(conn.getRemoteSocketAddress().getAddress().getHostAddress())) {
-                System.out.println("removed: " + con.getRemoteSocketAddress().getAddress().getHostAddress());
+                System.out.println("Player with IP: " + con.getRemoteSocketAddress().getAddress().getHostAddress() + " was already connected, Connection denied.");
                 conn.send("already connected");
                 conn.close();
                 isAlreadyConnected = true;
             }
         }
 
-        conns.add(conn);
-        String currentIP = conn.getRemoteSocketAddress().getAddress().getHostAddress();
-        boolean filled = false;
-        for(int i = 0; i < NUMBER_OF_PLAYERS; i++){
-            if(currentPlayerIPs[i].equals("0") && !filled){
-                currentPlayerIPs[i] = currentIP;
-                filled = true;
-                gameLogic.userConnected(i);
+        if (!isAlreadyConnected) {
+            conns.add(conn);
+            String currentIP = conn.getRemoteSocketAddress().getAddress().getHostAddress();
+            boolean filled = false;
+            for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
+                if (currentPlayerIPs[i].equals("0") && !filled) {
+                    currentPlayerIPs[i] = currentIP;
+                    filled = true;
+                    gameLogic.userConnected(i);
+                    System.out.println("New connection from " + currentIP);
+                }
             }
         }
-        System.out.println("New connection from " + currentIP);
     }
 
     /**
@@ -169,13 +169,21 @@ public class ConnectionHandler extends WebSocketServer  {
                     communicatePlayedCardToGameLogic(splitMessage[0], playerNumber);
                     if (splitMessage.length > 1) {
                         if (splitMessage[1].equalsIgnoreCase("b")) {
-                            gameLogic.selectColour("blue");
+                            if (gameLogic.getTurnOfPlayer() == playerNumber) {
+                                gameLogic.selectColour("blue");
+                            }
                         } else if (splitMessage[1].equalsIgnoreCase("y")) {
-                            gameLogic.selectColour("yellow");
+                            if (gameLogic.getTurnOfPlayer() == playerNumber) {
+                                gameLogic.selectColour("yellow");
+                            }
                         } else if (splitMessage[1].equalsIgnoreCase("g")) {
-                            gameLogic.selectColour("green");
+                            if (gameLogic.getTurnOfPlayer() == playerNumber) {
+                                gameLogic.selectColour("green");
+                            }
                         } else if (splitMessage[1].equalsIgnoreCase("r")) {
-                            gameLogic.selectColour("red");
+                            if (gameLogic.getTurnOfPlayer() == playerNumber) {
+                                gameLogic.selectColour("red");
+                            }
                         }
                     }
                     lastConnectionTime[i] = System.currentTimeMillis();
