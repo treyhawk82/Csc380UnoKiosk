@@ -31,6 +31,7 @@ public class GameLogic implements Runnable {
     static int win = 4;
     int lastWinner = 4;
     long lastTime = System.currentTimeMillis();
+    long[] unoMercy = new long[4];
 
     /*
     AI and User
@@ -77,13 +78,18 @@ public class GameLogic implements Runnable {
         System.out.println("player red");
         player_red.printHand();
         System.out.println();
-        System.out.println("player yello");
+        System.out.println("player yellow");
         player_yellow.printHand();
         System.out.println();
 
 
         for (int i = 0; i < connectedUser.length; i++) {
             connectedUser[i] = false;
+        }
+
+        for (long unoMercies : unoMercy
+                ) {
+            unoMercies = System.currentTimeMillis();
         }
 
         ai[0] = ai1;
@@ -473,24 +479,25 @@ public class GameLogic implements Runnable {
         return turnStartTime;
     }
 
-    public void callsUno(int id) {
-        calledUno[id] = true;
+    public void callsUno(int player_id) {
+        calledUno[player_id] = true;
+        unoMercy[player_id] = System.currentTimeMillis();
     }
 
     public void callsOutUno() {
-        if (player_blue.getSize() == 1 && !calledUno[0]) {
+        if (player_blue.getSize() == 1 && !calledUno[0] && unoMercy[0] > System.currentTimeMillis() + 4000) {
             player_blue.dealCard(deck);
             player_blue.dealCard(deck);
         }
-        if (player_yellow.getSize() == 1 && !calledUno[1]) {
+        if (player_yellow.getSize() == 1 && !calledUno[1] && unoMercy[1] > System.currentTimeMillis() + 4000) {
             player_yellow.dealCard(deck);
             player_yellow.dealCard(deck);
         }
-        if (player_green.getSize() == 1 && !calledUno[2]) {
+        if (player_green.getSize() == 1 && !calledUno[2] && unoMercy[2] > System.currentTimeMillis() + 4000) {
             player_green.dealCard(deck);
             player_green.dealCard(deck);
         }
-        if (player_red.getSize() == 1 && !calledUno[3]) {
+        if (player_red.getSize() == 1 && !calledUno[3] && unoMercy[3] > System.currentTimeMillis() + 4000) {
             player_red.dealCard(deck);
             player_red.dealCard(deck);
         }
