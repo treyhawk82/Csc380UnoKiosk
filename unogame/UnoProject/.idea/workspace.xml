@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/graphical_user_interface/CardDrawer.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/graphical_user_interface/CardDrawer.class" />
-      <change beforePath="$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java" afterPath="$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -770,7 +768,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512760167968</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="changed / to \\ in file paths">
+      <created>1512763056790</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1512763056790</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
