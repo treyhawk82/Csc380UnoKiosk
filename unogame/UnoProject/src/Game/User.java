@@ -47,10 +47,8 @@ public class User extends Player {
                     turnofPlayer = gameLogic.getTurnOfPlayer();
                     if (gameLogic.timeOut() == true) {
 
-
-                        if (gameLogic.checkIfStillConnected(turnofPlayer)) {
                             gameLogic.userDisconnected(turnofPlayer);
-                        }
+
                     }
 
 
