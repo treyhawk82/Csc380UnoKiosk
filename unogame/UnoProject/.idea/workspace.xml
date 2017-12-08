@@ -1,8 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="">
+    <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="new jar">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_picker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_reverse.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_skip.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/card_back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/card_back_alt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/card_back_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/card_back_right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_picker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_reverse.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_skip.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_picker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_reverse.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_skip.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/uno_called.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_color_changer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_color_changer_blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_color_changer_green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_color_changer_red.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_color_changer_yellow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_pick_four.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_pick_four_blue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_pick_four_green.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_pick_four_red.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_pick_four_yellow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_8.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_9.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_picker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_reverse.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_skip.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/graphical_user_interface/Background_backup.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/p1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/credits.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/UnoProject/META-INF/MANIFEST.MF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnoProject_jar/UnoProject.jar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/GameLogic.java" afterPath="$PROJECT_DIR$/src/Game/GameLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/User.java" afterPath="$PROJECT_DIR$/src/Game/User.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +96,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
+            <state relative-caret-position="312">
               <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
               <folding />
             </state>
@@ -31,7 +106,7 @@
       <file leaf-file-name="GameLogic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/GameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7410">
+            <state relative-caret-position="45">
               <caret line="494" column="31" lean-forward="false" selection-start-line="494" selection-start-column="31" selection-end-line="494" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -79,18 +154,8 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="48" column="84" lean-forward="true" selection-start-line="48" selection-start-column="84" selection-end-line="48" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CardDrawer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1500">
-              <caret line="107" column="22" lean-forward="false" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
+            <state relative-caret-position="242">
+              <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -101,7 +166,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-              <folding />
+              <folding>
+                <marker date="1512759241000" expanded="false" signature="7717:7728" ph=" { " />
+                <marker date="1512759241000" expanded="false" signature="7746:7752" ph=" }" />
+                <marker date="1512759241000" expanded="false" signature="7803:7814" ph=" { " />
+                <marker date="1512759241000" expanded="false" signature="7841:7847" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,8 +182,20 @@
             <state relative-caret-position="1200">
               <caret line="89" column="5" lean-forward="false" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
               <folding>
-                <element signature="e#2551#2552#0" expanded="true" />
-                <element signature="e#2594#2595#0" expanded="true" />
+                <marker date="1512681121000" expanded="true" signature="1644:1652" ph="{}" />
+                <marker date="1512681121000" expanded="true" signature="1702:2307" ph="{...}" />
+                <marker date="1512681121000" expanded="false" signature="2342:2352" ph=" { " />
+                <marker date="1512681121000" expanded="false" signature="2372:2378" ph=" }" />
+                <marker date="1512681121000" expanded="false" signature="2413:2423" ph=" { " />
+                <marker date="1512681121000" expanded="false" signature="2432:2438" ph=" }" />
+                <marker date="1512681121000" expanded="true" signature="2479:2506" ph="{...}" />
+                <marker date="1512681121000" expanded="true" signature="2550:2561" ph=" { " />
+                <marker date="1512681121000" expanded="true" signature="2589:2595" ph=" }" />
+                <marker date="1512681121000" expanded="false" signature="2620:2631" ph=" { " />
+                <marker date="1512681121000" expanded="false" signature="2642:2648" ph=" }" />
+                <marker date="1512681121000" expanded="false" signature="2687:2698" ph=" { " />
+                <marker date="1512681121000" expanded="false" signature="2732:2738" ph=" }" />
+                <marker date="1512681121000" expanded="true" signature="2790:2877" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -137,7 +219,21 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1140">
               <caret line="78" column="32" lean-forward="false" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
-              <folding />
+              <folding>
+                <marker date="1512759241000" expanded="true" signature="4214:4312" ph="/**...*/" />
+                <marker date="1512759241000" expanded="false" signature="4343:4353" ph=" { " />
+                <marker date="1512759241000" expanded="false" signature="4366:4372" ph=" }" />
+                <marker date="1512759241000" expanded="true" signature="4378:4445" ph="/**...*/" />
+                <marker date="1512759241000" expanded="false" signature="4485:4496" ph=" { " />
+                <marker date="1512759241000" expanded="false" signature="4520:4526" ph=" }" />
+                <marker date="1512759241000" expanded="false" signature="4560:4571" ph=" { " />
+                <marker date="1512759241000" expanded="false" signature="4591:4597" ph=" }" />
+                <marker date="1512759241000" expanded="false" signature="4640:4651" ph=" { " />
+                <marker date="1512759241000" expanded="false" signature="4677:4683" ph=" }" />
+                <marker date="1512759241000" expanded="true" signature="4737:4855" ph="{...}" />
+                <marker date="1512759241000" expanded="false" signature="4908:4919" ph=" { " />
+                <marker date="1512759241000" expanded="false" signature="4979:4985" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,12 +251,34 @@
       <file leaf-file-name="ConnectionHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/commServer/ConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2820">
+            <state relative-caret-position="2745">
               <caret line="188" column="55" lean-forward="false" selection-start-line="188" selection-start-column="55" selection-end-line="188" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1512759241000" expanded="true" signature="8486:9133" ph="{...}" />
+                <marker date="1512759241000" expanded="true" signature="9139:9362" ph="/**...*/" />
+                <marker date="1512759241000" expanded="true" signature="9431:9851" ph="{...}" />
+                <marker date="1512759241000" expanded="true" signature="9857:10204" ph="/**...*/" />
+                <marker date="1512759241000" expanded="true" signature="10251:10647" ph="{...}" />
+                <marker date="1512759241000" expanded="false" signature="10705:10716" ph=" { " />
+                <marker date="1512759241000" expanded="false" signature="10751:10757" ph=" }" />
+                <marker date="1512759241000" expanded="false" signature="10810:10821" ph=" { " />
+                <marker date="1512759241000" expanded="false" signature="10857:10863" ph=" }" />
+                <marker date="1512759241000" expanded="false" signature="10914:10925" ph=" { " />
+                <marker date="1512759241000" expanded="false" signature="10952:10958" ph=" }" />
+                <marker date="1512759241000" expanded="true" signature="10997:11390" ph="{...}" />
+                <marker date="1512759241000" expanded="false" signature="11444:11455" ph=" { " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/GameObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -190,7 +308,6 @@
       <find>wildcard</find>
       <find>setServer</find>
       <find>last colo</find>
-      <find>use</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -223,6 +340,7 @@
         <option value="$PROJECT_DIR$/src/Game/AI.java" />
         <option value="$PROJECT_DIR$/src/Game/Card.java" />
         <option value="$PROJECT_DIR$/src/Game/p1.html" />
+        <option value="$PROJECT_DIR$/src/Game/User.java" />
         <option value="$PROJECT_DIR$/src/Game/graphical_user_interface/UnoBoard.java" />
         <option value="$PROJECT_DIR$/src/Game/graphical_user_interface/GUI.java" />
         <option value="$PROJECT_DIR$/src/Game/graphical_user_interface/Background.java" />
@@ -233,7 +351,6 @@
         <option value="$PROJECT_DIR$/src/Game/GameLogic.java" />
         <option value="$PROJECT_DIR$/src/Game/Main.java" />
         <option value="$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java" />
-        <option value="$PROJECT_DIR$/src/Game/User.java" />
       </list>
     </option>
   </component>
@@ -243,10 +360,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="727" />
+    <option name="y" value="-29" />
     <option name="width" value="1440" />
-    <option name="height" value="793" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -264,26 +382,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="UnoProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UnoProject" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UnoProject" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
@@ -329,7 +435,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -343,7 +450,6 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
-    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -351,6 +457,119 @@
       <recent name="C:\Users\janni\Uno\Csc380UnoKiosk\unogame\UnoProject" />
       <recent name="C:\Users\janni\Uno\Csc380UnoKiosk\unogame\UnoProject\src" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UnoProject/Game/commServer/Server.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Game/Main.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -780,28 +999,7 @@
       <option name="project" value="LOCAL" />
       <updated>1512754144403</updated>
     </task>
-    <task id="LOCAL-00035" summary="new jar">
-      <created>1512760291143</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1512760291143</updated>
-    </task>
-    <task id="LOCAL-00036" summary="new jar">
-      <created>1512762339443</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1512762339443</updated>
-    </task>
-    <task id="LOCAL-00037" summary="timoue">
-      <created>1512762701786</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1512762701787</updated>
-    </task>
-    <option name="localTasksCounter" value="38" />
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -812,19 +1010,20 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32467532" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32305196" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4426934" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12517883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12517883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -832,14 +1031,35 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32467532" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293371" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32305196" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12546296" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -891,6 +1111,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="ran some tests on changing turn of player" />
     <MESSAGE value="implemented quick and dirty AI that works" />
     <MESSAGE value="got the CardDrawer to consider the last chosen wild color, not sure how" />
     <MESSAGE value="added skip, reverse, wild logic. Also Board gets reset for now once a player hits 0 cards" />
@@ -915,8 +1136,7 @@
     <MESSAGE value="few bugfixes with connection. Uno mercy should work correctly now and a bug occuring when first connecting to the game has been fixed" />
     <MESSAGE value="small fixes" />
     <MESSAGE value="new jar" />
-    <MESSAGE value="timoue" />
-    <option name="LAST_COMMIT_MESSAGE" value="timoue" />
+    <option name="LAST_COMMIT_MESSAGE" value="new jar" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -936,6 +1156,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1021,6 +1242,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1064,8 +1288,20 @@
         <state relative-caret-position="1200">
           <caret line="89" column="5" lean-forward="false" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
           <folding>
-            <element signature="e#2551#2552#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
+            <marker date="1512681121000" expanded="true" signature="1644:1652" ph="{}" />
+            <marker date="1512681121000" expanded="true" signature="1702:2307" ph="{...}" />
+            <marker date="1512681121000" expanded="false" signature="2342:2352" ph=" { " />
+            <marker date="1512681121000" expanded="false" signature="2372:2378" ph=" }" />
+            <marker date="1512681121000" expanded="false" signature="2413:2423" ph=" { " />
+            <marker date="1512681121000" expanded="false" signature="2432:2438" ph=" }" />
+            <marker date="1512681121000" expanded="true" signature="2479:2506" ph="{...}" />
+            <marker date="1512681121000" expanded="true" signature="2550:2561" ph=" { " />
+            <marker date="1512681121000" expanded="true" signature="2589:2595" ph=" }" />
+            <marker date="1512681121000" expanded="false" signature="2620:2631" ph=" { " />
+            <marker date="1512681121000" expanded="false" signature="2642:2648" ph=" }" />
+            <marker date="1512681121000" expanded="false" signature="2687:2698" ph=" { " />
+            <marker date="1512681121000" expanded="false" signature="2732:2738" ph=" }" />
+            <marker date="1512681121000" expanded="true" signature="2790:2877" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1078,19 +1314,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Deal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1925">
           <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
+        <state relative-caret-position="312">
           <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
           <folding />
         </state>
@@ -1098,11 +1342,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/commServer/ConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2820">
+        <state relative-caret-position="2745">
           <caret line="188" column="55" lean-forward="false" selection-start-line="188" selection-start-column="55" selection-end-line="188" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1512759241000" expanded="true" signature="8486:9133" ph="{...}" />
+            <marker date="1512759241000" expanded="true" signature="9139:9362" ph="/**...*/" />
+            <marker date="1512759241000" expanded="true" signature="9431:9851" ph="{...}" />
+            <marker date="1512759241000" expanded="true" signature="9857:10204" ph="/**...*/" />
+            <marker date="1512759241000" expanded="true" signature="10251:10647" ph="{...}" />
+            <marker date="1512759241000" expanded="false" signature="10705:10716" ph=" { " />
+            <marker date="1512759241000" expanded="false" signature="10751:10757" ph=" }" />
+            <marker date="1512759241000" expanded="false" signature="10810:10821" ph=" { " />
+            <marker date="1512759241000" expanded="false" signature="10857:10863" ph=" }" />
+            <marker date="1512759241000" expanded="false" signature="10914:10925" ph=" { " />
+            <marker date="1512759241000" expanded="false" signature="10952:10958" ph=" }" />
+            <marker date="1512759241000" expanded="true" signature="10997:11390" ph="{...}" />
+            <marker date="1512759241000" expanded="false" signature="11444:11455" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -1111,7 +1367,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="17" column="30" lean-forward="false" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding />
+          <folding>
+            <marker date="1512759241000" expanded="false" signature="7717:7728" ph=" { " />
+            <marker date="1512759241000" expanded="false" signature="7746:7752" ph=" }" />
+            <marker date="1512759241000" expanded="false" signature="7803:7814" ph=" { " />
+            <marker date="1512759241000" expanded="false" signature="7841:7847" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,28 +1391,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
           <caret line="78" column="32" lean-forward="false" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1500">
-          <caret line="107" column="22" lean-forward="false" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
-          <folding />
+          <folding>
+            <marker date="1512759241000" expanded="true" signature="4214:4312" ph="/**...*/" />
+            <marker date="1512759241000" expanded="false" signature="4343:4353" ph=" { " />
+            <marker date="1512759241000" expanded="false" signature="4366:4372" ph=" }" />
+            <marker date="1512759241000" expanded="true" signature="4378:4445" ph="/**...*/" />
+            <marker date="1512759241000" expanded="false" signature="4485:4496" ph=" { " />
+            <marker date="1512759241000" expanded="false" signature="4520:4526" ph=" }" />
+            <marker date="1512759241000" expanded="false" signature="4560:4571" ph=" { " />
+            <marker date="1512759241000" expanded="false" signature="4591:4597" ph=" }" />
+            <marker date="1512759241000" expanded="false" signature="4640:4651" ph=" { " />
+            <marker date="1512759241000" expanded="false" signature="4677:4683" ph=" }" />
+            <marker date="1512759241000" expanded="true" signature="4737:4855" ph="{...}" />
+            <marker date="1512759241000" expanded="false" signature="4908:4919" ph=" { " />
+            <marker date="1512759241000" expanded="false" signature="4979:4985" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7410">
+        <state relative-caret-position="45">
           <caret line="494" column="31" lean-forward="false" selection-start-line="494" selection-start-column="31" selection-end-line="494" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1195,10 +1455,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/User.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="48" column="84" lean-forward="true" selection-start-line="48" selection-start-column="84" selection-end-line="48" selection-end-column="84" />
+        <state relative-caret-position="400">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4075">
+          <caret line="170" column="84" lean-forward="false" selection-start-line="170" selection-start-column="84" selection-end-line="170" selection-end-column="84" />
           <folding />
         </state>
       </provider>
