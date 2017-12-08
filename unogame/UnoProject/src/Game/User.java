@@ -43,10 +43,12 @@ public class User extends Player {
                     printTimer = System.currentTimeMillis();
                     //TIMEOUT TO-DO
 
+                    int turnofPlayer;
+                    turnofPlayer = gameLogic.getTurnOfPlayer();
                     if (gameLogic.timeOut() == true) {
 
-                        if (gameLogic.checkIfStillConnected(gameLogic.getTurnOfPlayer())) {
-                            gameLogic.userDisconnected(gameLogic.getTurnOfPlayer());
+                        if (gameLogic.checkIfStillConnected(turnofPlayer)) {
+                            gameLogic.userDisconnected(turnofPlayer);
                         }
                     }
 
