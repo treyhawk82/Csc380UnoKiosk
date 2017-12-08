@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="new jar">
+    <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -794,7 +794,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512762339443</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="timoue">
+      <created>1512762701786</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1512762701787</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -884,7 +891,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ran some tests on changing turn of player" />
     <MESSAGE value="implemented quick and dirty AI that works" />
     <MESSAGE value="got the CardDrawer to consider the last chosen wild color, not sure how" />
     <MESSAGE value="added skip, reverse, wild logic. Also Board gets reset for now once a player hits 0 cards" />
@@ -909,7 +915,8 @@
     <MESSAGE value="few bugfixes with connection. Uno mercy should work correctly now and a bug occuring when first connecting to the game has been fixed" />
     <MESSAGE value="small fixes" />
     <MESSAGE value="new jar" />
-    <option name="LAST_COMMIT_MESSAGE" value="new jar" />
+    <MESSAGE value="timoue" />
+    <option name="LAST_COMMIT_MESSAGE" value="timoue" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
