@@ -1,82 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="new jar">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_picker.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_reverse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/blue_skip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/card_back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/card_back_alt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/card_back_left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/card_back_right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_picker.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_reverse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/green_skip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_picker.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_reverse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/red_skip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/uno_called.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_color_changer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_color_changer_blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_color_changer_green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_color_changer_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_color_changer_yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_pick_four.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_pick_four_blue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_pick_four_green.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_pick_four_red.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/wild_pick_four_yellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_picker.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_reverse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/yellow_skip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/graphical_user_interface/Background_backup.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/p1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Csc380UnoKiosk/Game/small/credits.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/UnoProject/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnoProject_jar/UnoProject.jar" afterPath="" />
+    <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/Deal.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/Deal.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/GameLogic.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/GameLogic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/Handler.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/Handler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/Main.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/User.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/graphical_user_interface/CardDrawer.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/graphical_user_interface/CardDrawer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/GameLogic.java" afterPath="$PROJECT_DIR$/src/Game/GameLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/UnoProject/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/User.java" afterPath="$PROJECT_DIR$/src/Game/User.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -154,8 +88,18 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+            <state relative-caret-position="183">
+              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardDrawer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="107" column="22" lean-forward="false" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -273,16 +217,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Game/GameObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -308,6 +242,7 @@
       <find>wildcard</find>
       <find>setServer</find>
       <find>last colo</find>
+      <find>use</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -340,7 +275,6 @@
         <option value="$PROJECT_DIR$/src/Game/AI.java" />
         <option value="$PROJECT_DIR$/src/Game/Card.java" />
         <option value="$PROJECT_DIR$/src/Game/p1.html" />
-        <option value="$PROJECT_DIR$/src/Game/User.java" />
         <option value="$PROJECT_DIR$/src/Game/graphical_user_interface/UnoBoard.java" />
         <option value="$PROJECT_DIR$/src/Game/graphical_user_interface/GUI.java" />
         <option value="$PROJECT_DIR$/src/Game/graphical_user_interface/Background.java" />
@@ -351,6 +285,7 @@
         <option value="$PROJECT_DIR$/src/Game/GameLogic.java" />
         <option value="$PROJECT_DIR$/src/Game/Main.java" />
         <option value="$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java" />
+        <option value="$PROJECT_DIR$/src/Game/User.java" />
       </list>
     </option>
   </component>
@@ -390,6 +325,17 @@
             <path>
               <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="UnoProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UnoProject" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UnoProject" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="UnoProject" type="b2602c69:ProjectViewProjectNode" />
@@ -999,7 +945,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512754144403</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="new jar">
+      <created>1512760291143</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1512760291143</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1007,6 +960,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="793" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1023,7 +977,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12517883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12517883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1314,20 +1268,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Deal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1925">
           <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1409,6 +1355,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="107" column="22" lean-forward="false" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1455,18 +1417,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Handler.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4075">
-          <caret line="170" column="84" lean-forward="false" selection-start-line="170" selection-start-column="84" selection-end-line="170" selection-end-column="84" />
+        <state relative-caret-position="183">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
