@@ -155,25 +155,25 @@ public class Background {
         int winner = gameLogic.getLastWinner();
         if (winner == 0) {
             g.setColor(blue);
-            g.fillRect(0, 0, SCREEN_WIDTH / (int) Math.round(SCREEN_SCALE_WIDTH), SCREEN_HEIGHT / (int) Math.round(SCREEN_SCALE_HEIGHT));
+            g.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
             g.setColor(Color.black);
             g.setFont(font);
             g.drawString("Player Blue Wins!", (int) Math.round((SCREEN_WIDTH / SCREEN_SCALE_WIDTH - 50 / SCREEN_SCALE_WIDTH) / 2), (int) Math.round((SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT - 50 / SCREEN_SCALE_HEIGHT) - 2));
         } else if (winner == 1) {
             g.setColor(yellow);
-            g.fillRect(0, 0, SCREEN_WIDTH / (int) Math.round(SCREEN_SCALE_WIDTH), SCREEN_HEIGHT / (int) Math.round(SCREEN_SCALE_HEIGHT));
+            g.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
             g.setColor(Color.black);
             g.setFont(font);
             g.drawString("Player Yellow Wins!", (int) Math.round((SCREEN_WIDTH / SCREEN_SCALE_WIDTH - 50 / SCREEN_SCALE_WIDTH) / 2), (int) Math.round((SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT - 50 / SCREEN_SCALE_HEIGHT) - 2));
         } else if (winner == 2) {
             g.setColor(green);
-            g.fillRect(0, 0, SCREEN_WIDTH / (int) Math.round(SCREEN_SCALE_WIDTH), SCREEN_HEIGHT / (int) Math.round(SCREEN_SCALE_HEIGHT));
+            g.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
             g.setColor(Color.black);
             g.setFont(font);
             g.drawString("Player Green Wins!", (int) Math.round((SCREEN_WIDTH / SCREEN_SCALE_WIDTH - 50 / SCREEN_SCALE_WIDTH) / 2), (int) Math.round((SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT - 50 / SCREEN_SCALE_HEIGHT) - 2));
         } else if (winner == 3) {
             g.setColor(red);
-            g.fillRect(0, 0, SCREEN_WIDTH / (int) Math.round(SCREEN_SCALE_WIDTH), SCREEN_HEIGHT / (int) Math.round(SCREEN_SCALE_HEIGHT));
+            g.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
             g.setColor(Color.black);
             g.setFont(font);
             g.drawString("Player Red Wins!", (int) Math.round((SCREEN_WIDTH / SCREEN_SCALE_WIDTH - 50 / SCREEN_SCALE_WIDTH) / 2), (int) Math.round((SCREEN_HEIGHT / SCREEN_SCALE_HEIGHT - 50 / SCREEN_SCALE_HEIGHT) - 2));

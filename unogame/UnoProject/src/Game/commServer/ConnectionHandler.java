@@ -70,14 +70,19 @@ public class ConnectionHandler extends WebSocketServer  {
      */
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
         boolean isAlreadyConnected = false;
+        int counter = 0;
         for (WebSocket con : conns
                 ) {
+            if (con.getRemoteSocketAddress().getAddress().getHostAddress().equalsIgnoreCase(conn.getRemoteSocketAddress().getAddress().getHostAddress())) {
+                lastConnectionTime[counter] = System.currentTimeMillis();
+            }
             if (!isAlreadyConnected && con.getRemoteSocketAddress().getAddress().getHostAddress().equalsIgnoreCase(conn.getRemoteSocketAddress().getAddress().getHostAddress())) {
                 System.out.println("Player with IP: " + con.getRemoteSocketAddress().getAddress().getHostAddress() + " was already connected, Connection denied.");
                 conn.send("already connected");
                 conn.close();
                 isAlreadyConnected = true;
             }
+            counter++;
         }
 
         if (!isAlreadyConnected) {

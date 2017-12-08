@@ -2,6 +2,10 @@ package Game;
 
 import Game.commServer.Server;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
 public class GameLogic implements Runnable {
 
     //fields
@@ -32,6 +36,8 @@ public class GameLogic implements Runnable {
     int lastWinner = 4;
     long lastTime = System.currentTimeMillis();
     long[] unoMercy = new long[4];
+    ReadWriteLock rwLockLastWildColourSelected = new ReentrantReadWriteLock();
+
 
     /*
     AI and User
@@ -110,15 +116,7 @@ public class GameLogic implements Runnable {
         //    wildCard(14);
         //}
 
-        /**
-         * instantiate all players
-         * user will be player 0 aka player 1
-         */
-        Player p1 = new Player(0);
-        Player p2 = new Player(1);      //computer player
-        Player p3 = new Player(2);      //computer player
-        Player p4 = new Player(3);      //computer player
-        int currentPlayer = 0;      //this is the user
+        int looper = 0;      //keeps the loop going
 
 
         /**
@@ -157,7 +155,7 @@ public class GameLogic implements Runnable {
             }
             //System.out.println("test" + loop);
             loop++;
-        } while (currentPlayer == 0);
+        } while (looper == 0);
     }
 
     /*******************************************
@@ -180,40 +178,6 @@ public class GameLogic implements Runnable {
     }
 
 
-    /*
-    /**
-     * method to handle wild card logic
-     * @param cardNum
-     * @return Card
-
-    public static Card wildCard(int cardNum) {
-        System.out.println("Enter a color: ");
-        String input = s.nextLine();
-        boolean check = false;
-        Card newCard = new Card("color", cardNum);
-
-        while (check == false) {
-            if (input.equalsIgnoreCase("Red")) {
-                newCard = new Card("Red", cardNum);
-                check = true;
-            } else if (input.equalsIgnoreCase("Blue")) {
-                newCard = new Card("Blue", cardNum);
-                check = true;
-            } else if (input.equalsIgnoreCase("Yellow")) {
-                newCard = new Card("Yellow", cardNum);
-                check = true;
-            } else if (input.equalsIgnoreCase("Green")) {
-                newCard = new Card("Green", cardNum);
-                check = true;
-            } else {
-                check = false;
-                System.out.println("Try again");
-                input = s.next();
-            }
-        }
-        System.out.println(newCard.toString());
-        return newCard;
-    }*/
 
     /**
      * where the magic happens. Checks which players turn it is, then lets the selected player make a turn.
@@ -432,7 +396,7 @@ public class GameLogic implements Runnable {
                     + getLastWildCardColourSelected();
             long lastColorConsoleTimer = System.currentTimeMillis();
             if (System.currentTimeMillis() > lastColorConsoleTimer + 5000) {
-                System.out.println(lastWildCardColourSelected + " = last color GameLogic");
+                System.out.println(getLastWildCardColourSelected() + " = last color GameLogic");
                 lastColorConsoleTimer = System.currentTimeMillis();
             }
         }
@@ -449,7 +413,7 @@ public class GameLogic implements Runnable {
      * @param cardToDiscard card that needs to be discarded
      */
     public void discardCard(Card cardToDiscard) {
-        if (cardToDiscard.getCardNum() != 15) {
+        if (cardToDiscard.getCardNum() != 15 && cardToDiscard.getCardNum() != 123) {
             discardPile.addCard(cardToDiscard);
         }
 
@@ -461,16 +425,25 @@ public class GameLogic implements Runnable {
      * @param colour colour that has been selected by the player
      */
     public void selectColour(String colour) {
-        lastWildCardColourSelected = colour;
+        try {
+            rwLockLastWildColourSelected.writeLock().lock();
+            lastWildCardColourSelected = colour;
+        } finally {
+            rwLockLastWildColourSelected.writeLock().unlock();
+        }
     }
 
     /**
      * @return the selected colour last time a wild card has been played
      */
     public String getLastWildCardColourSelected() {
-        return lastWildCardColourSelected;
+        try {
+            rwLockLastWildColourSelected.readLock().lock();
+            return lastWildCardColourSelected;
+        } finally {
+            rwLockLastWildColourSelected.readLock().unlock();
+        }
     }
-
     public void setServer(Server server) {
         this.server = server;
     }
@@ -485,19 +458,19 @@ public class GameLogic implements Runnable {
     }
 
     public void callsOutUno() {
-        if (player_blue.getSize() == 1 && !calledUno[0] && unoMercy[0] > System.currentTimeMillis() + 4000) {
+        if (player_blue.getSize() == 1 && !calledUno[0] && unoMercy[0] + 4000 < System.currentTimeMillis()) {
             player_blue.dealCard(deck);
             player_blue.dealCard(deck);
         }
-        if (player_yellow.getSize() == 1 && !calledUno[1] && unoMercy[1] > System.currentTimeMillis() + 4000) {
+        if (player_yellow.getSize() == 1 && !calledUno[1] && unoMercy[1] + 4000 < System.currentTimeMillis()) {
             player_yellow.dealCard(deck);
             player_yellow.dealCard(deck);
         }
-        if (player_green.getSize() == 1 && !calledUno[2] && unoMercy[2] > System.currentTimeMillis() + 4000) {
+        if (player_green.getSize() == 1 && !calledUno[2] && unoMercy[2] + 4000 < System.currentTimeMillis()) {
             player_green.dealCard(deck);
             player_green.dealCard(deck);
         }
-        if (player_red.getSize() == 1 && !calledUno[3] && unoMercy[3] > System.currentTimeMillis() + 4000) {
+        if (player_red.getSize() == 1 && !calledUno[3] && unoMercy[3] + 4000 < System.currentTimeMillis()) {
             player_red.dealCard(deck);
             player_red.dealCard(deck);
         }
