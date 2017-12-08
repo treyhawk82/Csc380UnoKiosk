@@ -283,7 +283,7 @@ public class GameLogic implements Runnable {
         long turnStart;
         turnStart = getTurnStartTime();
 
-        if (turnStart == turnStart + 30000) {
+        if (System.currentTimeMillis() == turnStart + 30000) {
             System.out.println("---------player timed out------------");
 
             return true;
