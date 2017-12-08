@@ -96,7 +96,7 @@ public class CardDrawer {
         this.SCREEN_SCALE_WIDTH = SCREEN_SCALE_WIDTH;
         this.SCREEN_SCALE_HEIGHT = SCREEN_SCALE_HEIGHT;
         try {
-            b0 = ImageIO.read(new File("src\\Game\\small\\blue_0.png"));
+            b0 = ImageIO.read(new File("/home/ulocal/Csc380UnoKiosk/unogame/UnoProject/src/Game/small/blue_0.png"));
             b1 = ImageIO.read(new File("src\\Game\\small\\blue_1.png"));
             b2 = ImageIO.read(new File("src\\Game\\small\\blue_2.png"));
             b3 = ImageIO.read(new File("src\\Game\\small\\blue_3.png"));
