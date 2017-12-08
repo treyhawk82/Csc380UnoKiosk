@@ -131,6 +131,7 @@ public class GameLogic implements Runnable {
                 for (int i = 0; i < discardPile.getSize(); i++) {
                     deck.push(discardPile.getCard(i));
                 }
+                deck.shuffleDeck();
                 discardPile.removeAll();
                 discardPile.addCard(Top);
 
@@ -278,12 +279,16 @@ public class GameLogic implements Runnable {
     }
 
 
-    private void timeOut(User user) {
-        if (getActionTimeOfPlayer(1) == 30 + getActionTimeOfPlayer(1)) {
+    public Boolean timeOut() {
+        long turnStart;
+        turnStart = getTurnStartTime();
 
+        if (turnStart == turnStart + 30000) {
             System.out.println("---------player timed out------------");
 
-
+            return true;
+        } else {
+            return false;
         }
     }
 
