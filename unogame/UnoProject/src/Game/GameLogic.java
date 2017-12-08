@@ -280,12 +280,8 @@ public class GameLogic implements Runnable {
 
 
     public Boolean timeOut() {
-        long turnStart;
-        turnStart = getTurnStartTime();
-
-        if (System.currentTimeMillis() == turnStart + 30000) {
+        if (System.currentTimeMillis() > getTurnStartTime() + 30000) {
             System.out.println("---------player timed out------------");
-
             return true;
         } else {
             return false;

@@ -143,4 +143,8 @@ public class Server implements Runnable{
     public String getPlayerAction(int playerNumber) {
         return connectionHandler.returnActionOfPlayer(playerNumber);
     }
+
+    public void disconnectPlayer(int playerNumber) {
+        connectionHandler.disconnectPlayer(playerNumber);
+    }
 }

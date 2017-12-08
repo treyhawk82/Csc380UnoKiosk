@@ -271,6 +271,14 @@ public class ConnectionHandler extends WebSocketServer  {
         }
     }
 
+    public void disconnectPlayer(int playerNumber) {
+        for (int i = 0; i < conns.size(); i++) {
+            if (i == playerNumber) {
+                conns.get(i).close();
+            }
+        }
+    }
+
     public void disconnectPlayerFromGameLogic(int i) {
         gameLogic.userDisconnected(i);
     }

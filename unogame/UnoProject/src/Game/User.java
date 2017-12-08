@@ -41,15 +41,13 @@ public class User extends Player {
                 if (System.currentTimeMillis() > printTimer + 4000) {
                     System.out.println("Waiting for Player " + id + " to play a Card.");
                     printTimer = System.currentTimeMillis();
-                    //TIMEOUT TO-DO
 
                     int turnofPlayer;
                     turnofPlayer = gameLogic.getTurnOfPlayer();
-                    if (gameLogic.timeOut() == true) {
-
-
+                    if (gameLogic.timeOut()) {
                         if (gameLogic.checkIfStillConnected(turnofPlayer)) {
                             gameLogic.userDisconnected(turnofPlayer);
+                            server.disconnectPlayer(turnofPlayer);
                         }
                     }
 
