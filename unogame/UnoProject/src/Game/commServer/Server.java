@@ -73,7 +73,7 @@ public class Server implements Runnable{
             long lastTime = System.currentTimeMillis();
             connectionHandler.setGameLogic(gameLogic);
             while (true) {
-                if (System.currentTimeMillis() > lastTime + 50) {
+                if (System.currentTimeMillis() > lastTime + 200) {
                     connectionHandler.runConnectionCheck();
                     lastTime = System.currentTimeMillis();
                     gameLogic.getHandSizesAndHands();

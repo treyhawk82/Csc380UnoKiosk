@@ -2,6 +2,7 @@ package Game;
 
 import Game.commServer.Server;
 
+import java.util.Date;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -249,9 +250,10 @@ public class GameLogic implements Runnable {
             if (handOfPlayer.getSize() > 1) {
                 calledUno[id] = false;
             }
+        }
 
-
-
+        if (handOfPlayer.getSize() == 1) {
+            unoMercy[turnOfPlayer] = System.currentTimeMillis() + 4000;
         }
 
         int CardNumber = playCard.getCardNum();
@@ -454,25 +456,29 @@ public class GameLogic implements Runnable {
 
     public void callsUno(int player_id) {
         calledUno[player_id] = true;
-        unoMercy[player_id] = System.currentTimeMillis();
+        unoMercy[player_id] = System.currentTimeMillis() + 4000;
     }
 
     public void callsOutUno() {
-        if (player_blue.getSize() == 1 && !calledUno[0] && unoMercy[0] + 4000 < System.currentTimeMillis()) {
+        if (player_blue.getSize() == 1 && !calledUno[0] && unoMercy[0] < System.currentTimeMillis()) {
             player_blue.dealCard(deck);
             player_blue.dealCard(deck);
         }
-        if (player_yellow.getSize() == 1 && !calledUno[1] && unoMercy[1] + 4000 < System.currentTimeMillis()) {
+        if (player_yellow.getSize() == 1 && !calledUno[1] && unoMercy[1] < System.currentTimeMillis()) {
             player_yellow.dealCard(deck);
             player_yellow.dealCard(deck);
         }
-        if (player_green.getSize() == 1 && !calledUno[2] && unoMercy[2] + 4000 < System.currentTimeMillis()) {
+        if (player_green.getSize() == 1 && !calledUno[2] && unoMercy[2] < System.currentTimeMillis()) {
             player_green.dealCard(deck);
             player_green.dealCard(deck);
         }
-        if (player_red.getSize() == 1 && !calledUno[3] && unoMercy[3] + 4000 < System.currentTimeMillis()) {
+        if (player_red.getSize() == 1 && !calledUno[3] && unoMercy[3] < System.currentTimeMillis()) {
             player_red.dealCard(deck);
             player_red.dealCard(deck);
+        }
+        for (long mercyTimes : unoMercy
+                ) {
+            System.out.println(new Date(mercyTimes) + " = mercy time; " + new Date(System.currentTimeMillis()) + " = current time");
         }
     }
 

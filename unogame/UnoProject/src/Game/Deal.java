@@ -8,7 +8,7 @@ public class Deal extends Handler {
 
     //fields
     private ArrayList<Card> hand;
-    ReadWriteLock handLock = new ReentrantReadWriteLock();
+    private ReadWriteLock handLock = new ReentrantReadWriteLock();
 
 
     //instantiate hand
@@ -73,11 +73,21 @@ public class Deal extends Handler {
     }
 
     public String getSizeString() {
-        return "" + hand.size();
+        try {
+            handLock.readLock().lock();
+            return "" + hand.size();
+        } finally {
+            handLock.readLock().unlock();
+        }
     }
 
     public void printArray() {
-        System.out.println(hand.toString());
+        try {
+            handLock.readLock().lock();
+            System.out.println(hand.toString());
+        } finally {
+            handLock.readLock().unlock();
+        }
     }
 
 
@@ -87,27 +97,41 @@ public class Deal extends Handler {
 //   }
 
     public void printHand() {
-
-        for (Card element : hand) {
-            System.out.println(element.toString());
+        try {
+            handLock.readLock().lock();
+            for (Card element : hand) {
+                System.out.println(element.toString());
+            }
+        } finally {
+            handLock.readLock().unlock();
         }
     }
 
     public String getCommHandString() {
-        boolean firstTime = true;
-        String commHandString = "";
-        for (Card handCard : hand) {
-            if (!firstTime) {
-                commHandString = commHandString + "x";
+        try {
+            handLock.readLock().lock();
+            boolean firstTime = true;
+            String commHandString = "";
+            for (Card handCard : hand) {
+                if (!firstTime) {
+                    commHandString = commHandString + "x";
+                }
+                commHandString = commHandString + handCard.getCommCardString();
+                firstTime = false;
             }
-            commHandString = commHandString + handCard.getCommCardString();
-            firstTime = false;
+            return commHandString;
+        } finally {
+            handLock.readLock().unlock();
         }
-        return commHandString;
     }
 
     public void removeAll() {
-        hand.clear();
+        try {
+            handLock.writeLock().lock();
+            hand.clear();
+        } finally {
+            handLock.writeLock().unlock();
+        }
     }
 
 

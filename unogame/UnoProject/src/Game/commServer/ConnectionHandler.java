@@ -119,7 +119,7 @@ public class ConnectionHandler extends WebSocketServer  {
         }
         conns.remove(conn);
         String currentIP = conn.getRemoteSocketAddress().getAddress().getHostAddress();
-        System.out.println("Closed connection to " + conn.getRemoteSocketAddress().getAddress().getHostAddress());
+        System.out.println("Closed connection to " + conn.getRemoteSocketAddress().getAddress().getHostAddress() + " (onClose)");
         gameLogic.userDisconnected(connectionNumber);
 
     }
