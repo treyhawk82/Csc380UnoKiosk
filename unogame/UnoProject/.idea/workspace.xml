@@ -70,8 +70,8 @@
       <file leaf-file-name="CardDrawer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="101" column="72" lean-forward="true" selection-start-line="101" selection-start-column="72" selection-end-line="101" selection-end-column="72" />
+            <state relative-caret-position="327">
+              <caret line="98" column="102" lean-forward="false" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -789,7 +789,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512763170674</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="changed / to \\ in file paths">
+      <created>1512763175030</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1512763175030</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1145,8 +1152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/graphical_user_interface/CardDrawer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="101" column="72" lean-forward="true" selection-start-line="101" selection-start-column="72" selection-end-line="101" selection-end-column="72" />
+        <state relative-caret-position="327">
+          <caret line="98" column="102" lean-forward="false" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="102" />
           <folding />
         </state>
       </provider>
