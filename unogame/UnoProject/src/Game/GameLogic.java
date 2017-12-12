@@ -61,6 +61,27 @@ public class GameLogic implements Runnable {
     long[] lastActionTime;
     long[] lastConnectionTimes;
 
+    public GameLogic() {
+        for (long unoMercies : unoMercy
+                ) {
+            unoMercies = System.currentTimeMillis();
+        }
+        for (int i = 0; i < connectedUser.length; i++) {
+            connectedUser[i] = false;
+        }
+
+
+        ai[0] = ai1;
+        ai[1] = ai2;
+        ai[2] = ai3;
+        ai[3] = ai4;
+
+        users[0] = u1;
+        users[1] = u2;
+        users[2] = u3;
+        users[3] = u4;
+    }
+
 
     public void run() {
         /**
@@ -90,24 +111,7 @@ public class GameLogic implements Runnable {
         System.out.println();
 
 
-        for (int i = 0; i < connectedUser.length; i++) {
-            connectedUser[i] = false;
-        }
 
-        for (long unoMercies : unoMercy
-                ) {
-            unoMercies = System.currentTimeMillis();
-        }
-
-        ai[0] = ai1;
-        ai[1] = ai2;
-        ai[2] = ai3;
-        ai[3] = ai4;
-
-        users[0] = u1;
-        users[1] = u2;
-        users[2] = u3;
-        users[3] = u4;
         /**
          * if the first card is a wild then randomly select a color to begin the game
          */
@@ -546,5 +550,9 @@ public class GameLogic implements Runnable {
 
     public void setLastTime(long newTime) {
         lastTime = newTime;
+    }
+
+    public Server getServer() {
+        return server;
     }
 }

@@ -8,8 +8,11 @@ import org.java_websocket.server.WebSocketServer;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ConnectionHandler extends WebSocketServer  {
+    ReadWriteLock serverLock = new ReentrantReadWriteLock();
     /**
      * TCP port on which this server is listening
      */
@@ -41,6 +44,7 @@ public class ConnectionHandler extends WebSocketServer  {
 
     private GameLogic gameLogic;
 
+
     /**
      * constructor of the WebsocketServer class. Instantiates with the current hands of our players as well as the
      * number of current players. Also instantiates every variable that is needed to accept connections
@@ -69,34 +73,46 @@ public class ConnectionHandler extends WebSocketServer  {
      * @param handshake handshake that is needed to establish the connection
      */
     public void onOpen(WebSocket conn, ClientHandshake handshake) {
-        boolean isAlreadyConnected = false;
-        int counter = 0;
-        for (WebSocket con : conns
-                ) {
-            if (con.getRemoteSocketAddress().getAddress().getHostAddress().equalsIgnoreCase(conn.getRemoteSocketAddress().getAddress().getHostAddress())) {
-                lastConnectionTime[counter] = System.currentTimeMillis();
+        try {
+            serverLock.writeLock().lock();
+            boolean isAlreadyConnected = false;
+            int counter = 0;
+            for (WebSocket con : conns
+                    ) {
+                if (con.getRemoteSocketAddress().getAddress().getHostAddress().equalsIgnoreCase(conn.getRemoteSocketAddress().getAddress().getHostAddress())) {
+                    lastConnectionTime[counter] = System.currentTimeMillis();
+                }
+                if (!isAlreadyConnected && con.getRemoteSocketAddress().getAddress().getHostAddress().equalsIgnoreCase(conn.getRemoteSocketAddress().getAddress().getHostAddress())) {
+                    String currentIP = con.getRemoteSocketAddress().getAddress().getHostAddress();
+                    System.out.println("Player with IP: " + con.getRemoteSocketAddress().getAddress().getHostAddress() + " was already connected, Connection denied.");
+                    conn.send("already connected");
+                    conn.close();
+                    for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
+                        if (currentPlayerIPs[i].equalsIgnoreCase(currentIP)) {
+                            currentPlayerIPs[i] = "0";
+                        }
+                    }
+                    isAlreadyConnected = true;
+                }
+                counter++;
             }
-            if (!isAlreadyConnected && con.getRemoteSocketAddress().getAddress().getHostAddress().equalsIgnoreCase(conn.getRemoteSocketAddress().getAddress().getHostAddress())) {
-                System.out.println("Player with IP: " + con.getRemoteSocketAddress().getAddress().getHostAddress() + " was already connected, Connection denied.");
-                conn.send("already connected");
-                conn.close();
-                isAlreadyConnected = true;
-            }
-            counter++;
-        }
 
-        if (!isAlreadyConnected) {
-            conns.add(conn);
-            String currentIP = conn.getRemoteSocketAddress().getAddress().getHostAddress();
-            boolean filled = false;
-            for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
-                if (currentPlayerIPs[i].equals("0") && !filled) {
-                    currentPlayerIPs[i] = currentIP;
-                    filled = true;
-                    gameLogic.userConnected(i);
-                    System.out.println("New connection from " + currentIP);
+
+            if (!isAlreadyConnected) {
+                conns.add(conn);
+                String currentIP = conn.getRemoteSocketAddress().getAddress().getHostAddress();
+                boolean filled = false;
+                for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
+                    if (currentPlayerIPs[i].equals("0") && !filled) {
+                        currentPlayerIPs[i] = currentIP;
+                        filled = true;
+                        gameLogic.userConnected(i);
+                        System.out.println("New connection from " + currentIP);
+                    }
                 }
             }
+        } finally {
+            serverLock.writeLock().unlock();
         }
     }
 
@@ -110,18 +126,23 @@ public class ConnectionHandler extends WebSocketServer  {
      */
     @Override
     public void onClose(WebSocket conn, int code, String reason, boolean remote) {
-        int connectionNumber = 0;
-        int counter = 0;
-        for (WebSocket con : conns
-                ) {
-            if (con == conn) connectionNumber = counter;
-            counter++;
-        }
-        conns.remove(conn);
-        String currentIP = conn.getRemoteSocketAddress().getAddress().getHostAddress();
-        System.out.println("Closed connection to " + conn.getRemoteSocketAddress().getAddress().getHostAddress() + " (onClose)");
-        gameLogic.userDisconnected(connectionNumber);
+        try {
+            serverLock.writeLock().lock();
+            int connectionNumber = 0;
+            int counter = 0;
+            for (WebSocket con : conns
+                    ) {
+                if (con == conn) connectionNumber = counter;
+                counter++;
+            }
+            conns.remove(conn);
+            String currentIP = conn.getRemoteSocketAddress().getAddress().getHostAddress();
+            System.out.println("Closed connection to " + conn.getRemoteSocketAddress().getAddress().getHostAddress() + " (onClose)");
+            gameLogic.userDisconnected(connectionNumber);
 
+        } finally {
+            serverLock.writeLock().unlock();
+        }
     }
 
     /**
@@ -137,92 +158,106 @@ public class ConnectionHandler extends WebSocketServer  {
      */
     @Override
     public void onMessage(WebSocket conn, String message) {
-        Date currenttime = new Date(System.currentTimeMillis());
-        System.out.println("Message from client " + conn.getRemoteSocketAddress().getAddress().getHostAddress() +": " + message + " at " + currenttime.toString());
-        //checks for inactive devices
-        gameLogic.setLastActionTime(lastActionTime);
-        gameLogic.setLastConnectionTimes(lastConnectionTime);
-        int playerNumber = -1;
-        for (int i = 0; i < conns.size(); i++) {
-            WebSocket con = conns.get(i);
-            if (conn == con) {
-                lastConnectionTime[i] = System.currentTimeMillis();
-                playerNumber = i;
-            }
-            if (lastConnectionTime[i] < System.currentTimeMillis() - 5000) {
-                conns.remove(i);
-                gameLogic.userDisconnected(i);
-                con.close();
-                System.out.println("removed Connection: " + i);
-            }
-        }
+        try {
+            serverLock.writeLock().lock();
+            Date currenttime = new Date(System.currentTimeMillis());
 
-        //saves action string if message is not update
-        if (message.equalsIgnoreCase("Uno")) {
-            if (gameLogic.getHandSize(playerNumber) == 1 && !gameLogic.checkCalledUno(playerNumber)) {
-                gameLogic.callsUno(playerNumber);
-            } else {
-                for (int i = 0; i < 4; i++) {
-                    gameLogic.callsOutUno();
+
+            long printLineTimer = System.currentTimeMillis();
+            if (System.currentTimeMillis() > printLineTimer + 5000) {
+                System.out.println("Currently connected Devices:");
+                for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
+                    if (lastConnectionTime[i] > System.currentTimeMillis() - 5000) {
+                        System.out.println("Player " + i + " at " + currentPlayerIPs + ".\n");
+                    }
+                }
+                printLineTimer = System.currentTimeMillis();
+            }
+            //checks for inactive devices
+            gameLogic.setLastActionTime(lastActionTime);
+            gameLogic.setLastConnectionTimes(lastConnectionTime);
+            int playerNumber = -1;
+            for (int i = 0; i < conns.size(); i++) {
+                WebSocket con = conns.get(i);
+                if (conn == con) {
+                    lastConnectionTime[i] = System.currentTimeMillis();
+                    playerNumber = i;
+                }
+                if (lastConnectionTime[i] < System.currentTimeMillis() - 5000) {
+                    conns.remove(i);
+                    gameLogic.userDisconnected(i);
+                    con.close();
+                    System.out.println("removed Connection: " + i);
                 }
             }
-        }
-        if (!message.equalsIgnoreCase("update") && !message.equalsIgnoreCase("Uno")) {
-            for (int i = 0; i < conns.size(); i++) {
-                if (conn == conns.get(i)) {
-                    String[] splitMessage = message.split("x");
-                    communicatePlayedCardToGameLogic(splitMessage[0], playerNumber);
-                    if (splitMessage.length > 1) {
-                        if (splitMessage[1].equalsIgnoreCase("b")) {
-                            if (gameLogic.getTurnOfPlayer() == playerNumber) {
-                                gameLogic.selectColour("blue");
-                            }
-                        } else if (splitMessage[1].equalsIgnoreCase("y")) {
-                            if (gameLogic.getTurnOfPlayer() == playerNumber) {
-                                gameLogic.selectColour("yellow");
-                            }
-                        } else if (splitMessage[1].equalsIgnoreCase("g")) {
-                            if (gameLogic.getTurnOfPlayer() == playerNumber) {
-                                gameLogic.selectColour("green");
-                            }
-                        } else if (splitMessage[1].equalsIgnoreCase("r")) {
-                            if (gameLogic.getTurnOfPlayer() == playerNumber) {
-                                gameLogic.selectColour("red");
+
+            //saves action string if message is not update
+            if (message.equalsIgnoreCase("Uno")) {
+                if (gameLogic.getHandSize(playerNumber) == 1 && !gameLogic.checkCalledUno(playerNumber)) {
+                    gameLogic.callsUno(playerNumber);
+                } else {
+                    for (int i = 0; i < 4; i++) {
+                        gameLogic.callsOutUno();
+                    }
+                }
+            }
+            if (!message.equalsIgnoreCase("update") && !message.equalsIgnoreCase("Uno")) {
+                for (int i = 0; i < conns.size(); i++) {
+                    if (conn == conns.get(i)) {
+                        String[] splitMessage = message.split("x");
+                        communicatePlayedCardToGameLogic(splitMessage[0], playerNumber);
+                        if (splitMessage.length > 1) {
+                            if (splitMessage[1].equalsIgnoreCase("b")) {
+                                if (gameLogic.getTurnOfPlayer() == playerNumber) {
+                                    gameLogic.selectColour("blue");
+                                }
+                            } else if (splitMessage[1].equalsIgnoreCase("y")) {
+                                if (gameLogic.getTurnOfPlayer() == playerNumber) {
+                                    gameLogic.selectColour("yellow");
+                                }
+                            } else if (splitMessage[1].equalsIgnoreCase("g")) {
+                                if (gameLogic.getTurnOfPlayer() == playerNumber) {
+                                    gameLogic.selectColour("green");
+                                }
+                            } else if (splitMessage[1].equalsIgnoreCase("r")) {
+                                if (gameLogic.getTurnOfPlayer() == playerNumber) {
+                                    gameLogic.selectColour("red");
+                                }
                             }
                         }
+                        lastConnectionTime[i] = System.currentTimeMillis();
                     }
-                    lastConnectionTime[i] = System.currentTimeMillis();
                 }
             }
-        }
-        //sends update data
-        for (WebSocket sock: conns
-                ) {
-            String currentIP = sock.getRemoteSocketAddress().getAddress().getHostAddress();
-            System.out.println("Test " + currentIP);
-            int currentPlayer = 0;
-            while (currentPlayer < NUMBER_OF_PLAYERS){
-                if (currentPlayerIPs[currentPlayer].equals(currentIP)) sock.send(hands[currentPlayer]);
-                currentPlayer++;
-            }
+            //sends update data
+
+            conn.send(hands[playerNumber]);
+        } finally {
+            serverLock.writeLock().unlock();
         }
     }
 
     /**
      * handles the connection in case an error has occured. Includes deleting the connection from the conns Set-
+     *
      * @param conn Websocket connection to the player
-     * @param ex exception that has occurred
+     * @param ex   exception that has occurred
      */
     @Override
     public void onError(WebSocket conn, Exception ex) {
-        //ex.printStackTrace();
-        if (conn != null) {
-            conns.remove(conn);
-            int currentPlayer = checkIfPlayer(conn.getRemoteSocketAddress().getAddress().getHostAddress());
-            if(currentPlayer > -1 && currentPlayer < 4)currentPlayerIPs[currentPlayer] = null;
-            // do some thing if required
+        try {
+            serverLock.writeLock().lock();
+            //ex.printStackTrace();
+            if (conn != null) {
+                conns.remove(conn);
+                int currentPlayer = checkIfPlayer(conn.getRemoteSocketAddress().getAddress().getHostAddress());
+                if (currentPlayer > -1 && currentPlayer < 4) currentPlayerIPs[currentPlayer] = null;
+                // do some thing if required
+            }
+            System.out.println("ERROR, a connection has been closed");
+        } finally {
+            serverLock.writeLock().unlock();
         }
-        System.out.println("ERROR, a connection has been closed");
     }
 
     /**
@@ -231,59 +266,121 @@ public class ConnectionHandler extends WebSocketServer  {
      * @return returns 20 if game is full and device is not known, returns the ID of the player if device is known,
      * returns and assignes new ID if game is not full and device is not known
      */
-    public int checkIfPlayer(String ipaddress){
-        boolean created = false;
-        for(int i = 0; i < 4; i++){
-            if(currentPlayerIPs[i].equals(ipaddress)){
-                return i;
+    public int checkIfPlayer(String ipaddress) {
+        try {
+            serverLock.writeLock().lock();
+
+            boolean created = false;
+            for (int i = 0; i < 4; i++) {
+                if (currentPlayerIPs[i].equals(ipaddress)) {
+                    return i;
+                }
             }
-        }
-        for (int i = 0; i < 4; i++){
-            if(currentPlayerIPs[i].equals("") && !created){
-                currentPlayerIPs[i] = ipaddress;
-                return i;
+            for (int i = 0; i < 4; i++) {
+                if (currentPlayerIPs[i].equals("") && !created) {
+                    currentPlayerIPs[i] = ipaddress;
+                    return i;
+                }
             }
+            return 20;
+        } finally {
+            serverLock.writeLock().unlock();
         }
-        return 20;
     }
 
     public String returnActionOfPlayer(int playerNumber) {
-        return playerActions[playerNumber];
+        try {
+            serverLock.readLock().lock();
+            return playerActions[playerNumber];
+        } finally {
+            serverLock.readLock().unlock();
+        }
     }
 
     public long getLastActionTime(int playerNumber) {
-        return lastActionTime[playerNumber];
+        try {
+            serverLock.readLock().lock();
+            return lastActionTime[playerNumber];
+        } finally {
+            serverLock.readLock().unlock();
+        }
     }
 
     public void setGameLogic(GameLogic gameLogic) {
-        this.gameLogic = gameLogic;
+        try {
+            serverLock.writeLock().lock();
+            this.gameLogic = gameLogic;
+        } finally {
+            serverLock.writeLock().unlock();
+        }
     }
 
     public void runConnectionCheck() {
-        for (int i = 0; i < conns.size(); i++) {
-            if (lastConnectionTime[i] < System.currentTimeMillis() - 5000) {
-                System.out.println("removed connection: " + i);
-                WebSocket connection = conns.get(i);
-                conns.remove(i);
-                disconnectPlayerFromGameLogic(i);
-                connection.close();
+        try {
+            serverLock.writeLock().lock();
+            for (int i = 0; i < conns.size(); i++) {
+                if (lastConnectionTime[i] < System.currentTimeMillis() - 5000) {
+                    System.out.println("removed connection: " + i);
+                    WebSocket connection = conns.get(i);
+                    conns.remove(i);
+                    disconnectPlayerFromGameLogic(i);
+                    connection.close();
+                }
             }
+            for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
+                String ipToCheck = currentPlayerIPs[i];
+                for (int j = 0; j < NUMBER_OF_PLAYERS; j++) {
+                    if (i != j) {
+                        if (ipToCheck.equalsIgnoreCase(currentPlayerIPs[j])) {
+                            currentPlayerIPs[j] = "0";
+                            gameLogic.userDisconnected(j);
+                        }
+                    }
+                }
+            }
+
+            for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
+                if (!currentPlayerIPs[i].equalsIgnoreCase("0")) {
+                    gameLogic.userConnected(i);
+                }
+            }
+        } finally {
+            serverLock.writeLock().unlock();
         }
     }
 
     public void disconnectPlayer(int playerNumber) {
-        for (int i = 0; i < conns.size(); i++) {
-            if (i == playerNumber) {
-                conns.get(i).close();
+        try {
+            serverLock.writeLock().lock();
+            for (WebSocket con : conns
+                    ) {
+                if (currentPlayerIPs[playerNumber].equalsIgnoreCase(con.getRemoteSocketAddress().getAddress().getHostAddress())) {
+                    con.send("You have been disconnected!");
+                    con.close();
+                    currentPlayerIPs[playerNumber] = "0";
+                }
             }
+        } finally {
+            serverLock.writeLock().unlock();
         }
     }
 
     public void disconnectPlayerFromGameLogic(int i) {
-        gameLogic.userDisconnected(i);
+        try {
+            serverLock.writeLock().lock();
+            gameLogic.userDisconnected(i);
+        } finally {
+            serverLock.writeLock().unlock();
+        }
     }
 
-    public void communicatePlayedCardToGameLogic(String message, int userID){
-        gameLogic.userPlayedCard(message, userID);
+    public void communicatePlayedCardToGameLogic(String message, int userID) {
+        try {
+            serverLock.writeLock().lock();
+
+            gameLogic.userPlayedCard(message, userID);
+        } finally {
+            serverLock.writeLock().unlock();
+        }
     }
 }

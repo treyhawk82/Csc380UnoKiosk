@@ -47,7 +47,8 @@ public class User extends Player {
                     if (gameLogic.timeOut()) {
                         if (gameLogic.checkIfStillConnected(turnofPlayer)) {
                             gameLogic.userDisconnected(turnofPlayer);
-                            //server.disconnectPlayer(turnofPlayer);
+                            server = gameLogic.getServer();
+                            server.disconnectPlayer(turnofPlayer);
                         }
                     }
 
