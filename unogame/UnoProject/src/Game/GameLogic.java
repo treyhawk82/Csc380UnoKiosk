@@ -345,7 +345,7 @@ public class GameLogic implements Runnable {
      * Removes any residual cards from hands, creates new deck and shuffles it, resets turn of player to player blue/0.
      * Then deals new cards to each player and lays down the first card onto the discard pile.
      */
-    private void resetBoard() {
+    public void resetBoard() {
         player_blue.removeAll();
         player_yellow.removeAll();
         player_green.removeAll();

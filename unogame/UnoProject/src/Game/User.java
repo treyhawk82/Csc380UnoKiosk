@@ -29,8 +29,8 @@ public class User extends Player {
             Card handCard = hand.getCard(i);
             if (handCard.getCardColor().equalsIgnoreCase(topOfDiscardPileColour)
                     || handCard.getCardNum() == topOfDiscardPileNumber
-                    || handCard.getCardColor().equalsIgnoreCase("wild")
-                    || handCard.getCardColor().equalsIgnoreCase("wild + 4")) {
+                    || handCard.getCardNum() == 13
+                    || handCard.getCardNum() == 14) {
                 hasPlayableCard = true;
             }
         }
@@ -38,6 +38,17 @@ public class User extends Player {
             int counter = 0;
             long printTimer = System.currentTimeMillis();
             while (lastActionTime < gameLogic.getTurnStartTime() && gameLogic.checkIfStillConnected(id)) {
+                if (gameLogic.getTurnStartTime() + 60000 < System.currentTimeMillis()) {
+                    gameLogic.resetBoard();
+                    for (int i = 0; i < 4; i++) {
+                        try {
+                            gameLogic.userDisconnected(i);
+                            server.disconnectPlayer(i);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
                 if (System.currentTimeMillis() > printTimer + 4000) {
                     System.out.println("Waiting for Player " + id + " to play a Card.");
                     printTimer = System.currentTimeMillis();

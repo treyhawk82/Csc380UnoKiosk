@@ -355,7 +355,7 @@ public class ConnectionHandler extends WebSocketServer  {
             for (WebSocket con : conns
                     ) {
                 if (currentPlayerIPs[playerNumber].equalsIgnoreCase(con.getRemoteSocketAddress().getAddress().getHostAddress())) {
-                    con.send("You have been disconnected!");
+                    con.send("timeout_disconnect");
                     con.close();
                     currentPlayerIPs[playerNumber] = "0";
                 }
