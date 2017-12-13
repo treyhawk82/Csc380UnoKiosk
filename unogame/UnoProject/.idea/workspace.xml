@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnoProject_jar/UnoProject.jar" afterPath="$PROJECT_DIR$/out/artifacts/UnoProject_jar/UnoProject.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/GameLogic.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/GameLogic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/User.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/commServer/ConnectionHandler.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/commServer/ConnectionHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/GameLogic.java" afterPath="$PROJECT_DIR$/src/Game/GameLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/commServer/ConnectionHandler.java" afterPath="$PROJECT_DIR$/src/Game/commServer/ConnectionHandler.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,8 +36,8 @@
       <file leaf-file-name="GameLogic.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game/GameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="144" column="64" lean-forward="false" selection-start-line="144" selection-start-column="64" selection-end-line="144" selection-end-column="64" />
+            <state relative-caret-position="375">
+              <caret line="156" column="87" lean-forward="true" selection-start-line="156" selection-start-column="87" selection-end-line="156" selection-end-column="87" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#17131#17132#0" expanded="true" />
@@ -565,7 +559,7 @@
       <workItem from="1512768406641" duration="1588000" />
       <workItem from="1513011014833" duration="934000" />
       <workItem from="1513023540077" duration="8195000" />
-      <workItem from="1513177769596" duration="4789000" />
+      <workItem from="1513177769596" duration="4858000" />
     </task>
     <task id="LOCAL-00001" summary="Edited deal class">
       <created>1510157962378</created>
@@ -861,11 +855,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513186271041</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="disabled connect function, upped AI timing">
+      <created>1513188530794</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1513188530794</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122568000" />
+    <option name="totallyTimeSpent" value="122637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="2182" height="1402" extended-state="6" />
@@ -952,7 +953,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added uno call and callout logic" />
     <MESSAGE value="progressed on switching out players and AI" />
     <MESSAGE value="implemented gui visualisation on called Unos" />
     <MESSAGE value="played around with the server and small fixes" />
@@ -977,7 +977,8 @@
     <MESSAGE value="fixed user timeout" />
     <MESSAGE value="fixed bugs in the server; now only one connection per ip address, timeouts should work correctly" />
     <MESSAGE value="updated jar" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated jar" />
+    <MESSAGE value="disabled connect function, upped AI timing" />
+    <option name="LAST_COMMIT_MESSAGE" value="disabled connect function, upped AI timing" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1221,8 +1222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="144" column="64" lean-forward="false" selection-start-line="144" selection-start-column="64" selection-end-line="144" selection-end-column="64" />
+        <state relative-caret-position="375">
+          <caret line="156" column="87" lean-forward="true" selection-start-line="156" selection-start-column="87" selection-end-line="156" selection-end-column="87" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#17131#17132#0" expanded="true" />
