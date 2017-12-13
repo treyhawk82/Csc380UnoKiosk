@@ -142,7 +142,7 @@ public class GameLogic implements Runnable {
 
             }
             if (win == 4) {
-                if (System.currentTimeMillis() > lastTime + 3000) {
+                if (System.currentTimeMillis() > lastTime + 3500) {
                     lastTime = System.currentTimeMillis();
                     checkIfPlayerHasToDraw(ai[turnOfPlayer].hand, turnOfPlayer);
                     play();
@@ -488,7 +488,7 @@ public class GameLogic implements Runnable {
     }
 
     public void userConnected(int id) {
-        connectedUser[id] = true;
+        connectedUser[id] = false;
     }
 
     public void userDisconnected(int id) {

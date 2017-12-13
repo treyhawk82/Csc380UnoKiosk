@@ -98,6 +98,7 @@ public class ConnectionHandler extends WebSocketServer  {
             }
 
 
+
             if (!isAlreadyConnected) {
                 conns.add(conn);
                 String currentIP = conn.getRemoteSocketAddress().getAddress().getHostAddress();
@@ -114,6 +115,7 @@ public class ConnectionHandler extends WebSocketServer  {
         } finally {
             serverLock.writeLock().unlock();
         }
+        conn.close();
     }
 
     /**
