@@ -7,14 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84789874-2a93-4722-a2ef-bf7600331c32" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/GameLogic.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/GameLogic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/User.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/commServer/ConnectionHandler.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/commServer/ConnectionHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UnoProject/Game/graphical_user_interface/CardDrawer.class" afterPath="$PROJECT_DIR$/out/production/UnoProject/Game/graphical_user_interface/CardDrawer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/GameLogic.java" afterPath="$PROJECT_DIR$/src/Game/GameLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/User.java" afterPath="$PROJECT_DIR$/src/Game/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game/commServer/ConnectionHandler.java" afterPath="$PROJECT_DIR$/src/Game/commServer/ConnectionHandler.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -569,7 +562,7 @@
       <workItem from="1512768406641" duration="1588000" />
       <workItem from="1513011014833" duration="934000" />
       <workItem from="1513023540077" duration="8195000" />
-      <workItem from="1513177769596" duration="2571000" />
+      <workItem from="1513177769596" duration="2862000" />
     </task>
     <task id="LOCAL-00001" summary="Edited deal class">
       <created>1510157962378</created>
@@ -851,11 +844,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513094567075</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fixed bugs in the server; now only one connection per ip address, timeouts should work correctly">
+      <created>1513185982709</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1513185982710</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120350000" />
+    <option name="totallyTimeSpent" value="120641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="2182" height="1402" extended-state="6" />
